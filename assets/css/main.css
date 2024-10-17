@@ -1,3 +1,17 @@
 .web6713{
     overflow: hidden;
 }
+
+/*Header*/
+
+/**/
+
+/*container*/
+ /*navnar*/
+.container{
+    background-color: var(--background-color);
+    padding: 20px 0;
+}
+.container_category{
+    background-color: var(--white-color);
+}

@@ -1,0 +1,14 @@
+:root{
+
+}
+
+*{
+    box-sizing: inherit; /*ke thua box-sizing*/
+}
+
+html{
+    font-size: 62.5%;/* bang 10px, 100% = 16px*/
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}

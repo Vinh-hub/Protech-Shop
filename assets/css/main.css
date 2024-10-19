@@ -1,14 +1,6 @@
 .web6713{
     overflow: hidden;
 }
-*{
-    box-sizing: border-box;
-    margin:0;
-}
-
-html{
-    font-family: Inter, Helvetica, Arial, sans-serif;
-}
 
 /*Header*/
 
@@ -46,7 +38,7 @@ html{
 
 .header_navbar-link--strong{
     font-weight: 550;
-    color: var(--header-text-color );
+    color: var(--text-color );
 }
 
 
@@ -69,6 +61,8 @@ html{
 /**/
 
 /*container*/
+
+
  /*navnar*/
 .container{
     background-color: var(--background-color);

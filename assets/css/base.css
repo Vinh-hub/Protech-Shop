@@ -4,13 +4,8 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
-    --header-color:#ffffff;
     --header-color:#bbe4c8;
-    --header-text-color:rgb(68, 58, 85);
     --icon-color: rgb(88, 88, 99);
-
-
-    
 }
 
 *{
@@ -20,6 +15,7 @@
 html{
     font-size: 62.5%;/* bang 10px, 100% = 16px*/
     line-height: 1.6rem;
-    font-family: "Roboto", sans-serif;
+    font-family: Inter, Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
+  

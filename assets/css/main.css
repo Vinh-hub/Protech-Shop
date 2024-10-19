@@ -5,7 +5,7 @@
 /*Header*/
 
 .header{
-    background-image: linear-gradient(0, #ffffff, #bbe4c8);
+    /* background-image: linear-gradient(0, #ffffff, #bbe4c8); */
     height:120px
 }
 
@@ -16,7 +16,8 @@
 
 .header_navbar-list{
     list-style: none;
-    margin-top:15px;
+    margin-top: 15px;
+    padding: 0;
 }
 
 .header_navbar-item-link,
@@ -41,6 +42,9 @@
     color: var(--text-color );
 }
 
+.navber__homepage{
+    color: var(--primary-color);
+}
 
 .header_navbar-item--separate::after{
     content:"";
@@ -56,6 +60,11 @@
 .header_navbar-icon-link{
     color: var(--icon-color);
     text-decoration: none;
+}
+
+.h_icon-fa,
+.h_icon-ins{
+    margin-left: 5px;
 }
 
 /**/

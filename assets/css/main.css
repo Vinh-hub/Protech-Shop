@@ -12,19 +12,43 @@ html{
 
 /*Header*/
 
-.header{
-    background-image: linear-gradient(0, #ffffff, #bbe4c8);
-    height:120px
+ .header{
+    height:170px;
+} 
+
+.header_first{
+   background-image:linear-gradient(0, #ffffff, #bbe4c8) ;
+   height:47px;
 }
 
 .header_navbar{
+    align-items: center;
+}
+
+.header_navbar-search{
     display:flex;
     justify-content: space-between;
+    gap:40px;
 }
+
+.header_width-search{
+    
+   
+}
+
+.header_search{
+    flex:1;
+    height:40px;
+    border-radius: 10px;
+    border: 1px solid rgb(221, 221, 227);
+    width:885px;
+
+}
+
+
 
 .header_navbar-list{
     list-style: none;
-    margin-top:15px;
 }
 
 .header_navbar-item-link,
@@ -41,7 +65,7 @@ html{
 
 .header_navbar-item{
     position:relative;
-    margin:0 8px;
+    margin:0 10px;
 }
 
 .header_navbar-link--strong{
@@ -50,7 +74,7 @@ html{
 }
 
 
-.header_navbar-item--separate::after{
+ .header_navbar-icon-link--separate::after{
     content:"";
     display:block;
     position:absolute;
@@ -59,12 +83,27 @@ html{
     right:-10px;
     top:50%;
     transform :translateY(-50%);
-}
+} 
 
 .header_navbar-icon-link{
     color: var(--icon-color);
     text-decoration: none;
 }
+
+/* header with search */
+.header_width-search{
+    height:81px;
+    
+}
+
+.header_logo{
+
+}
+
+.header_logo-img{
+
+}
+ 
 
 /**/
 

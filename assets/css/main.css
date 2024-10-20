@@ -1,13 +1,6 @@
 .web6713{
+    background-color: var(--background-color);
     overflow: hidden;
-}
-*{
-    box-sizing: border-box;
-    margin:0;
-}
-
-html{
-    font-family: Inter, Helvetica, Arial, sans-serif;
 }
 
 /*Header*/
@@ -19,6 +12,12 @@ html{
 .header_first{
    background-image:linear-gradient(0, #ffffff, #bbe4c8) ;
    height:47px;
+}
+
+.header{
+    background-color: var(--white-color);
+    height:120px
+
 }
 
 .header_navbar{
@@ -49,13 +48,16 @@ html{
 
 .header_navbar-list{
     list-style: none;
+    margin-top: 15px;
+    padding: 0;
+
 }
 
 .header_navbar-item-link,
 .header_navbar-item{
     display:inline-block;
     color: rgb(128, 128, 137 );
-    font-size: 17px;
+    font-size: 1.7rem;
     text-decoration: none;
     cursor: pointer;
 }
@@ -69,10 +71,13 @@ html{
 }
 
 .header_navbar-link--strong{
-    font-weight: 550;
-    color: var(--header-text-color );
+    font-weight: 1.4rem;
+    color: var(--text-color );
 }
 
+.navber__homepage{
+    color: var(--primary-color);
+}
 
  .header_navbar-icon-link--separate::after{
     content:"";
@@ -90,6 +95,7 @@ html{
     text-decoration: none;
 }
 
+
 /* header with search */
 .header_width-search{
     height:81px;
@@ -105,14 +111,60 @@ html{
 }
  
 
+
+.h_icon-fa,
+.h_icon-ins{
+    margin-left: 5px;
+}
+
 /**/
 
 /*container*/
+
+
  /*navnar*/
 .container{
-    background-color: var(--background-color);
     padding: 20px 0;
 }
-.container_category{
+.container__category{
     background-color: var(--white-color);
+    padding: 15px 20px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+.header__category{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.category__list{
+    list-style: none;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.category__item{
+}
+.category__item-link{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 7px 0;
+}
+.category__item-icon{
+    margin-right: 8px;
+}
+/**/
+.container__menu{
+    background-color: var(--white-color);
+    min-height: 126px;
+    border-radius: 8px;
+}
+
+
+.container__product{
+    background-color: var(--white-color);
+    border-radius: 8px;
 }

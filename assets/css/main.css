@@ -10,14 +10,13 @@
 } 
 
 .header_first{
-   background-image:linear-gradient(0, #ffffff, #bbe4c8) ;
+   background-color: #EFFFF4;
    height:47px;
 }
 
 .header{
     background-color: var(--white-color);
     height:120px
-
 }
 
 .header_navbar{
@@ -44,12 +43,10 @@
 
 }
 
-
-
 .header_navbar-list{
     list-style: none;
-    margin-top: 15px;
-    padding: 0;
+    margin: 0;
+    padding: 15px 0;
 
 }
 

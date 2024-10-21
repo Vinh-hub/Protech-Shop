@@ -29,9 +29,18 @@
     gap:40px;
 }
 
+/* header with search */
 .header_width-search{
-    
+    height:81px;
    
+}
+
+.header_logo{
+
+}
+
+.header_logo-img{
+
 }
 
 .header_search{
@@ -69,7 +78,11 @@
 
 .header_navbar-link--strong{
     font-weight: 1.4rem;
-    color: var(--text-color );
+    color: rgb(10, 104, 255);
+
+}
+
+
 }
 
 .navber__homepage{
@@ -90,23 +103,7 @@
 .header_navbar-icon-link{
     color: var(--icon-color);
     text-decoration: none;
-}
-
-
-/* header with search */
-.header_width-search{
-    height:81px;
-    
-}
-
-.header_logo{
-
-}
-
-.header_logo-img{
-
-}
- 
+} 
 
 
 .h_icon-fa,

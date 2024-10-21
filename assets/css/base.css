@@ -1,8 +1,11 @@
 :root{
     --primary-color: rgb(11, 116, 229);
+    --background-color: #f5f5fa;
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
+    --header-color:#bbe4c8;
+    --icon-color: rgb(88, 88, 99);
 }
 
 *{
@@ -12,6 +15,7 @@
 html{
     font-size: 62.5%;/* bang 10px, 100% = 16px*/
     line-height: 1.6rem;
-    font-family: "Roboto", sans-serif;
+    font-family: Inter, Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
+  

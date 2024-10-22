@@ -19,3 +19,11 @@ html{
     box-sizing: border-box;
 }
   
+.title{
+    font-size: 4.0rem;
+    margin-left: 40px;
+}
+.title_menu{
+    display: flex;
+    align-items: center;
+}

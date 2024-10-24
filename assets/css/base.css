@@ -28,3 +28,11 @@ html{
     display: flex;
     align-items: center;
 }
+.btn-custom{
+    border: transparent;
+    background-color: rgba(0, 0, 0, 0,1);
+    height: 34px;
+    min-width: 100px;
+    border-radius: 8px;
+    margin: 3px;
+}

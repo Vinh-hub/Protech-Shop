@@ -29,6 +29,7 @@
     display:flex;
     justify-content: space-between;
     gap:40px;
+    align-items: center;
    
 }
 
@@ -36,14 +37,20 @@
 /* header with search */
 .header_width-search{
     height:81px;
-   
+    display:flex;
+    align-items: center;
 }
 
 .header_logo{
-
+    
 }
 
 .header_logo-img{
+    width:81px;
+    height:100%;
+    color:var(--primary-color);
+    padding-bottom: 15px;
+
 
 }
 
@@ -53,7 +60,7 @@
     border-radius: 10px;
     border: 1px solid rgb(221, 221, 227);
     width:885px;
-    display:flex
+    display:flex;
 
 }
 
@@ -61,10 +68,6 @@
     font-size:1.5rem;
     margin: 10px 15px;
     color:var(--text-color);
-    font-size: 1.5rem;
-
-
-    
 }
 
 .header_search-button{
@@ -72,7 +75,7 @@
     width:10%;
     height:90%;
     border:none;
-    color:var(--text-color);
+    color:var(--icon-dis-color);
     font-size: 1.4rem;
     padding:0;
     background-color:var(--white-color);
@@ -91,14 +94,15 @@
     padding:0 8px;
     outline: none;
     flex:1;
+    align-items: center;
 }
 
-
-
+/* Header-list */
 .header_navbar-list{
     list-style: none;
     margin: 0;
     padding: 15px 0;
+    text-align: center;
 
 }
 
@@ -124,31 +128,6 @@
 
 }
 
-
-/* Header_navbar-discount */
-.header_navbar-discount-list{
-    position: relative;
-    width:100%;
-    border-width: 1px 0; 
-    border-style: solid;
-    border-color: var(--text-color);
-   
-    
-    
-}
-
-.header_navbar-discount-item{
-    display:flex;
-    gap:20px;
-    width:100%;
-    list-style: none;
-    font-size: 1.4rem;
-    text-align: center;
-    padding:12px 0;
-    margin:0;
-    
-}
-
 .navber__homepage{
     color: var(--primary-color);
 }
@@ -157,11 +136,12 @@
     content:"";
     display:block;
     position:absolute;
-    border-left: 2px solid black;
+    border-left: 2px solid rgb(235, 235, 240);
     height:12px;
     right:-10px;
     top:50%;
     transform :translateY(-50%);
+    margin:auto -9px;
 } 
 
 .header_navbar-icon-link{
@@ -169,11 +149,63 @@
     text-decoration: none;
 } 
 
+.header_navbar-icon-cart{
+    margin-left: 20px;
+}
+
 
 .h_icon-fa,
 .h_icon-ins{
     margin-left: 5px;
 }
+
+/* Header_navbar-discount */
+.header_navbar-discount{
+    position: relative;
+    width:100%;
+    border-width: 1px 0; 
+    border-style: solid;
+    border-color: rgb(235, 235, 240);   
+    
+}
+
+.header_navbar-discount-list{
+    display:flex;
+    gap:20px;
+    width:100%;
+    list-style: none;
+    font-size: 1.4rem;
+    text-align: center;
+    padding:12px 24px;
+    margin:0 78px;
+    cursor:pointer;
+    align-items: center;
+    
+}
+
+.header_navbar-discount-item{
+    position:relative;
+}
+
+
+
+.header_navbar-dis-link{
+    color: rgb(39, 39, 42);
+    text-decoration: none;
+    margin-right: 4px;
+}
+
+.header_navbar-dis-icon{
+    text-decoration: none;
+    color:var(--icon-dis-color);
+}
+
+
+.header_navbar-dis-link--strong{
+    color: rgb(0, 62, 161);
+    font-weight: 1.4rem;
+}
+
 
 /**/
 

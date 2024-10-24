@@ -291,8 +291,11 @@
         padding-left: 12px;
         padding-right: 12px;
     }
-
     .row.sm-gutter .col {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .row.protech .col {
         padding-left: 5px;
         padding-right: 5px;
     }

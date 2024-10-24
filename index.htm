@@ -34,7 +34,7 @@
                             
                         <div class="header_width-search">
                             <ul class="header_logo">
-                                <img class="header_logo-img " src="https://salt.tikicdn.com/ts/upload/0e/07/78/ee828743c9afa9792cf20d75995e134e.png" alt="tiki-logo" width="96" height="40">
+                                <img class="header_logo-img " src="./assets/imgs/logo.png" alt="tiki-logo" width="96" height="40">
                             </ul>
                         </div>
                             
@@ -86,7 +86,7 @@
                         <li class="header_navbar-item">
                             
                             <a href="#" class="header_navbar-icon-link">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="header_navbar-icon-cart fa-solid fa-cart-shopping"></i>
                               </a>
                         </li>
                         
@@ -95,37 +95,62 @@
                     </div>
                     
                 </div>
-                <div class="header_navbar-discount-list">
-                    <ul class="header_navbar-discount-item">
-                        <li>
-                            Cam kết
-                        <a href="#" class="header_navbar-dis-link"></a></li>
-
-                        <li>
-                            100% hàng thật  
-                        <a href="#" class="header_navbar-dis-link"></a></li>
-
-                        <li>
-                            Chính hãng
-                        <a href="#" class="header_navbar-dis-link"></a></li>
-
-                        <li>
-                            Giá ưu đãi
-                        <a href="#" class="header_navbar-dis-link"></a></li>
-
-                        <li>
-                            30 ngày đổi trả
-                        <a href="#" class="header_navbar-dis-link"></a></li>
-
-                        <li>
-                            Giao nhanh trong 2h
-                        <a href="#" class="header_navbar-dis-link"></a></li>
-
-                    </ul>
-        
-                </div>
+                
                 
                 </div>
+            </div>
+
+            <div class="header_navbar-discount">
+                <ul class="header_navbar-discount-list">
+
+                    <li class="header_navbar-discount-item">
+                    <a href="#" class=" header_navbar-dis-link header_navbar-dis-link--strong">
+                        Cam kết
+                    </a>
+                    </li>
+
+
+                    <li class="header_navbar-discount-item " >
+                    <a href="#" class="header_navbar-dis-link ">
+                        <i class="header_navbar-dis-icon fa-solid fa-award"></i>                            
+                        100% hàng thật  
+                    </a>
+                    </li>
+
+
+                    <li class="header_navbar-discount-item" >   
+                    <a href="#" class="header_navbar-dis-link">
+                        <i class="header_navbar-dis-icon fa-solid fa-circle-check"></i>
+                        Chính hãng 
+                    </a>
+                    </li>
+
+
+                    <li class="header_navbar-discount-item" >
+                    <a href="#" class="header_navbar-dis-link ">
+                        <i class="header_navbar-dis-icon fa-solid fa-tags"></i>
+                        Giá ưu đãi
+                    </a>
+                    </li>
+
+                     
+                    <li class="header_navbar-discount-item" >  
+                    <a href="#" class="header_navbar-dis-link">
+                        <i class="header_navbar-dis-icon fa-solid fa-rotate"></i> 
+                         30 ngày đổi trả
+                    </a>
+                    </li>
+
+
+                    <li class="header_navbar-discount-item" >
+                    <a href="#" class="header_navbar-dis-link">
+                         <i class="header_navbar-dis-icon fa-solid fa-truck-fast"></i>
+                        Giao nhanh trong 2h
+                    </a>
+                    </li>
+
+                </ul>
+    
             </div>
         </header>
         <!---->
@@ -185,15 +210,570 @@
                         </nav>
                     </div>
                     <div class="col l-10 m-12 c-12">
-                        <header class="container__menu title_menu">
-                            
+                        <header class="row container__menu title_menu">
+
+                            <a class="title_menu-thumail-link" href="#">
+                                <img src="assets/imgs/thumail.png" alt="" class="title_menu-thumail">
+                            </a>
                         </header>
-                        <article class="container__product">
-
+                        <article class="row protech container__product">
+                            <div class="Sale">
+                                <i class="Sale-icon fa-solid fa-thumbs-up"></i>
+                                <span class="Sale-text">TOP DEAL</span>
+                            </div>
+                            <div class="product-list">
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </article>
-                        <footer class="footer">
-
-                        </footer>
+                        <div class="Sale">
+                            <span class="Sale-suggest">Gợi ý hôm nay</span>
+                        </div>
+                        <article class="row protech container__product gutter" >
+                            <div class="product-list gutter">
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col l-2 m-3 c-6 product-item">
+                                    <a href="#" class="product-item-link">
+                                        <div class="product-item-group">
+                                            <div class="product-item__mark-favourite">
+                                            </div>
+                                            <div class="product-item-img"
+                                                style="background-image: url(https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-600x600.jpg);">
+                                            </div>
+                                            <div class="product-item-info">
+                                                <div class="product-item-name">
+                                                    <div class="item-name__group">
+                                                        <h3>Điện thoại iPhone 16 Pro Max</h3>
+                                                    </div>
+                                                    <div class="item-name-deal">
+                                                        <!-- <span class="name-main-deal-type">Mua Kèm Deal Sốc</span>
+                                                        <span class="name-main-deal-type">Rẻ Vô Địch</span> -->
+                                                        <!-- <div class="name-main-sales-percent" style="color: rgb(246, 145, 19);">
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                                <span class="name-main__sales-percent-main">30%</span>
+                                                                <svg class="name-main__sales-percent-border" style="color: rgb(246, 145, 19);" viewBox="-0.5 -0.5 4 16">
+                                                                    <path d="M4 0h-3q-1 0 -1 1a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3v0.333a1.2 1.5 0 0 1 0 3q0 1 1 1h3" stroke-width="1" transform="rotate(180) translate(-3 -15)" stroke="currentColor" fill="#f69113">
+                                                                    </path>
+                                                                </svg>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+                                                <strong class="product-price">
+                                                    <span class="price-current">6.990.000₫ </span>
+                                                    <span class="price-and-discount">
+                                                        <label class="price-old black">
+                                                            9.990.000₫
+                                                        </label>
+                                                            <small class="price-present">-30%</small>
+                                                    </span>
+                                                </strong>
+                                                <div class="buy__now">
+                                                    <span> Mua ngay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="pagination">
+                            <a class="pagination-more">Xem thêm</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -56,10 +56,11 @@
 
 .header_search{
     flex:1;
+    position:relative;
     height:40px;
     border-radius: 10px;
     border: 1px solid rgb(221, 221, 227);
-    width:885px;
+    width:800px;
     display:flex;
 
 }
@@ -80,6 +81,8 @@
     padding:0;
     background-color:var(--white-color);
     cursor:pointer;
+    border-left: 1px solid rgb(221, 221, 227);
+    
     
 }
 
@@ -93,9 +96,9 @@
     border-radius: 3px;
     padding:0 8px;
     outline: none;
-    flex:1;
     align-items: center;
 }
+
 
 /* Header-list */
 .header_navbar-list{
@@ -103,6 +106,7 @@
     margin: 0;
     padding: 15px 0;
     text-align: center;
+    
 
 }
 
@@ -159,6 +163,62 @@
     margin-left: 5px;
 }
 
+/* Header-search-history */
+.header_navbar-search-history{
+    position: absolute;
+    width:100%;
+    height:100px;
+    background-color: rgb(255, 255, 255);;
+    list-style: none;
+    top:calc(100% + 1px );
+    left:0px;
+    border-top: 1px solid rgb(235, 235, 240);
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 6px 12px 0px;
+    display:none;  
+
+
+}
+
+.header_navbar-search-history-heading{
+    color: rgb(128, 128, 137 );
+    padding: 12px 20px;
+    font-size: 1.4rem;
+}
+.header_navbar-search-story-list{
+    padding-left:0;  
+
+}
+
+.header_navbar-search-story-item a{
+    font-size:1.4rem;
+    text-decoration: none;
+    color:var(--search-item);    
+}
+
+.header_navbar-search-story-item {
+    list-style: none;
+    color: rgb(39, 39, 42);
+    font-size: 14px;
+    line-height: 150%;
+    height: 36px;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 16px;
+}
+
+.header_search-input:focus ~ .header_navbar-search-history {
+    display:block;
+}
+
+.header_navbar-search-story-item:hover{
+   background-color: #fafafa;
+}
+
+
+
 /* Header_navbar-discount */
 .header_navbar-discount{
     position: relative;
@@ -166,6 +226,7 @@
     border-width: 1px 0; 
     border-style: solid;
     border-color: rgb(235, 235, 240);   
+    z-index: 1;
     
 }
 
@@ -180,7 +241,7 @@
     margin:0 78px;
     cursor:pointer;
     align-items: center;
-    
+    z-index: 1;
 }
 
 .header_navbar-discount-item{

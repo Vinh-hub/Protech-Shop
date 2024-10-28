@@ -641,7 +641,7 @@ p{
   }
   .buy__now{
     position: relative;
-    top: 40px;
+    top: 10px;
     display: flex;
     justify-content: center;
     width: 100%;

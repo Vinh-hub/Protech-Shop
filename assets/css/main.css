@@ -541,7 +541,7 @@ p{
 
 .info-page{
     width:900px;
-    height:600px;
+    height:700px;
     border:2px solid white;
     box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2 );
     margin-left:auto;
@@ -583,6 +583,211 @@ p{
     
     
 }
+.delivery-item{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-left:60px;
+
+}
+
+.info-choose{
+    display:flex;
+    align-items: center;
+    gap:100px;
+}
+
+.info-choose-1{
+    margin-left: 60px;
+    margin-top:10px;
+}
+
+.info-choose-2{
+    
+    margin-top:10px;
+}
+
+.info-radio-item{
+    font-size: 1.6rem;
+}
+
+.info-radio{
+    margin-right: 10px;
+}
+
+
+.info-address{
+    height:187px;
+    width:800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+    border:2px solid #f8f8f8;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}
+
+.info-address-item{
+    display:flex;
+    gap:10px;
+
+}
+
+.address-1{
+    font-size: 1.5rem;
+    margin-left: 62px;
+    margin-top:20px;
+    border:none;
+    border-radius: 5px;
+}
+
+.select-1{
+    border-radius: 5px;
+    width:300px;
+    height:30px;
+    text-align: center;
+    color:var(--icon-color);
+}
+
+.select-2{
+    border-radius: 5px;
+    width:672px;
+    height:30px;
+    text-align: center;
+    color:var(--icon-color);
+}
+
+
+.address-input{
+    margin-top:20px;
+
+}
+
+.address-input-item{
+    margin-bottom:20px;
+    margin-left: 60px;
+    width:675px;
+    height:34px;
+    border:1px solid var(--icon-color) ;
+    border-radius: 8px;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+.pay-main{
+    width:900px;
+    height:300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    
+}
+
+.pay-momo{
+    box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
+    width:675px;
+    height:50px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 5px;
+}
+
+.pay-vnpay{
+    box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
+    width:675px;
+    height:50px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.pay-zalopay{
+    box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
+    width:675px;
+    height:50px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+    border-radius: 5px;
+}
+
+.pay-radio{
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+}
+ /* Momo */
+.img-momo{
+    width:50px;
+    height:45px
+}
+
+.item{
+    width: 150px;
+    display: flex;
+    margin-left: 80px;
+}
+
+.pay-momo-item{
+    font-size:1.4rem;
+    margin-left: 30px;
+    margin-top:auto;
+    margin-bottom: auto;
+    font-weight: 500;
+}
+
+/* Vnpay */
+.img-vnpay{
+    width:50px;
+    height:45px
+}
+
+.item{
+    width: 150px;
+    display: flex;
+    margin-left: 80px;
+}
+
+.pay-vnpay-item{
+    font-size:1.4rem;
+    margin-left: 30px;
+    margin-top:auto;
+    margin-bottom: auto;
+    font-weight: 500;
+}
+
+/* Zalo pay */
+
+.img-zalo{
+    width:50px;
+    height:45px
+}
+
+.item{
+    width: 150px;
+    display: flex;
+    margin-left: 80px;
+}
+
+.pay-zalo-item{
+    font-size:1.4rem;
+    margin-left: 30px;
+    margin-top:auto;
+    margin-bottom: auto;
+    font-weight: 500;
+}
+
+.pay-momo:hover, .pay-vnpay:hover, .pay-zalopay:hover{
+    border:1px solid var(--icon-dis-color);
+}
+
+
+
  
 
 

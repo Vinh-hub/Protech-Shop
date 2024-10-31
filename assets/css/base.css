@@ -9,6 +9,7 @@
     --icon-dis-color:rgb(11, 116, 229);
     --search-item-color:rgb(39, 39, 42);
     --hover-color: #dad5d5;
+    --box-shadow:0 1px 3.123rem 0 rgba(153, 150, 150, 0.2);
 }
 
 *{

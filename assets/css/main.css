@@ -803,11 +803,14 @@ p{
 
 .pay-momo{
     box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
-    width:675px;
-    height:50px;
-    margin-left:auto;
-    margin-right:auto;
+    width: 675px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 424px;
 }
 
 .pay-vnpay{
@@ -818,6 +821,9 @@ p{
     margin-right:auto;
     margin-top: 10px;
     border-radius: 5px;
+    display:flex;
+    align-items: center;
+    gap: 424px;
 }
 
 .pay-zalopay{
@@ -828,6 +834,9 @@ p{
     margin-right:auto;
     margin-top:10px;
     border-radius: 5px;
+    display:flex;
+    align-items: center;
+    gap: 424px;
 }
 
 .pay-radio{

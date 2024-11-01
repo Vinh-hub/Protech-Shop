@@ -1130,7 +1130,7 @@ p{
   .installment-text{
     font-size: 1.2rem;
   }
-  .item-name__group #item-name {
+  .item-name__group h3 {
     width: 100%;
     line-height: 2rem;
     -webkit-line-clamp: 2;
@@ -1140,7 +1140,7 @@ p{
     -webkit-box-orient: vertical;
     margin: 0;
   }
-  .product-item.cellphone #item-name{
+  .product-item.cellphone h3{
     font-size: 1.4rem;
   }
   .item-compare{
@@ -1242,6 +1242,7 @@ p{
 .end{
     background-color: var(--white-color);
     padding-bottom: 10px;
+    margin-top: 20px;
 }
 .end__heading{
     margin-top: 15px;

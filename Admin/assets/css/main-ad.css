@@ -1,0 +1,127 @@
+/* Đặt kiểu cho toàn bộ sidebar */
+a {
+    text-decoration: none;
+}
+.sidebar{
+    overflow: auto;
+    max-height: 100%;
+    height: 100%;
+}
+.sidebar-wrapper {
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(11, 116, 229, 0.701);
+}
+
+.sidebar-wrapper .logo {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 30px 0;
+}
+
+.sidebar-wrapper .logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-wrapper .logo{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-wrapper ul.nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-wrapper ul.nav li {
+    padding: 5px 20px;
+}
+
+.sidebar-wrapper ul.nav li a {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.sidebar-wrapper ul.nav li a:hover,
+.sidebar-wrapper ul.nav li.active a {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.sidebar-wrapper ul.nav li a i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.sidebar-wrapper .nav-item.active a {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px;
+}
+
+.sidebar-wrapper .nav-item.active.active-pro a {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.sidebar-wrapper .nav-item.active.active-pro a p {
+    color: #ffffff;
+}
+.nav-icon{
+    margin-left: 10px;
+}
+/* nav */
+.navbar{
+    padding: 5px 15px;
+    margin: 5px 0;
+    border-top: 1px solid #9a9a9a27;
+    border-bottom: 1px solid #9a9a9a27;
+
+}
+.container-fluid{
+    display: flex;
+    align-items: center;
+}
+.navbar-brand{
+    padding: 15px;
+    margin-left: -15px;
+    font-size: 2rem;
+    color: #5c5b5b;
+}
+.collapse {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav-link{
+    padding: 10px 15px;
+    margin: 10px 3px;
+    color:  #9A9A9A;
+    font-size: 1.8rem;
+}
+.collapse .nav-item:hover .nav-link{
+    color:  var(--primary-color);
+}
+.navbar-nav{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+.dropdown-menu{
+    display: none;
+}
+.caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}

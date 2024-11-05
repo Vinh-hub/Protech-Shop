@@ -20,17 +20,15 @@
     margin-left: 0;
     margin-right: 0;
 }
-
 .col {
     padding-left: 4px;
     padding-right: 4px;
 }
 
-.row.no-gutters .col {
+.row.no-gutters .col.no {
     padding-left: 0;
     padding-right: 0;
 }
-
 .c-0 {
     display: none;
 }
@@ -286,7 +284,10 @@
         margin-left: -5px;
         margin-right: -5px;
     }
-
+    .row.none{
+        margin-left: 0;
+        margin-right: 0;
+    }
     .col {
         padding-left: 12px;
         padding-right: 12px;

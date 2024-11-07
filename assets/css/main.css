@@ -250,7 +250,7 @@
     text-align: center;
     padding:12px 24px;
     margin:0 78px;
-    cursor:pointer;
+    cursor:text;
     align-items: center;
     
     
@@ -266,6 +266,7 @@
     color: rgb(39, 39, 42);
     text-decoration: none;
     margin-right: 4px;
+    cursor:text;
 }
 
 .header_navbar-dis-icon{

@@ -5,7 +5,9 @@
 
 /* Mobile */
 @media(max-width: 46.188em){
-
+    .product-item-group {
+        height: 348px;
+    }
 }
 
 /* Tablet */

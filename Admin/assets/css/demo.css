@@ -68,3 +68,31 @@
 .add-product:hover{
     color: rgb(11, 116, 229);
 }
+.search-product-admin{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    padding: 0 15px;
+}
+.search-product-admin.current{
+    /* margin-left: 50px; */
+}
+/*  */
+.header.addProductList{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.cart form{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.header.addProductList .header__text{
+    margin-bottom: 10px;
+}
+.btn-addproductlist{
+    margin-bottom: 10px;
+}
+.row.element-button{
+    margin-bottom: 10px;
+}

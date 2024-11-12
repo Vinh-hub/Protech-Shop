@@ -301,7 +301,7 @@
     text-align: center;
     margin-left:315px;
     margin-right:50px;
-    background-color: white;
+    /* background-color: white; */
     
 }
 .header_navbar-cart-no-cart-img{
@@ -343,7 +343,7 @@ p{
 .header_cart-has-product{
     width: 900px;
     min-height: 760px;
-    box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2); */
     border-radius: 5px;
     
 }
@@ -401,7 +401,13 @@ p{
     
     
 }
-
+.name-group{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-icon-1{
+    margin-right: 50px;
+}
 .header_cart-price-1{
     color:red;
     font-weight:700;
@@ -515,7 +521,7 @@ p{
 }
 
 .footer-button{
-    background-color: #6aaaea;
+    background-color: rgb(11, 116, 229);
     border: 0;
     border-radius: 5px;
     cursor: pointer;
@@ -536,6 +542,9 @@ p{
 
 /* info-product */
 
+.info-pay{
+    margin: 15px;
+}
 .info-product-heading{
     font-size: 1.5rem;
     height: 15px;
@@ -639,12 +648,10 @@ p{
 .button-item{
     width:675px;
     height:40px;
-    background-color: #6aaaea;
+    background-color: rgb(11, 116, 229);
     border:none;
     border-radius: 7px;
     cursor:pointer;
-
-
 }
 
 .button-item a{
@@ -662,8 +669,7 @@ p{
     height:1000px;
     border:2px solid white;
     box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2 );
-    margin-left:auto;
-    margin-right:auto;
+    margin: 20px auto;
     border-radius: 5px;
 
 }
@@ -685,21 +691,20 @@ p{
 
 .info-input{
     display:block;
-    width:100px;
+    width:100%;
 }
 
 
 .info-input-item{
     margin-bottom:20px;
     margin-left: 60px;
-    width:600px;
+    width: 780px;
     height:34px;
     border:1px solid var(--icon-color) ;
     border-radius: 8px;
     font-size: 1.3rem;
     background-color: #f0f2f5;
-    
-    
+    padding: 5px 10px;
 }
 .delivery-item{
     font-size: 1.4rem;
@@ -712,6 +717,7 @@ p{
     display:flex;
     align-items: center;
     gap:100px;
+    justify-content: center;
 }
 
 .info-choose-1{
@@ -788,6 +794,7 @@ p{
     border:1px solid var(--icon-color) ;
     border-radius: 8px;
     font-size: 1.3rem;
+    padding: 5px 10px;
 }
 
 /* Pay */
@@ -801,7 +808,21 @@ p{
 
     
 }
+.pay-main img{
+    object-fit: contain;
+}
+.pay-main .item {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
 
+.pay-main .selected .item {
+    border-color: #007bff; 
+    background-color: #e6f7ff; 
+}
 .pay-momo{
     box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
     width: 675px;
@@ -845,42 +866,45 @@ p{
     float: right;
     margin-right: 10px;
 }
+.pay-item{
+    width: 100px;
+}
+.pay-choice{
+    width: 800px;
+}
+.pay-choice .item{
+    display: flex;
+    justify-content: space-between;
+}
  /* Momo */
 .img-momo{
-    width:80px;
+    /* width:80px; */
     height:47px;
-    margin-left:-14px;
-}
-
-.item{
-    width: 150px;
-    display: flex;
-    margin-left: 80px;
+    margin-right: 25px;
+    object-fit: none;
 }
 
 .pay-momo-item{
     font-size:1.4rem;
-    margin-left: 15px;
     margin-top:auto;
     margin-bottom: auto;
     font-weight: 500;
 }
 
 /* Vnpay */
-.img-vnpay{
-    width:50px;
-    height:45px
-}
-
 .item{
-    width: 150px;
-    display: flex;
+    width: 250px;
     margin-left: 80px;
 }
+.img-vnpay{
+    width: 60px;
+    height:45px;
+    margin-right: 30px;
+}
+
 
 .pay-vnpay-item{
     font-size:1.4rem;
-    margin-left: 30px;
     margin-top:auto;
     margin-bottom: auto;
     font-weight: 500;
@@ -890,18 +914,12 @@ p{
 
 .img-zalo{
     width:54px;
-    height:47px
-}
+    height:47px;
+    margin-right: 30px;
 
-.item{
-    width: 150px;
-    display: flex;
-    margin-left: 80px;
 }
-
 .pay-zalo-item{
     font-size:1.4rem;
-    margin-left: 26px;
     margin-top:auto;
     margin-bottom: auto;
     font-weight: 500;
@@ -1118,7 +1136,9 @@ p{
     display: flex;
     flex-direction: column;
 }
-.category__item{
+.category__item:hover .category__item-link{
+    background-color: #33333350;
+    border-radius: 8px;
 }
 .category__item-link{
     display: flex;
@@ -1126,7 +1146,7 @@ p{
     font-size: 1.2rem;
     text-decoration: none;
     color: var(--text-color);
-    padding: 7px 0;
+    padding: 7px 5px;
 }
 .category__item-icon{
     margin-right: 8px;

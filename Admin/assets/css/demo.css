@@ -93,6 +93,71 @@
 .btn-addproductlist{
     margin-bottom: 10px;
 }
-.row.element-button{
+.btn-add{
+    background-color: rgb(11, 116, 229) !important;
+    color: #FFFFFF !important;
+    border-color: #FFFFFF;
+}
+.element-button {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
     margin-bottom: 10px;
+}
+/*  */
+.bg-success {
+    background-color: #bfefc4 !important;
+    color: #02790c !important;
+}
+
+.bg-info {
+    background-color: #b6bef5 !important;
+    color: #0f2094 !important;
+}
+
+.bg-warning {
+    background-color: #f2f98a !important;
+    color: #8b9400 !important;
+}
+
+.bg-danger {
+    background-color: #f9c9cd !important;
+    color: #a90312 !important;
+}
+.badge {
+    display: inline-block;
+    padding: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    color: white;
+}
+.trash {
+    background: #f7c3c2;
+    border: none;
+    color: #de0400;
+}
+
+.edit{
+    color: rgb(245 157 57);
+    background-color: rgb(251 226 197);
+    border: none;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+    padding: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+    padding-left: 10px;
+    border-radius: .357rem;
+    padding-right: 10px;
+    font-weight: 500;
+}
+.col-sm-2 {
+    max-width: 0%;
+    display: table;
 }

@@ -1053,7 +1053,7 @@ p{
 /* Information */
 .information-page{
     width:900px;
-    height:750px;
+    height:720px;
     /* margin-left:auto;
     margin-right:auto; */
     border-radius: 5px;
@@ -1068,7 +1068,7 @@ p{
 .information-left{
     font-size: 1.5rem;
     padding: 15px 25px 15px;
-    height: 670px;
+    height: 650px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: 600;

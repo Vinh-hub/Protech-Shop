@@ -300,9 +300,7 @@
     display:block;
     text-align: center;
     margin-left:315px;
-    margin-right:50px;
-    /* background-color: white; */
-    
+    margin-right:50px;  
 }
 .header_navbar-cart-no-cart-img{
    
@@ -877,11 +875,16 @@ p{
     justify-content: space-between;
 }
  /* Momo */
+ .item{
+    width: 300px;
+    margin-left: 80px;
+}
 .img-momo{
-    /* width:80px; */
-    height:47px;
-    margin-right: 25px;
+    width:53px;
+    height:41px;
+    margin-right: 30px;
     object-fit: none;
+
 }
 
 .pay-momo-item{
@@ -897,7 +900,7 @@ p{
     margin-left: 80px;
 }
 .img-vnpay{
-    width: 60px;
+    width: 56px;
     height:45px;
     margin-right: 30px;
 }
@@ -913,7 +916,7 @@ p{
 /* Zalo pay */
 
 .img-zalo{
-    width:54px;
+    width:40px;
     height:47px;
     margin-right: 30px;
 

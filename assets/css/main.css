@@ -298,9 +298,7 @@
     display:block;
     text-align: center;
     margin-left:315px;
-    margin-right:50px;
-    /* background-color: white; */
-    
+    margin-right:50px;  
 }
 .header_navbar-cart-no-cart-img{
    
@@ -692,7 +690,7 @@ p{
     width:100%;
 }
 
-
+/* radio-item */
 .info-input-item{
     margin-bottom:20px;
     margin-left: 60px;
@@ -711,32 +709,32 @@ p{
 
 }
 
-.info-choose{
+.radio-wrap{
     display:flex;
-    align-items: center;
-    gap:100px;
-    justify-content: center;
-}
+    gap:60px;
 
-.info-choose-1{
-    margin-left: 60px;
+}
+.radio{
+    display:flex;
+    gap:160px;
+    margin-left:auto;
+    margin-right: auto;
     margin-top:10px;
+
+
+}
+#radio1{
+    width:13px;
+    height:13px;
+
 }
 
-.info-choose-2{
-    
-    margin-top:10px;
-}
-
-.info-radio-item{
+label{
     font-size: 1.6rem;
 }
 
-.info-radio{
-    margin-right: 10px;
-}
 
-
+/* adress */
 .info-address{
     height:187px;
     width:800px;
@@ -798,134 +796,103 @@ p{
 /* Pay */
 
 .pay-main{
-    width:900px;
-    height:300px;
+    width:680px;
+    height:196px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-
-    
-}
-.pay-main img{
-    object-fit: contain;
-}
-.pay-main .item {
-    cursor: pointer;
-    padding: 10px;
-    border: 2px solid transparent;
+    border:1px solid white;
+    box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2 );
     border-radius: 5px;
-    transition: border-color 0.3s;
 }
-
-.pay-main .selected .item {
-    border-color: #007bff; 
-    background-color: #e6f7ff; 
+.pay{
+    margin-left:10px;
 }
-.pay-momo{
-    box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
-    width: 675px;
+.momo label, .vn-pay label, .money label{
+    width: 800px;
+    display: block;
     height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 424px;
+    align-content: center;
+    color:var(--text-color);
+    font-weight: 550;
+
+
 }
 
-.pay-vnpay{
-    box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
-    width:675px;
-    height:50px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 10px;
-    border-radius: 5px;
-    display:flex;
-    align-items: center;
-    gap: 424px;
+.momo, .vnpay, .zalo-pay{
+    margin-bottom:10px;
 }
 
-.pay-zalopay{
-    box-shadow: 0 1px 3.123rem 0 rgba(200, 188, 188, 0.2);
-    width:675px;
+#radio2{
+    width:13px;
+    height:13px;
+    margin-left:35px;
+    margin-right: 460px;
+}
+
+/* Tiền mặt */
+.money{
+    width:650px;
     height:50px;
-    margin-left:auto;
-    margin-right:auto;
     margin-top:10px;
+    border:1px solid rgb(88, 88, 99);
     border-radius: 5px;
     display:flex;
-    align-items: center;
-    gap: 424px;
+ }
+ .money:hover{
+    background-color:rgb(196, 213, 231);
+}
+.radio-img{
+    width: 49px;
+    height: 37px;
+    margin-right: 20px;
+    margin-top: 4px;
 }
 
-.pay-radio{
-    text-align: right;
-    float: right;
+.radio-img-money{
+    height: 47px;
+    width: 60px;
     margin-right: 10px;
 }
-.pay-item{
-    width: 100px;
-}
-.pay-choice{
-    width: 800px;
-}
-.pay-choice .item{
-    display: flex;
-    justify-content: space-between;
-}
+
  /* Momo */
-.img-momo{
-    /* width:80px; */
-    height:47px;
-    margin-right: 25px;
-    object-fit: none;
+
+ .momo{
+    width:650px;
+    height:50px;
+    margin-top:10px;
+    border:1px solid rgb(88, 88, 99);
+    border-radius: 5px;
+    display:flex;
+    
+ }
+ .momo:hover{
+    background-color:rgb(196, 213, 231);
 }
-
-.pay-momo-item{
-    font-size:1.4rem;
-    margin-top:auto;
-    margin-bottom: auto;
-    font-weight: 500;
+ /* Vnpay */
+ .vn-pay{
+    width:650px;
+    height:50px;
+    margin-top:10px;
+    border:1px solid rgb(88, 88, 99);
+    border-radius: 5px;
+    display:flex;
+    
+ }
+ .vn-pay:hover{
+    background-color:rgb(196, 213, 231);
 }
-
-/* Vnpay */
-.item{
-    width: 250px;
-    margin-left: 80px;
+.radio-img-vnpay{
+width: 59px;
+height: 50px;
+margin-right: 20px;
+margin-top: 4px;
 }
-.img-vnpay{
-    width: 60px;
-    height:45px;
-    margin-right: 30px;
-}
-
-
-.pay-vnpay-item{
-    font-size:1.4rem;
-    margin-top:auto;
-    margin-bottom: auto;
-    font-weight: 500;
-}
-
-/* Zalo pay */
-
-.img-zalo{
-    width:54px;
-    height:47px;
-    margin-right: 30px;
-
-}
-.pay-zalo-item{
-    font-size:1.4rem;
-    margin-top:auto;
-    margin-bottom: auto;
-    font-weight: 500;
-}
-
+ 
+/* 
 .pay-momo:hover, .pay-vnpay:hover, .pay-zalopay:hover{
     border:1px solid #83add8;
-}
+} */
 
 /* Order-Confirm */
 .Order-wrap{
@@ -1048,25 +1015,23 @@ p{
 /* Information */
 .information-page{
     width:900px;
-    height:1000px;
-    margin-left:auto;
-    margin-right:auto;
+    height:720px;
+    /* margin-left:auto;
+    margin-right:auto; */
     border-radius: 5px;
 }
 .information-heading{
     font-size: 1.5rem;
     height: 25px;
     margin-top: -4px;
-    margin-left: 30px;
     margin-bottom: 5px;
     font-weight: 600;
 }
-.information-customers{
+.information-left{
     font-size: 1.5rem;
-    padding: 15px 30px 15px;
-    height: 190px;
+    padding: 15px 25px 15px;
+    height: 650px;
     margin-top: 5px;
-    margin-left: 30px;
     margin-bottom: 5px;
     font-weight: 600;
     background-color: var(--white-color);
@@ -1083,7 +1048,7 @@ p{
 }
 .information-customers-profile span {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 .information-address{
     font-size: 1.5rem;
@@ -1109,8 +1074,105 @@ p{
     display: block;
     margin-bottom: 10px;
 }
+.form-info {
+    display: flex;
+    flex-direction: row;
+}
+.form-name {
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.form-control {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px 0px 34px;
+}
+.form-control > div {
+    display: flex;
+    flex: 1 1 0%;
+    position: relative;
+    z-index: 1;
+}
+.input-label {
+    width: 110px;
+    min-width: 110px;
+    font-size: 14px;
+    margin-right: 16px;
+    font-weight: normal;
+}
+input {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    height: 36px;
+    width: 350px;
+    border-radius: 4px;
+    padding: 10px 12px;
+    line-height: 20px;
+    outline: none;
+    flex: 1 1 0%;
+    border: 1px solid rgb(196, 196, 207);
+    cursor: pointer;
+}
+.bvIJNZ select {
+    width: 100px;
+    border: 1px solid rgb(204, 204, 204);
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 34px;
+    outline: none;
+    border-radius: 4px;
+    margin: 0px 12px 0px 0px;
+    background: 0px center;
+    box-shadow: none;
+    cursor: pointer;
+}
+.eQckrx {
+    display: flex;
+    margin-right: 15px;
+}
+.label {
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-left: 5px;
+    font-weight: normal;
+}
 
-/**/
+.radio-fake {
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgb(147, 150, 157);
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 10px 0px 0px;
+    position: relative;
+    z-index: 1;
+    color: rgb(120, 120, 120);
+    flex-shrink: 0;
+}
+.eQckrx {
+    display: flex;
+    margin-right: 15px;
+}
+.btn-submit {
+    width: 176px;
+}
+.cqEaiM {
+    border: 0px;
+    width: 300px;
+    height: 40px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    background-color: rgb(11, 116, 229);
+    cursor: pointer;
+}
 
 /*container*/
  /*navnar*/

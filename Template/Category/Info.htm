@@ -108,7 +108,6 @@
                     </div>                   
                 </div>               
             </div>
-
             <div class="header_navbar-discount">
                 <ul class="header_navbar-discount-list">
                     <li class="header_navbar-discount-item">
@@ -209,22 +208,27 @@
                     <input type="text" class="info-input-item " placeholder ="Email ">
                 </div>
                 <!-- info-address -->
-                <div class="info-delivery">
-                    <span class="delivery-item"> Chọn cách thức giao hàng </span>                    
-                </div>
 
-                <div class="info-choose">
-                <div class="info-choose-1">
-                    <input name="choose" class="info-radio" type="radio">
-                    <span class="info-radio-item"> Nhận tại cửa hàng </span>
-                </div>
+                 <div class="info-delivery">
+                    <span class="delivery-item"> Chọn cách thức giao hàng </span> 
+                </div>                   
+            
+                    <div class="radio-wrap">
+
+                <div class="radio">
+                    <label>
+                    <input type="radio" id="radio1" name="group-radio" checked />
+                    <span>Giao hàng tận nơi</span>
+                    </label>
+
+                    <label>
+                    <input type="radio" id="radio1" name="group-radio" checked />
+                    <span>Nhận tại cửa hàng</span>
+                    </label>
+                 </div>
                 
-                <div class="info-choose-2">
-                    <input name="choose" class="info-radio" type="radio">
-                    <span class="info-radio-item"> Giao hàng tận nơi </span>
-                </div>  
-                </div>
-
+            </div>
+               <!-- Begin: Address -->
                 <div class="info-address">
                   <div class="info-address-item">                     
                     <div class="address-1">
@@ -260,40 +264,44 @@
                     </div>
                 </div>
                 </div>
+                <!-- End: Address -->
 
                     <!-- info-pay -->
                 <div class="pay-main">
-                    <div class="pay-momo pay-choice">                      
-                        <div class="item">
-                            <img class="img-momo" src="../../assets/imgs/momo.jpg">
-                            <span class="pay-momo-item pay-item">Momo </span>
-                        </div>
-                        <input name="choose" class="pay-radio" type="radio">                      
+                    <div class="momo">
+                        <label>
+                            <input type="radio" id="radio1" name="group-radio" checked />
+                            <span>Giao hàng tận nơi</span>
+                        </label>
                     </div>
 
-                    <div class="pay-vnpay pay-choice">
-                        <div class="item">
-                            <img class="img-vnpay" src="../../assets/imgs/vnpay.png">
-                            <span class="pay-vnpay-item pay-item">Vn pay </span>
-                        </div>
-                        <input name="choose" class="pay-radio" type="radio">
+                    <div class="vnpay">
+                        <label>
+                            <input type="radio" id="radio1" name="group-radio" checked />
+                            <span>Giao hàng tận nơi</span>
+                        </label>
                     </div>
 
-                    <div class="pay-zalopay pay-choice">
-                        <div class="item">
-                            <img class="img-zalo" src="../../assets/imgs/zalo-pay.png">
-                            <span class="pay-zalo-item pay-item">Zalo pay </span>
-                        </div>
-                        <input name="choose" class="pay-radio" type="radio">
+                    <div class="zalo-pay">
+                        <label>
+                            <input type="radio" id="radio1" name="group-radio" checked />
+                            <span>Giao hàng tận nơi</span>
+                        </label>
                     </div>
+
+
+                    </div>
+
+
+
                     <div class="info-button">
-        
                        <button class="button-item"> 
                            <a href="../Category/Order.htm">
                            Đặt hàng 
                            </a>
                        </button>                      
                     </div>
+                    <!-- End: info-pay -->
                 </div>
             </div>
         </div>

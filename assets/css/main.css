@@ -798,8 +798,8 @@ label{
 /* Pay */
 
 .pay-main{
-    width:800px;
-    height:180px;
+    width:680px;
+    height:196px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -807,10 +807,17 @@ label{
     box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2 );
     border-radius: 5px;
 }
-.momo label, .vnpay label, .zalo-pay label{
-width: 800px;
-display: block;
-height: 50px;
+.pay{
+    margin-left:10px;
+}
+.momo label, .vn-pay label, .money label{
+    width: 800px;
+    display: block;
+    height: 50px;
+    align-content: center;
+    color:var(--text-color);
+    font-weight: 550;
+
 
 }
 
@@ -818,13 +825,71 @@ height: 50px;
     margin-bottom:10px;
 }
 
+#radio2{
+    width:13px;
+    height:13px;
+    margin-left:35px;
+    margin-right: 460px;
+}
+
+/* Tiền mặt */
+.money{
+    width:650px;
+    height:50px;
+    margin-top:10px;
+    border:1px solid rgb(88, 88, 99);
+    border-radius: 5px;
+    display:flex;
+ }
+ .money:hover{
+    background-color:rgb(196, 213, 231);
+}
+.radio-img{
+    width: 49px;
+    height: 37px;
+    margin-right: 20px;
+    margin-top: 4px;
+}
+
+.radio-img-money{
+    height: 47px;
+    width: 60px;
+    margin-right: 10px;
+}
+
  /* Momo */
 
  .momo{
-    width:800px;
+    width:650px;
     height:50px;
     margin-top:10px;
+    border:1px solid rgb(88, 88, 99);
+    border-radius: 5px;
+    display:flex;
+    
  }
+ .momo:hover{
+    background-color:rgb(196, 213, 231);
+}
+ /* Vnpay */
+ .vn-pay{
+    width:650px;
+    height:50px;
+    margin-top:10px;
+    border:1px solid rgb(88, 88, 99);
+    border-radius: 5px;
+    display:flex;
+    
+ }
+ .vn-pay:hover{
+    background-color:rgb(196, 213, 231);
+}
+.radio-img-vnpay{
+width: 59px;
+height: 50px;
+margin-right: 20px;
+margin-top: 4px;
+}
  
 /* 
 .pay-momo:hover, .pay-vnpay:hover, .pay-zalopay:hover{

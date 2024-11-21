@@ -172,6 +172,7 @@
     border: none;
     background-color: transparent;
     border-radius: 8px;
+    margin: 0 10px;
 }
 .btn--reviews-footer.show{
     border: 1px solid var(--text-color);

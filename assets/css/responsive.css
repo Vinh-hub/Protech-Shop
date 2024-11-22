@@ -33,8 +33,12 @@
         align-items: center;
         width: 80%;
     }
-    .header_search-button{
+    .header_search-icon{
         display: none;
+    }
+    .header_search-button{
+        font-size: 1.2rem;
+        width: 30px;
     }
     .header_navbar-item-mobile{
         display: block;

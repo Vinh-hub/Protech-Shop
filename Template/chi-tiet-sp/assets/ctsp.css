@@ -67,6 +67,7 @@
     display: flex;
     align-items: center;
     margin: 18px 0 0 0;
+    font-size: 1.5rem;
 }
 
 .product-commitment i {
@@ -100,7 +101,7 @@
 
 .specifications {
     padding: 20px 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .spec-item {
@@ -108,6 +109,7 @@
     justify-content: space-between;
     padding: 8px 0;
     border-bottom: 1px solid #f1f1f1;
+    font-size: 1.5rem;
 }
 
 .spec-title {
@@ -216,6 +218,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    user-select: none;
 }
 .options-GB-link.active{
     color: var(--primary-color);
@@ -237,7 +241,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+    user-select: none;
 }
 .options-color i{
     border: 1px solid #eaecf0;
@@ -333,4 +339,63 @@
     font-size: 2rem;
     padding: 5px;
     font-weight: bold;
+}
+.saidyes{
+    width: 15px;
+    /* margin-right: 10px; */
+    position: absolute;
+    top: 329px;
+}
+.auth-form__aside-policy.review{
+    /* display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px; */
+    margin-left: 7px;
+}
+.auth-form__controls.review{
+    margin-bottom: 15px;
+}
+.btn--review{
+    width: 100%;
+}
+.auth-form--review__body__group--input.review{
+    max-width: 48%;
+}
+.fRContent{
+    border: 1px solid var(--boder-color);
+    color: var(--text-color);
+    font-size: 14px;
+    height: 80px;
+    line-height: 17px;
+    padding: 10px;
+    resize: none;
+    width: 100%;
+    outline: none;
+    overflow: hidden;
+}
+.auth_form__body__group.review{
+    display: flex;
+    justify-content: space-between;
+}
+.auth-form--review__body__group--input.review,
+.fRContent{
+    border-radius: 8px;
+}
+.rating-topzonecr-star{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.rating-topzonecr-star li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rating-topzonecr-star li p{
+    font-size: 1.2rem;
+}
+.star__review{
+    font-size: 50px;
+
 }

@@ -163,11 +163,11 @@
                                         </div>
                                         <div class="spec-item">
                                             <span class="spec-title">Dung lượng lưu trữ</span>
-                                            <span class="spec-value">256 GB</span>
+                                            <span class="spec-value" id="option-gb">256 GB</span>
                                         </div>
                                         <div class="spec-item">
                                             <span class="spec-title">Dung lượng còn lại (khả dụng)</span>
-                                            <span class="spec-value">241 GB</span>
+                                            <span class="spec-value" id="option-gb-avai">241 GB</span>
                                         </div>
                                         <div class="spec-item">
                                             <span class="spec-title">Danh bạ</span>
@@ -222,24 +222,24 @@
                     <div class="col l-4 m-0 c-0">
                         <div class="product-option">
                             <div class="options-GB"> 
-                                <a href="" class="options-GB-link active">256GB</a>
-                                <a href="" class="options-GB-link">512GB</a>
-                                <a href="" class="options-GB-link">1T</a>
+                                <p class="options-GB-link active">256GB</p>
+                                <p class="options-GB-link">512GB</p>
+                                <p class="options-GB-link">1T</p>
                             </div> 
                             <div class="options-color"> 
-                                <a href="" class="options-color-link active">
+                                <p href="" class="options-color-link active">
                                     <i style="background-color:#BAB4A9"></i>
                                     Titan tự nhiên
-                                </a>
-                                <a href="" class="options-color-link">
+                                </p>
+                                <p href="" class="options-color-link">
                                     <i style="background-color:#3F4042"></i>
-                                    Titan đen</a>
-                                <a href="" class="options-color-link">
+                                    Titan đen</p>
+                                <p href="" class="options-color-link">
                                     <i style="background-color:#C4AB97"></i>
-                                    Titan sa mạc</a>
-                                <a href="" class="options-color-link">
+                                    Titan sa mạc</p>
+                                <p href="" class="options-color-link">
                                     <i style="background-color:#F2F1EB"></i>
-                                    Titan trắng</a>
+                                    Titan trắng</p>
                             </div> 
                             <div class="product-option-price">
                                 <span>34,990,000₫</span>
@@ -583,6 +583,63 @@
                     <span class="end__heading-end-information">© 2024 - Bản quyền thuộc về Công ty ProTech</span>
             </div>
         </footer>
+        <div class="modal-review" style="display: none;">
+            <div class="modal__overlay"></div>
+            <div class="modal__body">
+                <section class="auht-form--review" >
+                    <div class="auth-form__container">
+                        <header class="auth-form__heaader">
+                            <h3 class="auth-form__header--heading">Đánh giá sản phẩm </h3>
+                        </header>
+                        <ul class="rating-topzonecr-star">
+                            <li data-val="1">
+                                <i class="fa-regular fa-star star__review" style="color: #FFD43B;"></i>
+                                <p data-val="1">Rất tệ</p>
+                            </li>
+                            <li data-val="2">
+                                <i class="fa-regular fa-star star__review" style="color: #FFD43B;"></i>
+                                <p data-val="2">Tệ</p>
+                            </li>
+                            <li data-val="3">
+                                <i class="fa-regular fa-star star__review" style="color: #FFD43B;"></i>
+                                <p data-val="3">Tạm ổn</p>
+                            </li>
+                            <li data-val="4">
+                                <i class="fa-regular fa-star star__review" style="color: #FFD43B;"></i>
+                                <p data-val="4" class="active-slt">Tốt</p>
+                            </li>
+                            <li data-val="5">
+                                <i class="fa-regular fa-star star__review" style="color: #FFD43B;"></i>
+                                <p data-val="5">Rất tốt</p>
+                            </li>
+                        </ul>
+                        <form class="auth-form__body">
+                            <div class="auth_form__body__group">
+                                <textarea class="fRContent" name="fRContent" placeholder="Mời bạn chia sẻ thêm cảm nhận..."></textarea>              
+                            </div>
+                            <div class="auth_form__body__group review">
+                                <input type="password" class="auth-form--review__body__group--input review" placeholder="Họ và tên (bắt buộc)">  
+                                <input type="password" class="auth-form--review__body__group--input review" placeholder="Số điện thoại (bắt buộc)">                
+                            </div>
+                        </form>
+                        <article class="auth-form__aside--review">
+                            <input type="checkbox" class="saidyes">
+                            <p class="auth-form__aside-policy review">
+                                     Tôi đồng ý với ProTech về  
+                                <a href="#" class="auth-form__aside-policy--link"> Điều khoảng dịch vụ </a>
+                                 &                                
+                                 <a href="#" class="auth-form__aside-policy--link"> Chính sách bảo mật </a>          
+                            </p>
+                        </article>
+                        <footer class="auth-form__controls review">
+                            <button class="btn btn--primary btn--review">Gửi đánh giá </button>
+                        </footer>                   
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>    
 </body>
+<script src="../assets/ctsp.js">
+</script>
 </html>

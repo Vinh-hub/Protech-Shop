@@ -7,15 +7,11 @@ document.querySelector('.header_search-button').addEventListener("click", functi
     const filteredItems = Array.from(items).filter(item =>
         item.textContent.toLowerCase().includes(searchValue)
     );
-
-    // Lưu kết quả vào localStorage
     const results = filteredItems.map(item => item.closest('.product-item').outerHTML);
     localStorage.setItem('searchResults', JSON.stringify(results));
 
-    // Chuyển hướng sang trang kết quả
     window.location.href = './Template/Category/resultSearch.htm';
 });
-
 
 
 const productList = document.querySelector('.product-list__search');
@@ -32,3 +28,5 @@ if (searchResults && searchResults.length > 0) {
 }
 
 localStorage.removeItem('searchResults');
+
+//

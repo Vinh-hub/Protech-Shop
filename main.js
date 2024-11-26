@@ -99,3 +99,5 @@ btnPrices.forEach(btnPrice => {
         // } else {
         //     console.log('Không tìm thấy phần tử nào!');
         // }
+
+     

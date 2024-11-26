@@ -76,7 +76,7 @@
                             </li>
                             <li class="header_navbar-item">
                                 <a href="../../Cart.htm" class="header_navbar-icon-link">
-                                    <i class="header_navbar-icon-cart fa-solid fa-cart-shopping"></i>
+                                    <i class="header_navbar-icon-cart fa-solid fa-cart-shopping"></i> <span id="cart-count"></span>
                                 </a>
                             </li>
                         </ul>                       
@@ -261,12 +261,14 @@
                                         Nhập mã VNPAYTGDD4 giảm từ 50,000₫ đến 100,000₫ (Áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR.</span> 
                                 </div>
                             </div> 
-                            <div class="product-option-actions"> 
-                                <button class="btn--option-actions add-to-cart">Thêm vào giỏ</button> 
-                                <button class="btn--option-actions buy-now">Mua ngay</button> 
-                            </div> 
-                        </div>
+
+
+                            <div class="product-option-actions">
+                                <button class="btn--option-actions add-to-cart" onclick="handleAddToCart(this)">Thêm vào giỏ</button>
+                                <button class="btn--option-actions buy-now" onclick="handleBuyNow()">Mua ngay</button>
+                            </div>
                         
+
                         <span class="similar-products-text">Sản phẩm tương tự</span>
                         <div class="row sm-gutter similar-products">
                             <div class="col l-6 m-0 c-0 product-item">
@@ -640,6 +642,7 @@
         </div>
     </div>    
 </body>
-<script src="../assets/ctsp.js">
-</script>
+<script src="../assets/ctsp.js"></script>
+<script src="../../item.js"></script>
+
 </html>

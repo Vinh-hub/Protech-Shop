@@ -148,10 +148,21 @@
 .header_navbar-icon-link{
     color: var(--icon-color);
     text-decoration: none;
+    padding-top:30px;
 } 
 
 .header_navbar-icon-cart{
     margin-left: 20px;
+
+}
+
+#cart-count{
+    position:absolute;
+    font-size: 1.4rem;
+    line-height: 0.4rem;
+    color:var(--icon-color);
+    font-weight: 550;
+    
 }
 
 

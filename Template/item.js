@@ -10,7 +10,7 @@ function handleAddToCart(button) {
 }
 // Hàm xử lý khi nhấn nút "Mua ngay"
 function handleBuyNow() {
-    const targetUrl = "http://127.0.0.1:5500/Template/Category/Info.htm"; 
+    const targetUrl = "http://127.0.0.1:5500/Protech-Shop/Template/Cart.htm"; 
     window.location.href = targetUrl; 
 }
 

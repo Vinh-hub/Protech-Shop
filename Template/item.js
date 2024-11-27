@@ -10,14 +10,12 @@ function handleAddToCart(button) {
 }
 // Hàm xử lý khi nhấn nút "Mua ngay"
 function handleBuyNow() {
-    const targetUrl = "http://127.0.0.1:5500/Template/Category/Info.htm"; // Thay "https://www.example.com" bằng URL thật
-    window.location.href = targetUrl; // Chuyển hướng
+    const targetUrl = "http://127.0.0.1:5500/Template/Category/Info.htm"; 
+    window.location.href = targetUrl; 
 }
 
 
 let cartCount = 0; // Khởi tạo số lượng sản phẩm trong giỏ
-
-// Hàm thêm sản phẩm vào giỏ
 function handleAddToCart(button) {
     cartCount++; // Tăng số lượng sản phẩm trong giỏ
     document.getElementById("cart-count").textContent = cartCount; // Cập nhật số lượng trên giao diện

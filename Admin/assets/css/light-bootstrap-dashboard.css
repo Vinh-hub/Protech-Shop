@@ -780,6 +780,8 @@ body > .navbar-collapse[data-color="blue"]:after {
   height: 40px;
   -webkit-box-shadow: none;
   box-shadow: none;
+  resize: none;
+
 }
 .form-control:focus {
   background-color: #FFFFFF;

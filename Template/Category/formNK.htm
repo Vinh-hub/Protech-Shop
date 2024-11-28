@@ -30,13 +30,17 @@
                                 </header>
                                 <form class="auth-form__body">
                                     <div class="auth_form__body">
-                                        <input type="text" class="auth-form__body__group--input" placeholder="Tên đăng nhập/Email">                
+                                        <input type="text" class="auth-form__body__group--input" id="inp-namesign" placeholder="Tên đăng nhập/Email">                
                                     </div>
                                     <div class="auth_form__body__group">
-                                        <input type="password" class="auth-form__body__group--input" placeholder="Mật khẩu">                
+                                        <input type="password" class="auth-form__body__group--input" placeholder="Mật khẩu">   
                                     </div>
                                     <div class="auth_form__body__group">
-                                        <input type="password" class="auth-form__body__group--input" placeholder="Nhập lại mật khẩu">                                            </div>
+                                        <input type="password" class="auth-form__body__group--input" placeholder="Nhập lại mật khẩu">  
+                                    </div>
+                                    <div class="auth_form__body__group">
+                                        <input type="text" class="auth-form__body__group--input" placeholder="Nhập địa chỉ">  
+                                    </div>
                                 </form>
                                 <article class="auth-form__aside">
                                     <p class="auth-form__aside-policy">
@@ -48,7 +52,7 @@
                                 </article>
                                 <footer class="auth-form__controls">
                                     <button class="btn auth-form__controls-back">TRỞ LẠI</button>
-                                    <button class="btn btn--primary">Đăng ký </button>
+                                    <button class="btn btn--primary" id="btn-login">Đăng ký </button>
                                 </footer>                   
                             </div>
                                 <footer class="auth-form__socials">
@@ -71,10 +75,11 @@
                                 </header>
                                 <form class="auth-form__body">
                                     <div class="auth_form__body__group">
-                                        <input type="text" class="auth-form__body__group--input" placeholder="Tên đăng nhập/Email">
+                                        <input type="text" class="auth-form__body__group--input" id="inp-namelogin" placeholder="Tên đăng nhập/Email">
                                     </div>
                                     <div class="auth_form__body__group">
-                                        <input type="password" class="auth-form__body__group--input" placeholder="Mật khẩu">
+                                        <input type="password" class="auth-form__body__group--input" id="mk" placeholder="Mật khẩu">
+                                        <i class="fas fa-eye"  onclick="daoTT()" ></i>
                                     </div>
                                 </form>
                                 <article class="auth-form__aside">
@@ -248,6 +253,9 @@ var loginSection = document.getElementById('loginSection');
 var btnSignUp = document.getElementById('showSignUp');
 var btnLogin = document.getElementById('showLogin');
 var returnpage = document.getElementById('btn--pagemain');
+var loginss = document.getElementById('btn-login');
+const textsign = document.getElementById('inp-namesign');
+const textlogin = document.getElementById('inp-namelogin');
 
 function openModal(sectionToShow) {
     if (sectionToShow === 'signUp') {
@@ -266,10 +274,19 @@ btnLogin.addEventListener('click', function() {
     openModal('login');
 });
 
+loginss.addEventListener('click', function(){
+    signUpSection.style.display = 'none'; 
+    loginSection.style.display = 'block';
+    textlogin.value = textsign.value;
+});
 returnpage.addEventListener('click', function(){
     window.location.href = '../../index.htm';
 
-})
+});
+function daoTT() {
+  let mk = document.getElementById("mk");
+  mk.type = (mk.type === "password")? "text":"password";
+} ;
     </script>
 </body>
 </html>

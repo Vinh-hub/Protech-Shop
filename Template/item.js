@@ -22,4 +22,5 @@ function handleAddToCart(button) {
     cartCount++; // Tăng số lượng sản phẩm trong giỏ
     document.getElementById("cart-count").textContent = cartCount; // Cập nhật số lượng trên giao diện
     alert("Sản phẩm đã được thêm vào giỏ hàng!"); // Thông báo người dùng
+    return;
 }

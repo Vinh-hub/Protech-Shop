@@ -161,6 +161,7 @@
     max-width: 0%;
     display: table;
 }
+HEAD
 /* modal */
 .modal {
     display: none;

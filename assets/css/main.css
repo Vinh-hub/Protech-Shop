@@ -1902,6 +1902,8 @@ li.is-active {
     border-radius: 2px;
   }
   
+  }
+  
   .auth-form__aside,
   .auth-form__aside--review{
     margin-top: 18px;

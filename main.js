@@ -139,15 +139,11 @@ btndts.forEach(btndt => {
         if (itemProducts.length > 5){
             nonepagination.style.display = 'block';
             pagination.style.display = 'none';
-        } else if(itemProducts.length === 0){
-            nonepagination.style.display = 'none';
-            pagination.style.display = 'none';
-        }
+        } 
         else{
             nonepagination.style.display = 'none';
             pagination.style.display = 'flex';
         }
-
 //
 var arr = [];
 

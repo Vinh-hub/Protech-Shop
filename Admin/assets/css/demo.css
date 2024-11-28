@@ -71,14 +71,11 @@
 .search-product-admin{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
     padding: 0 15px;
 }
 .search-product-admin.current{
     /* margin-left: 50px; */
-}
-.search-product-admin.search{
-    justify-content: end;
 }
 /*  */
 .header.addProductList{

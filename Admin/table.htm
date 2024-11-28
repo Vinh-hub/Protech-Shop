@@ -42,7 +42,7 @@
             </div>
 
             <ul class="nav">
-                <li>
+                <li class="active">
                     <a href="../Admin/dashboard.htm">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
@@ -54,7 +54,7 @@
                         <p>User Profile</p>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="../Admin/table.htm">
                         <i class="pe-7s-note2"></i>
                         <p>Table List</p>
@@ -162,7 +162,7 @@
                                 </button>
                             </div>
                             <div class="search-product-admin"> 
-                                <div class="search-product-admin current" style="display: none;">
+                                <div class="search-product-admin current">
                                     <div class="dataTables_length" id="sampleTable_length"> 
                                         <label>Hiện 
                                             <select name="sampleTable_length" aria-controls="sampleTable" class="form-control form-control-sm">
@@ -185,18 +185,18 @@
                                         <th>ID</th>
                                     	<th>Name</th>
                                     	<th>Salary</th>
-                                    	<th>Quantity</th>
-                                    	<th>Condition</th>
+                                    	<th>Country</th>
+                                    	<th>City</th>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         	<td>1</td>
                                         	<td>HP 15 fd0304TU i3 1315U (A2NL5PA)</td>
                                         	<td>10.490.000₫</td>
-                                        	<td>60</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                        	<td>VietNam</td>
+                                        	<td>HCM City</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
@@ -207,11 +207,11 @@
                                         <tr>
                                         	<td>2</td>
                                         	<td>Đồng hồ ELIO 21 mm Nữ EL090-01</td>
-                                        	<td>290.000₫</td>
-                                        	<td>40</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                        	<td> 290.000₫</td>
+                                        	<td>VietNam</td>
+                                        	<td>HCM City</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
@@ -223,10 +223,10 @@
                                         	<td>3</td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
-                                        	<td>20</td>
-                                            <td><span class="badge bg-danger">Chờ xử lý</span></td>
+                                        	<td>VietNam</td>
+                                        	<td>HaNoi</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
@@ -238,10 +238,10 @@
                                         	<td>4</td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
-                                        	<td>30</td>
-                                            <td><span class="badge bg-danger">Chờ xử lý</span></td>
+                                        	<td>VietNam</td>
+                                        	<td>HaNoi</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
@@ -253,10 +253,10 @@
                                         	<td>5</td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
-                                        	<td>10</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                        	<td>VietNam</td>
+                                        	<td>HaNoi</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
@@ -268,10 +268,10 @@
                                         	<td>6</td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
-                                        	<td>40</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                        	<td>VietNam</td>
+                                        	<td>HaNoi</td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
                                                 <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
@@ -386,33 +386,6 @@
 
 
 </body>
-    <script>
-    var modal = document.getElementById('ModalUP');
-var btnShows = document.querySelectorAll('.btn-edit-show');
-
-function closeModal() {
-    modal.style.display = 'none';
-}
-
-// Đóng modal khi click vào overlay
-modal.addEventListener('click', function (event) {
-    if (event.target === modal) { // Chỉ đóng khi click đúng overlay
-        closeModal();
-    }
-});
-
-// Hiển thị modal khi click vào nút
-if (btnShows.length > 0) {
-    btnShows.forEach(btnShow => {
-        btnShow.addEventListener('click', function () {
-            modal.style.display = 'block';
-        });
-    });
-} else {
-    console.error("Không tìm thấy nút '.btn-edit-show'");
-}
-
-    </script>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>

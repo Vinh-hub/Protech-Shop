@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (searchHistory.length > 5) searchHistory.pop(); // Giữ tối đa 5 mục
             renderSearchHistory();
         }
-        alert(`Tìm kiếm sản phẩm: ${query}`);
         searchInput.value = "";
         suggestionsBox.innerHTML = ""; // Xóa gợi ý sau khi tìm kiếm
     });

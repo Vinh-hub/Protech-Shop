@@ -26,128 +26,86 @@
         </div>
         <header class="header">
             <div class="grid wide">
-                
                 <div class="header_navbar">
-                        <div class="header_navbar-search">
-                          
-                            
+                        <div class="header_navbar-search">                   
                         <div class="header_width-search">
                             <a href="../../index.htm" class="header_logo">
                                 <img class="header_logo-img " src="../../assets/imgs/logo.png" alt="ProTech-logo" width="96" height="40">
                             </a>
                         </div>
-                            
-                            
-                        <div class="header_navbar-search">
-                                
-                            
-                            <div class="header_search">
 
-                                <i class="header_search-icon fa-solid fa-magnifying-glass "></i>
-                                <input type="text" class="header_search-input " placeholder ="Nhập thông tin để tìm kiếm sản phẩm ">
-                                <button type="button" class="header_search-button"> Tìm kiếm </button>  
-                                   
-                                <div class="header_navbar-search-history">
-                                    <div class="header_navbar-search-history-heading">
-                                         Lịch sử tìm kiếm 
-                                         
-                                    </div>
+                        <div class="header_search">
+                            <input type="text" class="header_search-input" placeholder="Nhập thông tin để tìm kiếm sản phẩm">
+                            <button type="button" class="header_search-button">Tìm kiếm</button>
+                            <div class="suggestions"></div>
+                        </div>
+                        </div>
 
-                                    <ul class="header_navbar-search-history-list">
-                                        <li class="header_navbar-search-history-item">
-                                            <a href="#"> 
-                                                <i class="header_search-icon fa-solid fa-clock-rotate-left"></i>
-                                                Iphone 14 promax 
-                                                
-                                            </a>
-                                        </li>
-
-                                        <li class="header_navbar-search-history-item">
-                                            <a href="#"> 
-                                                <i class="header_search-icon fa-solid fa-clock-rotate-left"></i>
-                                                AirPod Pro 2 
-                                                
-                                            </a>
-                                        </li>
-
-                                        <li class="header_navbar-search-history-item">
-                                            <a href="#"> 
-                                                <i class="header_search-icon fa-solid fa-clock-rotate-left"></i>
-                                                Laptop Dell Precision 
-                                            </a>
-                                           
-                                        </li>
- 
-                                        
-                                    </ul>
-                                </div>
-                                
-                            </div>
-                            </div>
-                            
-                            
-                            <ul class="header_navbar-list">
-                            <li class="header_navbar-item">
-    
-                            <a href="../../index.htm" class="header_navbar-icon-link">
-                                <i class="fa-solid fa-house"></i>
-                            </a>
-    
-                            <a href="../../index.htm" class="header_navbar-icon-link header_navbar-link--strong">
-                                Trang chủ
-                            </a>
-                        </li>
-    
-                       
-    
-                        <li class="header_navbar-item">
-                            <a href="#" class="header_navbar-item-link">
-                                <a href="./Information.htm" class="header_navbar-icon-link">
-                                    <i class="fa-regular fa-face-smile-wink"></i>
-                                </a>
-                                <a href="./Information.htm" class="header_navbar-icon-link header_navbar-link--strong">
-                                    Tài khoản
-                                </a>
-                            </a>
-    
-                        </li>
-
-                        <li class="header_navbar-item header_navbar-item-no-pointer">
-                            Liên hệ
-                            <a href="#" class="header_navbar-icon-link header_navbar-icon-link--separate">
-                                <i class="fa-brands fa-facebook"></i>
-                                <i class="fa-brands fa-instagram "></i>
-                            </a>
-                            
-                        </li>
-                        
-                        <li class="header_navbar-item">
-                           
-                                <!-- <div class="header_cart-wrap">  -->
-
-                                <a href="../../Template/Cart.htm" class="header_navbar-icon-link">
-                                <i class="header_navbar-icon-cart fa-solid fa-cart-shopping"></i> </a>
-                            
-                                 
-                            <!-- <div class="header_cart-list header_cart-list-no-cart">
-                                <img class=" header_cart-no-cart-img" src="./assets/imgs/cart-empty.png">
-                                <span class="header_cart-no-cart-msg"> Giỏ hàng đang trống </span>
-
-
-                            </div>
-                        </div> -->
-                            
-                        </li>
-                        
-                        
-                    </ul>                       
+                     <div class="history-wrap">
+                        <p class="history-item"> Lịch sử tìm kiếm </p>
+                        <ul class="search-history">
+                            <!-- Lịch sử tìm kiếm sẽ xuất hiện tại đây -->
+                        </ul>
                     </div>
                     
-                </div>
-                
-                
-            </div>
+                    <ul class="header_navbar-list">
+                        <li class="header_navbar-item">
 
+                        <a href="../../index.htm" class="header_navbar-icon-link">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+
+                        <a href="../../index.htm" class="header_navbar-icon-link header_navbar-link--strong">
+                            Trang chủ
+                        </a>
+                    </li>
+
+                   
+
+                    <li class="header_navbar-item">
+                        <a href="#" class="header_navbar-item-link">
+                            <a href="./Information.htm" class="header_navbar-icon-link">
+                                <i class="fa-regular fa-face-smile-wink"></i>
+                            </a>
+                            <a href="./Information.htm" class="header_navbar-icon-link header_navbar-link--strong">
+                                Tài khoản
+                            </a>
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="header_navbar-item header_navbar-item-no-pointer">
+                        Liên hệ
+                        <a href="#" class="header_navbar-icon-link header_navbar-icon-link--separate">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-instagram "></i>
+                        </a>
+                        
+                    </li>
+                    
+                    <li class="header_navbar-item">
+                        <!-- <div class="header_cart-wrap">  -->
+
+                            <a href="../../Template/Cart.htm" class="header_navbar-icon-link">
+                                <i class="header_navbar-icon-cart fa-solid fa-cart-shopping"></i> </a>
+                                
+                                
+                                <!-- <div class="header_cart-list header_cart-list-no-cart">
+                                    <img class=" header_cart-no-cart-img" src="./assets/imgs/cart-empty.png">
+                                    <span class="header_cart-no-cart-msg"> Giỏ hàng đang trống </span>
+                                    
+                                    
+                                </div>
+                            </div> -->
+                            
+                        </li>
+                    </ul>                       
+                </div>
+            </div>
+        </div>
+            
+            
+        </div>
             <div class="header_navbar-discount">
                 <ul class="header_navbar-discount-list">
 
@@ -196,10 +154,8 @@
                         Giao nhanh trong 2h
                     </a>
                     </li>
-
-                </ul>
-    
-            </div>
+                </ul>   
+            </div>            
         </header>
         <!---->
         <nav class="mobile-category">
@@ -409,4 +365,5 @@
     </div>
     </div>
 </body>
+<script src="../Template/cart.js"></script>
 </html>

@@ -25,6 +25,7 @@
 
 .header_navbar{
     align-items: center;
+    display:flex;
 }
 
 .header_navbar-search{
@@ -223,17 +224,30 @@
 }
 .search-history li {
     
-    margin-left:195px;
-    font-size: 14px;
+    font-size: 1.5rem;
     color: #333;
+    width:580px;
+    margin-bottom: 10px;
+    font-weight: 550;
 }
-/* .search-history li {
 
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 5px 0;
-    background-color: #f9f9f9;
-} */
+.history-wrap{
+    margin-left:190px;
+    height:100%;
+    width:596px;
+    border: 1px solid white;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display:none;
+
+}
+.history-item{
+    font-size: 1.4rem;
+    margin-left: 10px;
+    color: var(--icon-color);
+    
+}
 
 
 /* .header_navbar-search-history-item {

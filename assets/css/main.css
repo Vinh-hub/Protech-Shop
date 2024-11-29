@@ -2041,14 +2041,85 @@ li.is-active {
     font-size: 2.5rem;
   }
 
-.preview {
-    margin-top: 15px;
+/* Phần hiển thị sản phẩm */
+  .orders {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
 }
-.preview img {
-    max-width:10px;
+
+.order-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-right: 0;
+    border-left:0;
+    background: #f9f9f9;
+    align-items: center;
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+#item-img{
+    width:50px;
     height:50px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
+}
+
+.empty-order {
+    text-align: center;
+    color: #888;
+}
+
+.empty-order img {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+
+/* Thay đổi màu chữ và border-bottom khi chuyển cột */
+/* Thiết lập mặc định cho các tab */
+.styles__Tab-sc-e27b7w-3 {
+    border-bottom: 2px solid transparent; /* Không có border-bottom khi không được chọn */
+    color: #333; /* Màu chữ mặc định */
+    padding: 10px;
+    cursor: pointer;
+    transition: border-bottom 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt mà cho border và màu chữ */
+}
+
+/* Tab đang được chọn */
+.styles__Tab-sc-e27b7w-3.active-tab {
+    border-bottom: 2px solid #007bff; /* Đặt màu border-bottom */
+    color: #007bff; /* Màu chữ khi tab được chọn */
+    font-weight: bold; /* Tùy chọn: Làm chữ đậm hơn */
+}
+
+/* Tùy chọn: Thay đổi màu tab khi hover */
+.styles__Tab-sc-e27b7w-3:hover {
+    color: #0056b3; /* Màu chữ khi hover (chưa chọn) */
+}
+
+/* Ẩn hình ảnh khi có đơn hàng */
+.styles__EmptyCpn-sc-1twarw-0.hggZkm {
+    display: none; /* Ẩn mặc định */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.styles__EmptyCpn-sc-1twarw-0.hggZkm img {
+    width: 150px;
+    height: auto;
+}
+
+.styles__EmptyCpn-sc-1twarw-0.hggZkm p {
+    font-size: 16px;
+    color: #555;
 }
  
+
+
+
+
+
+
+

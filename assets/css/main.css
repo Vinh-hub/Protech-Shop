@@ -1312,6 +1312,96 @@ li.is-active {
     border-bottom: none;
 }
 
+.login {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: ROBOTO LIGHT;
+    width: 100%;
+    margin: 65px 0 105px 0;
+}
+.login>img {
+    max-width: 540px;
+    height: auto;
+}
+.login>div.d1 {
+    padding: 85px 99px;
+}
+.login>div {
+    border-radius: 12px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, .11);
+    background-color: #fff;
+}
+.login>div>span {
+    font-size: 24px;
+    font-weight: 0;
+    line-height: 1.5;
+    display: block;
+    margin-bottom: 25px;
+    font-family: Inter, Helvetica, Arial, sans-serif;
+}
+.form-login{
+    display: block;
+    margin-bottom: 20px;
+}
+.form-input {
+    border: 1px solid #e0e0e0;
+    border-radius: 100px;
+    height: 50px;
+    padding: 0 50px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Inter, Helvetica, Arial, sans-serif;
+}
+.login>div>form>.btnn {
+    cursor: pointer;
+}
+.login>div>form>.input-area {
+    position: relative;
+    margin-bottom: 15px;
+    width: 302px;
+    max-width: 100%;
+}
+.form-submit{
+    display: block;
+    margin: auto;
+    font-family: ROBOTO LIGHT;
+}
+.login>div>form>label {
+    color: #f01;
+    margin-bottom: 15px;
+    max-width: 302px;
+    font-weight: 600;
+    font-size: 13px;
+}
+.btnn {
+    background-color: rgb(11, 116, 229);
+    box-shadow: unset;
+    border-radius: 100px;
+    width: 302px;
+    height: 50px;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 17px;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    font-family: Inter, Helvetica, Arial, sans-serif;
+}
+.input-area i {
+    position: absolute; /* Đặt vị trí tuyệt đối cho biểu tượng */
+    left: 10px; /* Canh trái cho biểu tượng */
+    top: 50%; /* Đặt biểu tượng giữa theo chiều cao */
+    transform: translateY(-50%); /* Dịch chuyển để căn giữa hoàn hảo */
+    color: #888; /* Màu cho biểu tượng nếu muốn */
+}
+.fa-key{
+    font-size: 21px;
+}
+
 /*container*/
  /*navnar*/
 .container{

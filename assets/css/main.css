@@ -2040,3 +2040,15 @@ li.is-active {
     margin:auto;
     font-size: 2.5rem;
   }
+
+.preview {
+    margin-top: 15px;
+}
+.preview img {
+    max-width:10px;
+    height:50px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+ 

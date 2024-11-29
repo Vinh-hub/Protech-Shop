@@ -1,38 +1,27 @@
-const users = [
-    { username: "user", password: "123456" },
-    { username: "admin", password: "admin123" }
-];
-
-// Lấy tham số từ URL
-function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-
-// Kiểm tra đăng nhập
-function checkLogin() {
-    const username = getQueryParam('username');
-    const password = getQueryParam('password');
-
-    if (username && password) {
-        // Kiểm tra thông tin đăng nhập với dữ liệu người dùng
-        const user = users.find(u => u.username === username && u.password === password);
-        
-        if (user) {
-            // Đăng nhập thành công
-            alert("Đăng nhập thành công!");
-            // Chuyển hướng tới trang khác sau khi đăng nhập
-            window.location.href = "http://127.0.0.1:5500/dashboard.html";
-        } else {
-            // Đăng nhập thất bại
-            alert("Tên đăng nhập hoặc mật khẩu không chính xác.");
-        }
-    } else {
-        alert("Vui lòng cung cấp tên đăng nhập và mật khẩu.");
+document.getElementById("form-login").addEventListener("submit", function (event) {   
+    event.preventDefault(); // Ngăn form tự động gửi đi    
+  
+    // Lấy giá trị từ input   
+    const username = document.getElementById("username").value.trim();    
+  
+    if (username) {       
+        // Kiểm tra nếu là tài khoản admin       
+        if (username === "admin") {           
+            // Lưu thông tin đăng nhập vào localStorage           
+            localStorage.setItem("username", username);           
+            // Hiển thị thông báo thành công           
+            alert("Đăng nhập thành công với tài khoản Admin!");           
+            // Chuyển hướng về trang quản trị admin.html           
+            window.location.href = "dashboard.htm";       
+        } else {           
+            // Lưu thông tin đăng nhập tài khoản thường           
+            localStorage.setItem("username", username);           
+            // Hiển thị thông báo thành công           
+            alert("Đăng nhập thành công!");           
+            // Chuyển hướng về trang index.html           
+            window.location.href = "index.htm";       
+        }   
+    } else {       
+        alert("Vui lòng nhập tên tài khoản!");   
     }
-}
-
-// Khi trang được tải xong
-window.onload = function() {
-    checkLogin();  
-}
+  });

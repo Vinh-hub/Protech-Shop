@@ -4,7 +4,6 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="icon" type="image/x-icon" href="../assets/imgs/logo-tab.png">
-
 	<title>Admin_ProTech</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -183,14 +182,17 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <th>ID</th>
+                                        <th>Img</th>
                                     	<th>Name</th>
-                                    	<th>Salary</th>
+                                    	<th>Price</th>
                                     	<th>Quantity</th>
                                     	<th>Condition</th>
+                                        <th> </th>
                                     </thead>
                                     <tbody>
                                         <tr>
                                         	<td>1</td>
+                                            <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
                                         	<td>HP 15 fd0304TU i3 1315U (A2NL5PA)</td>
                                         	<td>10.490.000₫</td>
                                         	<td>60</td>
@@ -206,6 +208,7 @@
                                         </tr>
                                         <tr>
                                         	<td>2</td>
+                                            <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
                                         	<td>Đồng hồ ELIO 21 mm Nữ EL090-01</td>
                                         	<td>290.000₫</td>
                                         	<td>40</td>
@@ -221,6 +224,7 @@
                                         </tr>
                                         <tr>
                                         	<td>3</td>
+                                            <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>20</td>
@@ -236,6 +240,7 @@
                                         </tr>
                                         <tr>
                                         	<td>4</td>
+                                            <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>30</td>
@@ -251,6 +256,7 @@
                                         </tr>
                                         <tr>
                                         	<td>5</td>
+                                            <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>10</td>
@@ -266,6 +272,7 @@
                                         </tr>
                                         <tr>
                                         	<td>6</td>
+                                            <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>40</td>
@@ -361,6 +368,7 @@
                 <label class="control-label">Giá bán</label>
                 <input class="form-control" type="text" value="5.600.000">
               </div>
+
               <div class="form-group col-md-6">
                 <label for="exampleSelect1" class="control-label">Danh mục</label>
                 <select class="form-control" id="exampleSelect1">
@@ -369,10 +377,24 @@
                   <option>Chuột</option>
                 </select>
               </div>
+              
           </div>
-          <br>
-          <a href="#" style="float: right; font-weight: 600; color: #ea0000;">Chỉnh sửa sản phẩm nâng cao</a>
-          <br>
+        
+    </head>
+    <body>
+
+
+        <div>
+            <h4>Chọn ảnh</h4>
+            <!-- Input để chọn ảnh -->
+            <input type="file" id="imageInput" accept="image/*">
+            
+            <!-- Khu vực hiển thị ảnh preview -->
+            <div class="preview-container" id="imagePreview">
+               
+            </div>
+        </div>
+
           <br>
           <button class="btn btn-save" type="button">Lưu lại</button>
           <a class="btn btn-cancel" data-dismiss="modal" onclick="closeModal()" href="#">Hủy bỏ</a>
@@ -419,6 +441,100 @@ btnAddProduct.addEventListener('click', () =>{
 });
     </script>
 
+ 
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const saveButton = document.querySelector(".btn-save");
+    const productModal = document.getElementById("ModalUP");
+
+    let currentRow; // Biến lưu trữ hàng hiện tại đang chỉnh sửa
+
+    // Lấy các trường dữ liệu từ modal
+    const productNameInput = productModal.querySelector("input[type='text']");
+    const productPriceInput = productModal.querySelector("input[type='number']");
+    const productQuantityInput = productModal.querySelectorAll("input[type='number']")[1];
+    const productConditionSelect = productModal.querySelector("select");
+    const productCategorySelect = productModal.querySelector("select");
+    const imageInput = document.getElementById("imageInput");
+    const imagePreview = document.getElementById("imagePreview");
+
+    // Sự kiện khi nhấn nút "Chỉnh sửa" trong bảng
+    document.querySelectorAll(".btn-edit-show").forEach(function (editButton) {
+        editButton.addEventListener("click", function () {
+            currentRow = this.closest("tr"); // Lấy hàng hiện tại
+            const cells = currentRow.querySelectorAll("td"); // Các ô dữ liệu trong hàng
+
+            // Gán giá trị từ hàng vào modal
+            productCategorySelect.value = cells[6].textContent.trim(); // Tên danh mục
+            productNameInput.value = cells[2].textContent.trim(); // Tên sản phẩm (cột 2)
+            productPriceInput.value = cells[3].innerHTML.trim(); // Giá bán (cột 3)
+            productQuantityInput.value = cells[4].textContent.trim(); // Số lượng (cột 4)
+            productConditionSelect.value = cells[5].textContent.trim(); // Tình trạng (cột 5)
+            imagePreview.innerHTML = cells[1].querySelector("img").outerHTML; // Hiển thị ảnh hiện tại
+
+            // Hiển thị modal
+            productModal.style.display = "block";
+        });
+    });
+
+    // Xử lý hiển thị ảnh preview khi chọn ảnh mới
+    imageInput.addEventListener("change", function () {
+        const file = imageInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                imagePreview.innerHTML = `<img src="${e.target.result}" style="width: 50px; height: 45px;">`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Sự kiện khi nhấn nút "Lưu lại"
+    saveButton.addEventListener("click", function () {
+        if (currentRow) {
+            const cells = currentRow.querySelectorAll("td");
+
+            // Cập nhật giá trị trong hàng từ modal
+            console.log("Cập nhật cột Tên sp: " + productNameInput.value);
+            console.log("Cập nhật cột Giá bán: " + productPriceInput.value);
+            console.log("Cập nhật cột Số lượng: " + productQuantityInput.value);
+            console.log("Cập nhật cột Tình trạng: " + productConditionSelect.value);
+
+            // Cập nhật cột Tên sản phẩm (cột 2)
+            cells[2].textContent = productNameInput.value;
+            // Cập nhật cột Giá bán (cột 3)
+            cells[3].textContent = productPriceInput.value;
+            // Cập nhật cột Số lượng (cột 4)
+            cells[4].textContent = productQuantityInput.value;
+            // Cập nhật cột Tình trạng (cột 5)
+            cells[5].innerHTML = `<span class="badge ${
+                productConditionSelect.value === "Còn hàng" ? "bg-success" : "bg-danger"
+            }">${productConditionSelect.value}</span>`;
+
+            // Cập nhật ảnh nếu có ảnh mới (cột ảnh là cột 1)
+            const newImage = imagePreview.querySelector("img");
+            if (newImage) {
+                console.log("Cập nhật ảnh: ", newImage.src);
+                cells[1].innerHTML = newImage.outerHTML; // Cập nhật ảnh vào cột 1
+            }
+
+            // Đóng modal
+            closeModal();
+        }
+    });
+
+    // Hàm đóng modal
+    function closeModal() {
+        productModal.style.display = "none";
+        imageInput.value = ""; // Xóa ảnh input
+        imagePreview.innerHTML = ""; // Xóa ảnh preview
+    }
+});
+
+
+
+
+    </script>
     <!--   Core JS Files   -->
     <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>

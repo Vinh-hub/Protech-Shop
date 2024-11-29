@@ -207,98 +207,26 @@
         </nav>
         <!---->
         <section class="container">
-            <div class="grid wide">
-                <div class="row">
-                    <div class="col l-2 m-0 c-0">
-                        <nav class="container__head">
-                            <span class="header__category">Tài khoản của</span>
-                            <strong class="header__name">...</strong>
-                        </nav>
-                        <nav class="container__category">
-                            <span class="header__category">Danh mục</span>
-                            <ul class="category__list">
-                                <li class="category__item">
-                                    <a href="./Information.htm" class="category__item-link">
-                                        <i class="category__item-icon fa-regular fa-user"></i>
-                                        Thông tin tài khoản
-                                    </a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="./Noti.htm" class="category__item-link">
-                                        <i class="category__item-icon fa-regular fa-envelope"></i>
-                                        Thông báo của tôi
-                                    </a>
-                               </li>
-                                <li class="category__item">
-                                    <a href="./Order.htm" class="category__item-link">
-                                        <i class="category__item-icon fa-solid fa-list"></i>
-                                        Quản lý đơn hàng
-                                    </a>
-                                </li>
-                                <li class="category__item">
-                                    <a href="./Return.htm" class="category__item-link">
-                                        <i class="category__item-icon fa-solid fa-rotate-left"></i>
-                                        Quản lý đổi trả
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="col l-10 m-12 c-12">
-                        <div class="information-page">
-                            <div class="information-heading">
-                                <h3>Quản lý đơn hàng</h3>
-                            </div>
-                            <div class="information-right">
-                                <div class="styles__StyledTab-sc-e27b7w-2 krSXKE">
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 kJvPK">Tất cả đơn</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Chờ thanh toán</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đang xử lý</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đang vận chuyển</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đã giao</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đã huỷ</div>
-                                </div>
-
-                                <div class="orders">
-                                    <!-- Nếu không có đơn -->
-                                    <div class="styles__EmptyCpn-sc-1twarw-0 hggZkm" >
-                                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/account/empty-order.png" alt="Empty Order">
-                                        <p>Chưa có đơn hàng</p>
-                                    </div>
-                                    <!-- Đơn hàng -->
-                                    <div class="order-item" data-status="Chờ thanh toán">
-                                        <img id="item-img" src="../assets/imgs/iphone-15.png"> 
-                                        Iphone 16 Promax 256gb - Chờ thanh toán 
-                                    </div>
-
-                                    <div class="order-item" data-status="Đang xử lý">
-                                        <img id="item-img" src="../assets/imgs/m55-den.webp"> 
-                                       Điện thoại Samsung Galaxy S23 Ultra 5G5G - Đang xử lý
-                                    </div>
-
-                                    <div class="order-item" data-status="Đang vận chuyển">
-                                        <img id="item-img" src="../assets/imgs/Đồng hồ.jpg"> 
-                                        Đồng hồ thông minh BeFit Watch Ultra - Đang vận chuyển
-                                    </div>
-
-                                    <div class="order-item" data-status="Đã giao">
-                                        <img id="item-img" src="../assets/imgs/LaptopHP.webp"> 
-                                        Laptop HP 15s i5 - Đã giao 
-                                    </div>
-
-                                    <div class="order-item" data-status="Đang xử lý">
-                                        <img id="item-img" src="../assets/imgs/iMac.webp">
-                                        iMac 24inch 4.5K M3 16GB/256GB - Đang vận chuyển 
-                                    </div>
-
-                                </div>
-                            </div>                                                         
-                            </div>
+            <div class="login">
+                <img class="site-icon " src="https://cdn.tgdd.vn/2022/10/banner/TGDD-540x270.png">
+                <div class="d1 step1">
+                    <span>Đăng nhập</span>
+                    <form action="" id="form-login">
+                        <div class="input-area">
+                            <i class="fas fa-user"></i>
+                            <input type="username" id = "username" class="form-input" placeholder="Tài khoản">
                         </div>
-                    </div>
+                        <div class="input-area">
+                            <i class="fas fa-key"></i>
+                            <i class="iconoh-phone-blue input-icon"></i>
+                            <input type="password" id = "password" class="form-input" placeholder="Mật khẩu">
+                        </div>
+                        <button type="submit" class="btnn">Tiếp tục</button>
+                    </form>
                 </div>
             </div>
         </section>
+
         <footer class="end">
             <div class="grid wide">
                 <div class="row row-end">
@@ -439,151 +367,7 @@
         </footer>
     </div>
     </div>
-<script>
 
-    // Hiển thị thông tin danh mục
-   document.addEventListener("DOMContentLoaded", function () {
-    // Lấy danh sách các phần tử danh mục
-    const categoryItems = document.querySelectorAll(".category__item-link");
-    const pages = document.querySelectorAll(".information-page");
-
-    categoryItems.forEach((item, index) => {
-        item.addEventListener("click", (event) => {
-            event.preventDefault(); // Ngăn chặn tải lại trang
-
-            // Ẩn tất cả các trang
-            pages.forEach(page => page.style.display = "none");
-
-            // Hiển thị trang tương ứng
-            pages[index].style.display = "block";
-        });
-    });
-});
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".tab");
-    const orders = document.querySelectorAll(".order-item");
-    const emptyOrder = document.querySelector(".empty-order");
-
-    // Xử lý chuyển tab
-    tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            // Loại bỏ active khỏi tất cả tab
-            tabs.forEach(tab => tab.classList.remove("active"));
-            // Thêm active cho tab được chọn
-            tab.classList.add("active");
-
-            // Lọc đơn hàng
-            const status = tab.innerText;
-            let hasOrder = false;
-            orders.forEach(order => {
-                if (status === "Tất cả đơn" || order.dataset.status === status) {
-                    order.style.display = "block";
-                    hasOrder = true;
-                } else {
-                    order.style.display = "none";
-                }
-            });
-
-            // Hiển thị thông báo nếu không có đơn hàng
-            emptyOrder.style.display = hasOrder ? "none" : "block";
-        });
-    });
-});
-</script>
-
-<script>
-    //Lọc đơn hàng theo trạng thái
-    document.addEventListener("DOMContentLoaded", function () {
-const tabs = document.querySelectorAll(".styles__Tab-sc-e27b7w-3");
-const orders = document.querySelectorAll(".order-item"); // Giả sử danh sách đơn hàng có class là 'order-item'
-
-tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => {
-        // Loại bỏ active khỏi tất cả tab
-        tabs.forEach(tab => tab.classList.remove("active"));
-        // Thêm active cho tab được chọn
-        tab.classList.add("active");
-
-        // Ẩn tất cả đơn hàng
-        orders.forEach(order => {
-            if (order.dataset.status === tab.innerText) {
-                order.style.display = "block"; // Hiển thị đơn hàng phù hợp trạng thái
-            } else {
-                order.style.display = "none";
-            }
-        });
-    });
-});
-});
-
-</script>
-
-<script>
-   //Hiển thị thông báo khi không có đơn
-    document.addEventListener("DOMContentLoaded", function () {
-const orderContainer = document.querySelector(".styles__EmptyCpn-sc-1twarw-0");
-const orders = document.querySelectorAll(".order-item");
-
-if (orders.length === 0) {
-    orderContainer.style.display = "block"; // Hiển thị thông báo
-} else {
-    orderContainer.style.display = "none"; // Ẩn thông báo nếu có đơn hàng
-}
-});
-
-</script>
-
-<script>
-//Hiển thị hình ảnh khi không có đơn
-   document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".styles__Tab-sc-e27b7w-3"); // Chọn tất cả các tab
-    const orders = document.querySelectorAll(".order-item"); // Chọn tất cả các đơn hàng
-    const emptyOrder = document.querySelector(".styles__EmptyCpn-sc-1twarw-0.hggZkm"); // Chọn hình ảnh "Chưa có đơn hàng" với class mới
-
-    // Kiểm tra xem phần tử emptyOrder có tồn tại không
-    if (!emptyOrder) {
-        console.error("Không tìm thấy phần tử .styles__EmptyCpn-sc-1twarw-0.hggZkm");
-        return; // Dừng mã nếu không tìm thấy phần tử
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            // Loại bỏ trạng thái "active-tab" khỏi các tab
-            tabs.forEach(tab => tab.classList.remove("active-tab"));
-            tab.classList.add("active-tab"); // Đặt tab hiện tại là "active"
-
-            // Lấy trạng thái từ nội dung của tab được chọn
-            const status = tab.innerText.trim(); // Ví dụ: "Chờ thanh toán"
-            let hasOrder = false;
-
-            // Duyệt qua danh sách đơn hàng
-            orders.forEach(order => {
-                if (status === "Tất cả đơn" || order.dataset.status === status) {
-                    order.style.display = "flex"; // Hiển thị đơn hàng khớp
-                    hasOrder = true; // Có ít nhất một đơn hàng
-                } else {
-                    order.style.display = "none"; // Ẩn đơn hàng không khớp
-                }
-            });
-
-            // Hiển thị hoặc ẩn hình ảnh "Chưa có đơn hàng"
-            if (hasOrder) {
-                emptyOrder.style.display = "none"; // Ẩn hình ảnh nếu có đơn hàng
-            } else {
-                emptyOrder.style.display = "flex"; // Hiển thị hình ảnh nếu không có đơn hàng
-            }
-        });
-    });
-
-    // Mặc định kích hoạt tab đầu tiên khi tải trang
-    tabs[0].click();
-});
-
-
-</script>
-
+    <script src="../Template/Login.js"></script>
 </body>
 </html>

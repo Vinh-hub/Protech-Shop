@@ -412,6 +412,11 @@ if (btnShows.length > 0) {
     console.error("Không tìm thấy nút '.btn-edit-show'");
 }
 
+var btnAddProduct = document.querySelector('.add-product');
+console.log(btnAddProduct);
+btnAddProduct.addEventListener('click', () =>{
+  window.location.href = `http://127.0.0.1:5500/Admin/add-productList.htm`;
+});
     </script>
 
     <!--   Core JS Files   -->

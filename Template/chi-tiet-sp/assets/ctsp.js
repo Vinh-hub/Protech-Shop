@@ -22,15 +22,3 @@ optionColors.forEach(optionColor => {
         optionColor.classList.add('active');
     });
 });
-
-
-const itemProducts = document.querySelectorAll('.product-item__cate');
-        var pagination = document.querySelector('.pagination-list');
-        var nonepagination = document.querySelector('.none-pagination');
-        if (itemProducts.length > 5){
-            nonepagination.style.display = 'block';
-            pagination.style.display = 'none';
-        } else{
-            nonepagination.style.display = 'none';
-            pagination.style.display = 'flex';
-        }

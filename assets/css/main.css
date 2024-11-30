@@ -2160,3 +2160,8 @@ li.is-active {
     font-size: 16px;
     color: #555;
 }
+.styles__Tab-sc-b2w09e-2.active {
+    border-bottom: 2px solid #007bff; /* Đặt màu border-bottom */
+    color: #007bff; /* Màu chữ khi tab được chọn */
+    font-weight: bold; /* Tùy chọn: Làm chữ đậm hơn */
+}

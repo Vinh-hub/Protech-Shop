@@ -187,6 +187,26 @@
                                   class="fas fa-trash-alt"></i> Xóa tất cả </a>
                             </div>
                           </div>
+                          <div class="filters">
+                            <div class="filter">
+                              <label for="filterStatus">Lọc theo trạng thái:</label>
+                              <select id="filterStatus">
+                                <option value="Tất cả">Tất cả</option>
+                                <option value="Hoàn thành">Hoàn thành</option>
+                                <option value="Chờ thanh toán">Chờ thanh toán</option>
+                                <option value="Đang giao hàng">Đang giao hàng</option>
+                                <option value="Đã hủy">Đã hủy</option>
+                              </select>
+                            </div>
+                            <div class="filter">
+                              <label for="startDate">Từ ngày:</label>
+                              <input type="date" id="startDate">
+                              <label for="endDate">Đến ngày:</label>
+                              <input type="date" id="endDate">
+                              <button id="filterDateBtn">Lọc</button>
+                            </div>
+                          </div>
+                           
                           <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
                               <tr>
@@ -202,71 +222,71 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-11-15" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>MD0837</td>
                                 <td>Triệu Thanh Phú</td>
-                                <td>......</td>
+                                <td>Iphone 14 Promax</td>
                                 <td>2</td>
                                 <td>9.400.000 đ</td>
                                 <td><span class="badge bg-success">Hoàn thành</span></td>
-                                <td><button class="btn btn-primary btn-sm trash"  rel="tooltip" type="button" title="" data-original-title="Remove"><i class="fas fa-trash-alt"></i> </button>
-                                    <button class="btn btn-primary btn-sm edit"  rel="tooltip" type="button" title="" data-original-title="Edit Product"><i class="fa fa-edit"></i></button></td>
-                              </tr>
+                                <td>
+                                    <button class="btn view">Xem</button>
+                                </td>
                               <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-11-18" width="10" ><input type="checkbox" name="check1" value="1"></td>
                                 <td>MĐ8265</td>
                                 <td>Nguyễn Thị Ngọc Cẩm</td>
-                                <td>.......</td>
+                                <td>iMac 14s</td>
                                 <td>1</td>
                                 <td>3.800.000 đ</td>                 
                                 <td><span class="badge bg-success">Hoàn thành</span></td>
-                                <td><button class="btn btn-primary btn-sm trash"  rel="tooltip" type="button" title="" data-original-title="Remove"><i class="fas fa-trash-alt"></i> </button>
-                                  <button class="btn btn-primary btn-sm edit"  rel="tooltip" type="button" title="" data-original-title="Edit Product"><i class="fa fa-edit"></i></button></td>
-                              </tr>
+                                <td>
+                                    <button class="btn view">Xem</button>
+                                </td>
                               <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-11-20" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>MT9835</td>
                                 <td>Đặng Văn Vinh</td>
-                                <td>....</td>
+                                <td>Galaxy Zlip 7</td>
                                 <td>3 </td>
                                 <td>40.650.000 đ</td>
                                 <td><span class="badge bg-success">Hoàn thành</span></td>
-                                <td><button class="btn btn-primary btn-sm trash"  rel="tooltip" type="button" title="" data-original-title="Remove"><i class="fas fa-trash-alt"></i> </button>
-                                  <button class="btn btn-primary btn-sm edit"  rel="tooltip" type="button" title="" data-original-title="Edit Product"><i class="fa fa-edit"></i></button></td>
-                              </tr>
+                                <td>
+                                    <button class="btn view">Xem</button>
+                                </td>
                               <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-11-30" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>ER3835</td>
                                 <td>Nguyễn Thị Mỹ Yến</td>
-                                <td>....</td>
+                                <td>Đồng hồ thông minh</td>
                                 <td>1 </td>
                                 <td>16.770.000 đ</td>
                                 <td><span class="badge bg-info">Chờ thanh toán</span></td>
-                                <td><button class="btn btn-primary btn-sm trash"  rel="tooltip" type="button" title="" data-original-title="Remove"><i class="fas fa-trash-alt"></i> </button>
-                                  <button class="btn btn-primary btn-sm edit"  rel="tooltip" type="button" title="" data-original-title="Edit Product"><i class="fa fa-edit"></i></button></td>
-                              </tr>
+                                <td>
+                                    <button class="btn view">Xem</button>
+                                </td>
                               <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-11-10" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>AL3947</td>
                                 <td>Phạm Thị Ngọc</td>
-                                <td>....</td>
+                                <td>Laptop Dell Core i5</td>
                                 <td>2 </td>
                                 <td>19.770.000 đ</td>
                                 <td><span class="badge bg-warning">Đang giao hàng</span></td>
-                                <td><button class="btn btn-primary btn-sm trash"  rel="tooltip" type="button" title="" data-original-title="Remove"><i class="fas fa-trash-alt"></i> </button>
-                                  <button class="btn btn-primary btn-sm edit"  rel="tooltip" type="button" title="" data-original-title="Edit Product"><i class="fa fa-edit"></i></button></td>
-                              </tr>
+                                <td>
+                                    <button class="btn view">Xem</button>
+                                </td>
                               <tr>
-                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-09-20" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>QY8723</td>
                                 <td>Ngô Thái An</td>
-                                <td>....</td>
+                                <td>AirPod Pro2 </td>
                                 <td>1 </td>
                                 <td>14.500.000 đ</td>
                                 <td><span class="badge bg-danger">Đã hủy</span></td>
-                                <td><button class="btn btn-primary btn-sm trash"  rel="tooltip" type="button" title="" data-original-title="Remove"><i class="fas fa-trash-alt"></i> </button>
-                                  <button class="btn btn-primary btn-sm edit"  rel="tooltip" type="button" title="" data-original-title="Edit Product"><i class="fa fa-edit"></i></button></td>
-                              </tr>
+                                <td>
+                                    <button class="btn view">Xem</button>
+                                </td>
                             </tbody>
                           </table>
                         </div>
@@ -311,7 +331,102 @@
     </div>
 </div>
 
+<script>
+    // Đánh dấu trạng thái của đơn hàng
+function markOrderStatus() {
+  const checkboxes = document.querySelectorAll("tbody input[type='checkbox']");
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", function () {
+      const row = this.closest("tr");
+      if (this.checked) {
+        row.style.backgroundColor = "#e0f7fa"; // Đánh dấu màu khi chọn
+      } else {
+        row.style.backgroundColor = ""; // Bỏ đánh dấu
+      }
+    });
+  });
+}
 
+// Lọc các đơn hàng trong khoảng thời gian
+function filterByDate() {
+  const startDate = document.getElementById("startDate").value;
+  const endDate = document.getElementById("endDate").value;
+  const rows = document.querySelectorAll("tbody tr");
+
+  if (!startDate || !endDate) {
+    alert("Vui lòng chọn đầy đủ Từ ngày và Đến ngày!");
+    return;
+  }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  rows.forEach((row) => {
+    const orderDate = new Date(row.querySelector("td[data-date]").dataset.date);
+    if (orderDate >= start && orderDate <= end) {
+      row.style.display = ""; // Hiển thị
+    } else {
+      row.style.display = "none"; // Ẩn
+    }
+  });
+}
+
+// Lọc các đơn hàng theo trạng thái
+function filterByStatus() {
+  const status = document.getElementById("filterStatus").value;
+  const rows = document.querySelectorAll("tbody tr");
+
+  rows.forEach((row) => {
+    const currentStatus = row.querySelector(".badge").textContent.trim();
+    if (status === "Tất cả" || currentStatus === status) {
+      row.style.display = ""; // Hiển thị
+    } else {
+      row.style.display = "none"; // Ẩn
+    }
+  });
+}
+
+// Hiển thị chi tiết đơn hàng
+function viewOrderDetails() {
+  const viewButtons = document.querySelectorAll(".btn.view");
+  viewButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const row = this.closest("tr");
+      const details = `
+        ID đơn hàng: ${row.cells[1].textContent.trim()}
+        Khách hàng: ${row.cells[2].textContent.trim()}
+        Sản phẩm: ${row.cells[3].textContent.trim()}
+        Số lượng: ${row.cells[4].textContent.trim()}
+        Tổng tiền: ${row.cells[5].textContent.trim()}
+        Trạng thái: ${row.cells[6].textContent.trim()}
+      `;
+      alert(details); // Hiển thị chi tiết đơn hàng
+    });
+  });
+}
+
+// Sắp xếp các đơn hàng theo địa chỉ giao hàng
+function sortOrdersByAddress() {
+  const rows = Array.from(document.querySelectorAll("tbody tr"));
+  rows.sort((a, b) => {
+    const addressA = a.cells[2].textContent.trim().toLowerCase();
+    const addressB = b.cells[2].textContent.trim().toLowerCase();
+    return addressA.localeCompare(addressB);
+  });
+
+  const tbody = document.querySelector("tbody");
+  rows.forEach((row) => tbody.appendChild(row));
+}
+
+// Gắn sự kiện khi trang load
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("filterStatus").addEventListener("change", filterByStatus);
+  document.getElementById("filterDateBtn").addEventListener("click", filterByDate);
+  viewOrderDetails();
+  markOrderStatus();
+});
+
+</script>
 </body>
 
         <!--   Core JS Files   -->

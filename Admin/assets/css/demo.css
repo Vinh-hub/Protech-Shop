@@ -109,26 +109,26 @@
 }
 /*  */
 .bg-success {
-    background-color: #bfefc4 !important;
-    color: #02790c !important;
+    background-color: #28a745 !important;
+    color:  white !important;
 }
 
 .bg-info {
-    background-color: #b6bef5 !important;
-    color: #0f2094 !important;
+    background-color: #17a2b8 !important;
+    color: white !important;
 }
 
 .bg-warning {
-    background-color: #f2f98a !important;
-    color: #8b9400 !important;
+    background-color:  #ffc107!important;
+    color:  white !important;
 }
 
 .bg-danger {
-    background-color: #f9c9cd !important;
-    color: #a90312 !important;
+    background-color:#dc3545 !important;
+    color: white !important;
 }
 .badge {
-    display: inline-block;
+    /* display: inline-block;
     padding: 7px;
     font-size: 12px;
     font-weight: 500;
@@ -137,7 +137,12 @@
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
+    color: white; */
+
+    padding: 5px 10px;
+    border-radius: 5px;
     color: white;
+    font-size: 0.9em;
 }
 .trash {
     background: #f7c3c2;
@@ -234,3 +239,33 @@
     align-items: center;
     font-size: 10px;
 }
+
+ 
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }

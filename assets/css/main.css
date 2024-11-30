@@ -1076,7 +1076,7 @@ margin-top: 4px;
 .information-left{
     font-size: 1.5rem;
     padding: 20px 25px 15px;
-    height: 650px;
+    height: 680px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: 600;
@@ -1251,19 +1251,26 @@ input {
     display: flex;
     border-bottom: 1px solid rgb(248, 248, 248);
 }
-li.is-active {
-    border-color: rgb(27, 168, 255);
-}
+
 .tabs > li {
     padding: 8px 15px 5px;
     margin: 0px 20px;
     font-size: 28px;
     cursor: pointer;
-    border-bottom: 3px solid transparent;
     color: rgb(102, 102, 102);
     position: relative;
     z-index: 1;
+    /* Thêm border-bottom cho tab */
+    border-bottom: 3px solid transparent;
 }
+
+/* Thay thế border-color bằng color cho tab hiện tại và tạo chân xanh */
+li.is-active {
+    color: rgb(27, 168, 255); /* Màu chữ cho tab đang hoạt động */
+    /* Ở đây ta có thể giữ lại border-bottom = 3px, nhưng thay đổi màu sắc */
+    border-bottom: 3px solid rgb(27, 168, 255); /* Chân xanh dưới tab được chọn */
+}
+
 .kuORbI {
     display: none;
     position: absolute;
@@ -1436,7 +1443,10 @@ li.is-active {
 .fa-key{
     font-size: 21px;
 }
-
+.styles__Tab-sc-e27b7w-3.active {
+    color: rgb(13, 92, 182);
+    border-bottom: 2px solid rgb(13, 92, 182);
+}
 /*container*/
  /*navnar*/
 .container{
@@ -2150,11 +2160,3 @@ li.is-active {
     font-size: 16px;
     color: #555;
 }
- 
-
-
-
-
-
-
-

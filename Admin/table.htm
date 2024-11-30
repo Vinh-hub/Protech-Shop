@@ -196,7 +196,7 @@
                                         	<td>HP 15 fd0304TU i3 1315U (A2NL5PA)</td>
                                         	<td>10.490.000₫</td>
                                         	<td>60</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                            <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -212,7 +212,7 @@
                                         	<td>Đồng hồ ELIO 21 mm Nữ EL090-01</td>
                                         	<td>290.000₫</td>
                                         	<td>40</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                            <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -228,7 +228,7 @@
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>20</td>
-                                            <td><span class="badge bg-danger">Chờ xử lý</span></td>
+                                            <td><span class="badge bg-danger">Hết hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -244,7 +244,7 @@
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>30</td>
-                                            <td><span class="badge bg-danger">Chờ xử lý</span></td>
+                                            <td><span class="badge bg-danger">Hết hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -260,7 +260,7 @@
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>10</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                            <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -276,7 +276,7 @@
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>40</td>
-                                            <td><span class="badge bg-success">Hoàn thành</span></td>
+                                            <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -366,12 +366,12 @@
               </div>
               <div class="form-group col-md-6">
                 <label class="control-label">Giá bán</label>
-                <input class="form-control" type="text" value="5.600.000">
+                <input class="form-control" type="text" id="productPrice" value="5.600.000">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="exampleSelect1" class="control-label">Danh mục</label>
-                <select class="form-control" id="exampleSelect1">
+                <select class="form-control" id="exampleSelect2">
                   <option>Laptop</option>
                   <option>Điện thoại thông minh</option>
                   <option>Chuột</option>
@@ -450,32 +450,56 @@ btnAddProduct.addEventListener('click', () =>{
     let currentRow; // Biến lưu trữ hàng hiện tại đang chỉnh sửa
 
     // Lấy các trường dữ liệu từ modal
-    const productNameInput = productModal.querySelector("input[type='text']");
-    const productPriceInput = productModal.querySelector("input[type='number']");
-    const productQuantityInput = productModal.querySelectorAll("input[type='number']")[1];
-    const productConditionSelect = productModal.querySelector("select");
-    const productCategorySelect = productModal.querySelector("select");
-    const imageInput = document.getElementById("imageInput");
-    const imagePreview = document.getElementById("imagePreview");
+        const productNameInput = productModal.querySelector("input[type='text']");
+        // const productPriceInput = productModal.querySelector("input[type='number']")[3];
+        const productPriceInput = productModal.querySelector("#productPrice");
+        const productQuantityInput = productModal.querySelectorAll("input[type='number']")[1];
+        const productConditionSelect = productModal.querySelector("select");
+        const productCategorySelect = productModal.querySelector("select");
+        const imageInput = document.getElementById("imageInput");
+        const imagePreview = document.getElementById("imagePreview");
 
-    // Sự kiện khi nhấn nút "Chỉnh sửa" trong bảng
-    document.querySelectorAll(".btn-edit-show").forEach(function (editButton) {
-        editButton.addEventListener("click", function () {
-            currentRow = this.closest("tr"); // Lấy hàng hiện tại
-            const cells = currentRow.querySelectorAll("td"); // Các ô dữ liệu trong hàng
+        
 
-            // Gán giá trị từ hàng vào modal
-            productCategorySelect.value = cells[6].textContent.trim(); // Tên danh mục
-            productNameInput.value = cells[2].textContent.trim(); // Tên sản phẩm (cột 2)
-            productPriceInput.value = cells[3].innerHTML.trim(); // Giá bán (cột 3)
-            productQuantityInput.value = cells[4].textContent.trim(); // Số lượng (cột 4)
-            productConditionSelect.value = cells[5].textContent.trim(); // Tình trạng (cột 5)
-            imagePreview.innerHTML = cells[1].querySelector("img").outerHTML; // Hiển thị ảnh hiện tại
+        function formatPrice(price) {
+        return new Intl.NumberFormat('vi-VN').format(price);
+        }
 
-            // Hiển thị modal
-            productModal.style.display = "block";
+
+        // Sự kiện khi nhấn nút "Chỉnh sửa" trong bảng
+        document.querySelectorAll(".btn-edit-show").forEach(function (editButton) {
+            editButton.addEventListener("click", function () {
+                currentRow = this.closest("tr"); // Lấy hàng hiện tại
+                const cells = currentRow.querySelectorAll("td"); // Các ô dữ liệu trong hàng
+
+                // Gán giá trị từ hàng vào modal
+                productCategorySelect.value = cells[6].textContent.trim(); // Tên danh mục
+                productNameInput.value = cells[2].textContent.trim(); // Tên sản phẩm (cột 2)
+                const rawPrice = cells[3].textContent.trim(); // Giá tiền từ bảng
+                const cleanPrice = rawPrice.replace(/[^\d]/g, ""); // Xóa ký tự không phải số
+                productPriceInput.value = formatPrice(cleanPrice);
+                console.log("Giá bán:", productPriceInput.value);
+                productQuantityInput.value = cells[4].textContent.trim(); // Số lượng (cột 4)
+                // productConditionSelect.value = cells[5].textContent.trim(); // Tình trạng (cột 5)
+                imagePreview.innerHTML = cells[1].querySelector("img").outerHTML; // Hiển thị ảnh hiện tại
+                const conditionValue = cells[5].textContent.trim();
+                const options = productConditionSelect.querySelectorAll('option');
+
+                let found = false;
+                options.forEach(option => {
+                if (option.textContent.trim() === conditionValue) {
+                    productConditionSelect.value = option.value; // Cập nhật giá trị của select
+                    found = true;
+                    }
+                });
+                if (!found) {
+                    productConditionSelect.value = 'Còn hàng'; // Giá trị mặc định
+                }
+
+                // Hiển thị modal
+                productModal.style.display = "block";   
+            });
         });
-    });
 
     // Xử lý hiển thị ảnh preview khi chọn ảnh mới
     imageInput.addEventListener("change", function () {
@@ -488,7 +512,6 @@ btnAddProduct.addEventListener('click', () =>{
             reader.readAsDataURL(file);
         }
     });
-
     // Sự kiện khi nhấn nút "Lưu lại"
     saveButton.addEventListener("click", function () {
         if (currentRow) {
@@ -503,7 +526,8 @@ btnAddProduct.addEventListener('click', () =>{
             // Cập nhật cột Tên sản phẩm (cột 2)
             cells[2].textContent = productNameInput.value;
             // Cập nhật cột Giá bán (cột 3)
-            cells[3].textContent = productPriceInput.value;
+            const formattedPrice = `${formatPrice(parseInt(productPriceInput.value.replace(/\./g, ""), 10))}₫`;
+            cells[3].textContent = formattedPrice;
             // Cập nhật cột Số lượng (cột 4)
             cells[4].textContent = productQuantityInput.value;
             // Cập nhật cột Tình trạng (cột 5)

@@ -218,25 +218,25 @@
                             <span class="header__category">Danh mục</span>
                             <ul class="category__list">
                                 <li class="category__item">
-                                    <a href="./Information.htm" class="category__item-link">
+                                    <a href="../Template/Information.htm" class="category__item-link">
                                         <i class="category__item-icon fa-regular fa-user"></i>
                                         Thông tin tài khoản
                                     </a>
                                 </li>
                                 <li class="category__item">
-                                    <a href="./Noti.htm" class="category__item-link">
+                                    <a href="../Template/Noti.htm" class="category__item-link">
                                         <i class="category__item-icon fa-regular fa-envelope"></i>
                                         Thông báo của tôi
                                     </a>
                                </li>
                                 <li class="category__item">
-                                    <a href="./Order.htm" class="category__item-link">
+                                    <a href="../Template/Order.htm" class="category__item-link">
                                         <i class="category__item-icon fa-solid fa-list"></i>
                                         Quản lý đơn hàng
                                     </a>
                                 </li>
                                 <li class="category__item">
-                                    <a href="./Return.htm" class="category__item-link">
+                                    <a href="../Template/Return.htm" class="category__item-link">
                                         <i class="category__item-icon fa-solid fa-rotate-left"></i>
                                         Quản lý đổi trả
                                     </a>
@@ -297,8 +297,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
+    </div>
         <footer class="end">
             <div class="grid wide">
                 <div class="row row-end">
@@ -437,10 +437,13 @@
                     <span class="end__heading-end-information">© 2024 - Bản quyền thuộc về Công ty ProTech</span>
             </div>
         </footer>
-    </div>
-    </div>
-<script>
+<!-- <script>
+    const tabs = document.querySelectorAll(".tab");
+    const orders = document.querySelectorAll(".order-item");
+    const emptyOrder = document.querySelector(".empty-order");
+    const tabss = document.querySelectorAll(".styles__Tab-sc-e27b7w-3");
 
+  
     // Hiển thị thông tin danh mục
    document.addEventListener("DOMContentLoaded", function () {
     // Lấy danh sách các phần tử danh mục
@@ -459,15 +462,8 @@
         });
     });
 });
-</script>
-
-<script>
     document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".tab");
-    const orders = document.querySelectorAll(".order-item");
-    const emptyOrder = document.querySelector(".empty-order");
-
-    // Xử lý chuyển tab
+  // Xử lý chuyển tab
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {
             // Loại bỏ active khỏi tất cả tab
@@ -492,15 +488,9 @@
         });
     });
 });
-</script>
-
-<script>
     //Lọc đơn hàng theo trạng thái
     document.addEventListener("DOMContentLoaded", function () {
-const tabs = document.querySelectorAll(".styles__Tab-sc-e27b7w-3");
-const orders = document.querySelectorAll(".order-item"); // Giả sử danh sách đơn hàng có class là 'order-item'
-
-tabs.forEach((tab, index) => {
+tabss.forEach((tab, index) => {
     tab.addEventListener("click", () => {
         // Loại bỏ active khỏi tất cả tab
         tabs.forEach(tab => tab.classList.remove("active"));
@@ -518,14 +508,9 @@ tabs.forEach((tab, index) => {
     });
 });
 });
-
-</script>
-
-<script>
    //Hiển thị thông báo khi không có đơn
     document.addEventListener("DOMContentLoaded", function () {
 const orderContainer = document.querySelector(".styles__EmptyCpn-sc-1twarw-0");
-const orders = document.querySelectorAll(".order-item");
 
 if (orders.length === 0) {
     orderContainer.style.display = "block"; // Hiển thị thông báo
@@ -533,14 +518,9 @@ if (orders.length === 0) {
     orderContainer.style.display = "none"; // Ẩn thông báo nếu có đơn hàng
 }
 });
-
-</script>
-
-<script>
 //Hiển thị hình ảnh khi không có đơn
    document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".styles__Tab-sc-e27b7w-3"); // Chọn tất cả các tab
-    const orders = document.querySelectorAll(".order-item"); // Chọn tất cả các đơn hàng
     const emptyOrder = document.querySelector(".styles__EmptyCpn-sc-1twarw-0.hggZkm"); // Chọn hình ảnh "Chưa có đơn hàng" với class mới
 
     // Kiểm tra xem phần tử emptyOrder có tồn tại không
@@ -583,7 +563,6 @@ if (orders.length === 0) {
 });
 
 
-</script>
-
+</script> -->
 </body>
 </html>

@@ -52,7 +52,7 @@
                                 </article>
                                 <footer class="auth-form__controls">
                                     <button class="btn auth-form__controls-back">TRỞ LẠI</button>
-                                    <button class="btn btn--primary" id="btn-b">Đăng ký </button>
+                                    <button class="btn btn--primary" id="btn--signup">Đăng ký </button>
                                 </footer>                   
                             </div>
                                 <footer class="auth-form__socials">
@@ -91,7 +91,7 @@
                                 </article>
                                 <footer class="auth-form__controls">
                                     <button class="btn auth-form__controls-back" id="btn--returnlog"> TRỞ LẠI</button>
-                                    <button class="btn btn--primary" id="btn--pagemain">Đăng nhập </button>
+                                    <button class="btn btn--primary" id="btn--login">Đăng nhập </button>
                                 </footer>
                             </div>
                             <footer class="auth-form__socials">
@@ -252,8 +252,8 @@ var signUpSection = document.getElementById('signUpSection');
 var loginSection = document.getElementById('loginSection');
 var btnSignUp = document.getElementById('showSignUp');
 var btnLogin = document.getElementById('showLogin');
-var returnpage = document.getElementById('btn--pagemain');
-var loginss = document.getElementById('btn-login');
+var returnpage = document.getElementById('btn--login');
+var signUps = document.getElementById('btn--signup');
 const textsign = document.getElementById('inp-namesign');
 const textlogin = document.getElementById('inp-namelogin');
 
@@ -274,7 +274,7 @@ btnLogin.addEventListener('click', function() {
     openModal('login');
 });
 
-loginss.addEventListener('click', function(){
+signUps.addEventListener('click', function(){
     signUpSection.style.display = 'none'; 
     loginSection.style.display = 'block';
     textlogin.value = textsign.value;

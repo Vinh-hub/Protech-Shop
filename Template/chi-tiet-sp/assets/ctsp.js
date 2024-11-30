@@ -22,3 +22,7 @@ optionColors.forEach(optionColor => {
         optionColor.classList.add('active');
     });
 });
+
+// document.getElementById("add-product-btn").addEventListener("click", function (){
+
+// });

@@ -270,3 +270,53 @@
     background-color:#0056b3;
     color: white;
   }
+  .myfileupload{
+    display: flex;
+
+  }
+/* Modal Content */
+.modal-content_confirm {
+    background-color: #fff; 
+    margin: 15% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 80%; 
+    max-width: 400px; 
+    border-radius: 8px; 
+    text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+.close-btn:hover, 
+.close-btn:focus {
+    color: #000; 
+    text-decoration: none; 
+    cursor: pointer;
+}
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px; 
+    margin: 0 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+}
+.btn-confirm {
+    background-color: #4CAF50; 
+    color: white;
+}
+.btn-unConfirm {
+    background-color: #f44336; 
+    color: white;
+}

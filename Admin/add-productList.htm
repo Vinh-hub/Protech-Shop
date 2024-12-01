@@ -224,6 +224,7 @@
                                           <label class="control-label">Ảnh sản phẩm</label>
                                           <div id="myfileupload">
                                             <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);">
+                                            <img id="previewImage" src="#" alt="Preview Image" style="display: none; max-width: 200px; max-height: 200px;">
                                           </div>
                                           <div id="thumbbox">
                                             <img height="450" width="400" alt="Thumb image" id="thumbimage" style="display: none">
@@ -241,7 +242,7 @@
                                       </form> 
                                 </div>
                                 <div class="btn-addproductlist">
-                                    <button class="btn btn-save" type="button">Lưu lại</button>
+                                    <button class="btn btn-save" type="button" onclick="saveProductToLocal()">Lưu lại</button>
                                     <a class="btn btn-cancel" href="./table.htm">Hủy bỏ</a>
                                 </div>
                             </div>    
@@ -298,47 +299,82 @@ tinymce.init({
     }
 });
 
+
+function readURL(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const previewImage = document.getElementById('previewImage');
+                    if (previewImage) {
+                        previewImage.src = e.target.result;
+                        previewImage.style.display = 'block';
+                    }
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
 // Lấy dữ liệu khi người dùng bấm lưu
-const saveProductToLocal = () => {
-    const productData = {
-        maSanPham: document.getElementById('masanpham').value,
-        tenSanPham: document.getElementById('tensanpham').value,
-        soLuong: document.getElementById('soluong').value,
-        tinhTrang: document.getElementById('exampleSelect1').value,
-        danhMuc: document.getElementById('exampleSelect2').value,
-        nhaCungCap: document.getElementById('exampleSelect3').value,
-        giaBan: document.getElementById('giaban').value,
-        giaVon: document.getElementById('giavon').value,
-        moTaSanPham: tinymce.get('mota') ? tinymce.get('mota').getContent() : '', // Kiểm tra nếu tinymce.get('mota') tồn tại
-        anhSanPham: getImageBase64() // Hàm để lấy ảnh base64
-    };
-
-    let productList = JSON.parse(localStorage.getItem('productList')) || [];
-    productList.push(productData);
-    localStorage.setItem('productList', JSON.stringify(productList));
-
-    alert("Dữ liệu sản phẩm đã được lưu!");
-
-    window.location.href = './table.htm'; 
-};
 const getImageBase64 = () => {
-    const fileInput = document.getElementById('uploadfile'); // Lấy input file
-    const file = fileInput.files[0]; // Lấy file đầu tiên được chọn
+    return new Promise((resolve, reject) => {
+        const fileInput = document.getElementById('uploadfile');
+        const file = fileInput.files[0];
 
-    if (file) {
-        const reader = new FileReader();
+        if (file) {
+            const reader = new FileReader();
 
-        reader.onloadend = function () {
-            // Khi FileReader đã đọc xong, trả về kết quả dưới dạng base64
-            return reader.result; // Đây là dữ liệu ảnh base64
+            reader.onloadend = function () {
+                resolve(reader.result); // Trả về dữ liệu ảnh base64
+            };
+
+            reader.onerror = function (error) {
+                reject(error); // Trả về lỗi nếu có
+            };
+
+            reader.readAsDataURL(file); // Đọc file dưới dạng base64
+        } else {
+            resolve(''); // Nếu không có file, trả về chuỗi rỗng
+        }
+    });
+};
+
+
+const saveProductToLocal = async () => {
+    try {
+        const anhSanPhamBase64 = await getImageBase64(); // Chờ ảnh được đọc xong
+
+        const productData = {
+            maSanPham: document.getElementById('masanpham').value,
+            tenSanPham: document.getElementById('tensanpham').value,
+            soLuong: document.getElementById('soluong').value,
+            tinhTrang: document.getElementById('exampleSelect1').value,
+            danhMuc: document.getElementById('exampleSelect2').value,
+            nhaCungCap: document.getElementById('exampleSelect3').value,
+            giaBan: document.getElementById('giaban').value,
+            giaVon: document.getElementById('giavon').value,
+            moTaSanPham: tinymce.get('mota') ? tinymce.get('mota').getContent() : '',
+            anhSanPham: anhSanPhamBase64 // Dữ liệu ảnh base64
         };
 
-        reader.readAsDataURL(file); // Đọc file dưới dạng base64
+        let productList = JSON.parse(localStorage.getItem('productList')) || [];
+        productList.push(productData);
+        localStorage.setItem('productList', JSON.stringify(productList));
+
+        alert('Sản phẩm đã được lưu thành công!');
+        window.location.href = './table.htm';
+    } catch (error) {
+        console.error('Lỗi khi lưu sản phẩm:', error);
+        alert('Không thể lưu sản phẩm. Vui lòng thử lại.');
     }
 };
 
+
 // Gắn sự kiện lưu sản phẩm vào button
-document.querySelector('.btn-save').addEventListener('click', saveProductToLocal);
+// document.querySelector('.btn-save').addEventListener('click', saveProductToLocal);
 
 
 </script>

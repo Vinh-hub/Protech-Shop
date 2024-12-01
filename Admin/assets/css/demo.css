@@ -196,7 +196,7 @@
 }
 .btn-save:hover{
     border: 1px solid rgb(166 236 171);
-    color: rgb(1 123 10);
+    color: #fff;
 }
 .btn-cancel {
     background-color: rgb(255 197 197);
@@ -208,7 +208,7 @@
 }
 .btn-cancel:hover {
     border: 1px solid rgb(255 197 197);
-    color: rgb(190, 40, 40);
+    color: #fff;
 }
 
 .preview {
@@ -260,12 +260,13 @@
   .btn {
     background-color: #007bff;
     color: white;
-    border: none;
+    /* border: none; */
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
   }
   
   .btn:hover {
-    background-color: #0056b3;
+    background-color:#0056b3;
+    color: white;
   }

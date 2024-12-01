@@ -189,7 +189,7 @@
                                     	<th>Condition</th>
                                         <th> </th>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="productTableBody">
                                         <tr>
                                         	<td>1</td>
                                             <td style="width:70px"> <img style="width:50px; height:45px"src="../assets/imgs/iphone-15.png"></td>
@@ -198,10 +198,10 @@
                                         	<td>60</td>
                                             <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct" data-id="1" data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -214,10 +214,10 @@
                                         	<td>40</td>
                                             <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct" data-id="2" data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -230,10 +230,10 @@
                                         	<td>20</td>
                                             <td><span class="badge bg-danger">Hết hàng</span></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct" data-id="3" data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -246,10 +246,10 @@
                                         	<td>30</td>
                                             <td><span class="badge bg-danger">Hết hàng</span></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct" data-id="4" data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -262,10 +262,10 @@
                                         	<td>10</td>
                                             <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct" data-id="5" data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -278,10 +278,10 @@
                                         	<td>40</td>
                                             <td><span class="badge bg-success">Còn hàng</span></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show" data-original-title="Edit Product">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
                                                 </button>
-                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct " data-id="6" data-original-title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
@@ -408,41 +408,45 @@
 
 
 </body>
-    <script>
+<script>
     var modal = document.getElementById('ModalUP');
-var btnShows = document.querySelectorAll('.btn-edit-show');
+    var btnShows = document.querySelectorAll('.btn-edit-show');
 
-function closeModal() {
-    modal.style.display = 'none';
-}
-
-// Đóng modal khi click vào overlay
-modal.addEventListener('click', function (event) {
-    if (event.target === modal) { // Chỉ đóng khi click đúng overlay
-        closeModal();
+    // Đóng modal
+    function closeModal() {
+        modal.style.display = 'none';
     }
-});
 
-// Hiển thị modal khi click vào nút
-if (btnShows.length > 0) {
-    btnShows.forEach(btnShow => {
-        btnShow.addEventListener('click', function () {
-            modal.style.display = 'block';
-        });
+    // Đóng modal khi click overlay
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
     });
-} else {
-    console.error("Không tìm thấy nút '.btn-edit-show'");
-}
 
-var btnAddProduct = document.querySelector('.add-product');
-console.log(btnAddProduct);
-btnAddProduct.addEventListener('click', () =>{
-  window.location.href = `http://127.0.0.1:5500/Admin/add-productList.htm`;
-});
-    </script>
+    // Hiển thị modal
+    if (btnShows.length > 0) {
+        btnShows.forEach(btnShow => {
+            btnShow.addEventListener('click', function () {
+                modal.style.display = 'block';
+            });
+        });
+    } else {
+        console.error("Không tìm thấy nút '.btn-edit-show'");
+    }
 
- 
- <script>
+    // Chuyển hướng đến trang thêm sản phẩm
+    var btnAddProduct = document.querySelector('.add-product');
+    if (btnAddProduct) {
+        btnAddProduct.addEventListener('click', () => {
+            window.location.href = 'http://127.0.0.1:5500/Admin/add-productList.htm';
+        });
+    } else {
+        console.error("Không tìm thấy nút '.add-product'");
+    }
+</script>
+
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     const saveButton = document.querySelector(".btn-save");
     const productModal = document.getElementById("ModalUP");
@@ -555,7 +559,86 @@ btnAddProduct.addEventListener('click', () =>{
     }
 });
 
+// const deleteButtons = document.querySelectorAll('.btn-deleteProduct');
+//     console.log(deleteButtons);
 
+//     deleteButtons.forEach(button => {
+//         button.addEventListener('click', function(event) {
+//             // Xóa dòng tr chứa nút xóa vừa nhấn
+//             const row = event.target.closest('tr'); // Lấy dòng tr chứa nút
+//             row.remove(); // Xóa dòng đó khỏi bảng
+//         });
+//     });
+
+
+// window.onload = function() {
+//     const deleteButtons = document.querySelectorAll('.btn-deleteProduct');
+//     deleteButtons.forEach(button => {
+//         button.addEventListener('click', function(event) {
+//             // Lấy ID của sản phẩm từ thuộc tính data-id
+//             const productId = event.target.closest('button').getAttribute('data-id');
+            
+//             // Xóa dòng khỏi bảng
+//             const row = event.target.closest('tr');
+//             row.remove();
+
+//             // Cập nhật lại localStorage bằng cách loại bỏ sản phẩm có ID tương ứng
+//             let productList = JSON.parse(localStorage.getItem('productList')) || [];
+//             productList = productList.filter(product => product.maSanPham !== productId);  // Loại bỏ sản phẩm theo ID
+//             localStorage.setItem('productList', JSON.stringify(productList));  // Lưu lại mảng đã cập nhật vào localStorage
+//         });
+//     });
+// };
+
+// Hàm đọc dữ liệu sản phẩm từ localStorage và hiển thị trong bảng
+window.onload = function () {
+
+    function formatPrice(price) {
+        return new Intl.NumberFormat('vi-VN').format(price);
+        }
+
+    const productList = JSON.parse(localStorage.getItem('productList')) || []; // Lấy dữ liệu sản phẩm từ localStorage
+
+    const tableBody = document.getElementById('productTableBody'); // Truyền id của tbody
+
+    // Duyệt qua từng sản phẩm và thêm dòng vào bảng
+    productList.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.maSanPham}</td>
+            <td style="width:70px"> <img style="width:50px; height:45px"src="${product.anhSanPham}"></td>
+            <td>${product.tenSanPham}</td>
+            <td>${formatPrice(product.giaBan)}₫</td>
+            <td>${product.soLuong}</td>
+            <td><span class="badge ${product.tinhTrang === 'Còn hàng' ? 'bg-success' : 'bg-danger'}">${product.tinhTrang}</span></td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
+                    <i class="fa fa-edit"></i>
+                </button>
+                <button type="button" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs btn-deleteProduct" data-id="${product.maSanPham}" data-original-title="Remove">
+                    <i class="fa fa-times"></i>
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(row); // Thêm dòng vào bảng
+    });
+    const deleteButtons = document.querySelectorAll('.btn-deleteProduct');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            // Lấy ID của sản phẩm từ thuộc tính data-id
+            const productId = event.target.closest('button').getAttribute('data-id');
+            
+            // Xóa dòng khỏi bảng
+            const row = event.target.closest('tr');
+            row.remove();
+
+            // Cập nhật lại localStorage bằng cách loại bỏ sản phẩm có ID tương ứng
+            let productList = JSON.parse(localStorage.getItem('productList')) || [];
+            productList = productList.filter(product => product.maSanPham !== productId);  // Loại bỏ sản phẩm theo ID
+            localStorage.setItem('productList', JSON.stringify(productList));  // Lưu lại mảng đã cập nhật vào localStorage
+        });
+    });
+};
 
 
     </script>

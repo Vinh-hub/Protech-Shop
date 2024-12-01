@@ -233,7 +233,7 @@
                                     <button class="btn view">Xem</button>
                                 </td>
                               <tr>
-                                <td data-date="2024-11-18" width="10" ><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-04-18" width="10" ><input type="checkbox" name="check1" value="1"></td>
                                 <td>MĐ8265</td>
                                 <td>Nguyễn Thị Ngọc Cẩm</td>
                                 <td>iMac 14s</td>
@@ -244,7 +244,7 @@
                                     <button class="btn view">Xem</button>
                                 </td>
                               <tr>
-                                <td data-date="2024-11-20" width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-07-23" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>MT9835</td>
                                 <td>Đặng Văn Vinh</td>
                                 <td>Galaxy Zlip 7</td>
@@ -255,7 +255,7 @@
                                     <button class="btn view">Xem</button>
                                 </td>
                               <tr>
-                                <td data-date="2024-11-30" width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-05-19" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>ER3835</td>
                                 <td>Nguyễn Thị Mỹ Yến</td>
                                 <td>Đồng hồ thông minh</td>
@@ -266,7 +266,7 @@
                                     <button class="btn view">Xem</button>
                                 </td>
                               <tr>
-                                <td data-date="2024-11-10" width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td data-date="2024-03-19" width="10"><input type="checkbox" name="check1" value="1"></td>
                                 <td>AL3947</td>
                                 <td>Phạm Thị Ngọc</td>
                                 <td>Laptop Dell Core i5</td>
@@ -391,19 +391,26 @@ function viewOrderDetails() {
   const viewButtons = document.querySelectorAll(".btn.view");
   viewButtons.forEach((button) => {
     button.addEventListener("click", function () {
+      // Lấy hàng tương ứng (row) mà nút "Xem" được bấm
       const row = this.closest("tr");
-      const details = `
-        ID đơn hàng: ${row.cells[1].textContent.trim()}
-        Khách hàng: ${row.cells[2].textContent.trim()}
-        Sản phẩm: ${row.cells[3].textContent.trim()}
-        Số lượng: ${row.cells[4].textContent.trim()}
-        Tổng tiền: ${row.cells[5].textContent.trim()}
-        Trạng thái: ${row.cells[6].textContent.trim()}
-      `;
-      alert(details); // Hiển thị chi tiết đơn hàng
+
+      // Lấy thông tin chi tiết từ các ô trong hàng
+      const orderId = row.cells[1].textContent.trim();
+      const customerName = row.cells[2].textContent.trim();
+      const productName = row.cells[3].textContent.trim();
+      const quantity = row.cells[4].textContent.trim();
+      const totalAmount = row.cells[5].textContent.trim();
+      const orderStatus = row.cells[6].textContent.trim();
+
+      // Tạo URL với các tham số (query string) để chuyển dữ liệu sang trang chi tiết
+      const url = `chiTiet.html?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
+
+      // Chuyển hướng đến trang chiTiet.html với dữ liệu của đơn hàng
+      window.location.href = url;
     });
   });
 }
+
 
 // Sắp xếp các đơn hàng theo địa chỉ giao hàng
 function sortOrdersByAddress() {

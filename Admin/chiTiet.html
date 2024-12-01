@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết đơn hàng</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Chi tiết đơn hàng</h1>
+    <p><strong>ID đơn hàng:</strong> <span id="orderId"></span></p>
+    <p><strong>Khách hàng:</strong> <span id="customer"></span></p>
+    <p><strong>Sản phẩm:</strong> <span id="product"></span></p>
+    <p><strong>Số lượng:</strong> <span id="quantity"></span></p>
+    <p><strong>Tổng tiền:</strong> <span id="total"></span></p>
+    <p><strong>Trạng thái:</strong> <span id="status" data-status=""></span></p>
+    <a href="../Admin/typography.htm" class="back-btn">Quay lại</a>
+  </div>
+  
+
+<style>
+  /* Tổng thể */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Container chính */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Tiêu đề trang */
+h1 {
+  text-align: center;
+  color: #007BFF;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Thông tin chi tiết */
+p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+p strong {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Phong cách riêng cho từng trường */
+#orderId {
+  color: #007BFF;
+}
+
+#status {
+  font-weight: bold;
+}
+
+#status[data-status="Hoàn thành"] {
+  color: #28a745; /* Màu xanh lá */
+}
+
+#status[data-status="Chờ thanh toán"] {
+  color: #17a2b8; /* Màu xanh dương nhạt */
+}
+
+#status[data-status="Đang giao hàng"] {
+  color: #ffc107; /* Màu vàng */
+}
+
+#status[data-status="Đã hủy"] {
+  color: #dc3545; /* Màu đỏ */
+}
+
+/* Nút quay lại */
+.back-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+  <script>
+    // Lấy tham số từ URL
+const urlParams = new URLSearchParams(window.location.search);
+const orderId = urlParams.get('id');
+const customerName = urlParams.get('customer');
+const productName = urlParams.get('product');
+const quantity = urlParams.get('quantity');
+const totalAmount = urlParams.get('total');
+const orderStatus = urlParams.get('status');
+
+// Hiển thị thông tin trong các phần tử HTML
+document.getElementById('orderId').textContent = orderId;
+document.getElementById('customer').textContent = customerName;
+document.getElementById('product').textContent = productName;
+document.getElementById('quantity').textContent = quantity;
+document.getElementById('total').textContent = totalAmount;
+document.getElementById('status').textContent = orderStatus;
+
+  </script>
+</body>
+</html>

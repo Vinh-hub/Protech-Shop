@@ -54,7 +54,7 @@ function updateSuggestions(query) {
     }
 }
 
-// Lắng nghe sự kiện nhập dữ liệu vào ô tìm kiếm
+// // Lắng nghe sự kiện nhập dữ liệu vào ô tìm kiếm
 searchInput.addEventListener('input', (e) => {
     const query = e.target.value;
     updateSuggestions(query);
@@ -233,4 +233,54 @@ window.addEventListener('load', () => {
     searchHistoryContainer.style.display = 'none'; // Ẩn khi chưa focus vào ô tìm kiếm
 });
 
-//bdv
+// Chọn sp trong gợi ý
+function updateSuggestions(query) {
+    // Xóa các gợi ý cũ
+    searchHistoryList.innerHTML = '';
+
+    // Nếu ô tìm kiếm trống, ẩn lịch sử tìm kiếm
+    if (!query.trim()) {
+        searchHistoryContainer.style.display = 'none';
+        return;
+    }
+
+    // Tìm các sản phẩm phù hợp
+    const suggestions = products.filter(product =>
+        product.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // Hiển thị gợi ý nếu có sản phẩm phù hợp
+    if (suggestions.length > 0) {
+        searchHistoryContainer.style.display = 'block';
+        suggestions.forEach(product => {
+            // Xác định vị trí phần trùng khớp
+            const startIndex = product.toLowerCase().indexOf(query.toLowerCase());
+            const endIndex = startIndex + query.length;
+
+            // Tách sản phẩm thành các phần trước, trùng khớp, và sau
+            const beforeMatch = product.slice(0, startIndex);
+            const matchText = product.slice(startIndex, endIndex);
+            const afterMatch = product.slice(endIndex);
+
+            // Tạo danh sách gợi ý với phần trùng khớp được bôi đậm
+            const listItem = document.createElement('li');
+            listItem.className = 'header_navbar-search-history-item';
+            listItem.innerHTML = `
+                <a href="#">
+                    <i class="header_search-icon fa-solid fa-clock-rotate-left"></i>
+                    ${beforeMatch}<span class="highlight">${matchText}</span>${afterMatch}
+                </a>
+            `;
+
+            // Thêm sự kiện click cho từng mục
+            listItem.addEventListener('click', () => {
+                searchInput.value = product; // Điền sản phẩm vào ô tìm kiếm
+                searchHistoryContainer.style.display = 'none'; // Ẩn phần gợi ý
+            });
+
+            searchHistoryList.appendChild(listItem);
+        });
+    } else {
+        searchHistoryContainer.style.display = 'none';
+    }
+}

@@ -7,7 +7,9 @@
 
 	<title>Admin_ProTech</title>
 
-    <script src="./assets/ckeditor/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script> -->
+    <script src="https://cdn.tiny.cloud/1/itb04hy51qrgnbuaocly783a0r43k5tr0e7ou0yqdnc5tyoc/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -176,15 +178,15 @@
                                     <form class="row">
                                         <div class="form-group col-md-3">
                                           <label class="control-label">Mã sản phẩm </label>
-                                          <input class="form-control" type="number" placeholder="">
+                                          <input class="form-control" id="masanpham" type="number" placeholder="">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label class="control-label">Tên sản phẩm</label>
-                                          <input class="form-control" type="text">
+                                          <input class="form-control" id="tensanpham" type="text">
                                         </div>
                                         <div class="form-group  col-md-3">
                                           <label class="control-label">Số lượng</label>
-                                          <input class="form-control" type="number">
+                                          <input class="form-control" id="soluong" type="number">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="exampleSelect1" class="control-label">Tình trạng</label>
@@ -195,8 +197,8 @@
                                           </select>
                                         </div>
                                         <div class="form-group col-md-3">
-                                          <label for="exampleSelect1" class="control-label">Danh mục</label>
-                                          <select class="form-control" id="exampleSelect1">
+                                          <label for="exampleSelect2" class="control-label">Danh mục</label>
+                                          <select class="form-control" id="exampleSelect2">
                                             <option>-- Chọn danh mục --</option>
                                             <option>Điện thoại thông minh</option>
                                             <option>Laptop</option>
@@ -204,7 +206,7 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label for="exampleSelect1" class="control-label">Nhà cung cấp</label>
-                                          <select class="form-control" id="exampleSelect1">
+                                          <select class="form-control" id="exampleSelect3">
                                             <option>-- Chọn nhà cung cấp --</option>
                                             <option>Thế giới di động</option>
                                             <option>FPT</option>
@@ -212,11 +214,11 @@
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label class="control-label">Giá bán</label>
-                                          <input class="form-control" type="text">
+                                          <input class="form-control" id="giaban" type="text">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <label class="control-label">Giá vốn</label>
-                                          <input class="form-control" type="text">
+                                          <input class="form-control" id="giavon" type="text">
                                         </div>
                                         <div class="form-group col-md-12">
                                           <label class="control-label">Ảnh sản phẩm</label>
@@ -235,17 +237,6 @@
                                         <div class="form-group col-md-12">
                                           <label class="control-label">Mô tả sản phẩm</label>
                                           <textarea class="form-control" name="mota" id="mota"></textarea>
-                                          <!-- <script>CKEDITOR.replace('mota');</script> -->
-                                          <script>
-                                            // Đảm bảo CKEditor được tải hoàn toàn trước khi sử dụng
-                                            window.onload = function() {
-                                              if (typeof CKEDITOR !== 'undefined') {
-                                                CKEDITOR.replace('mota');
-                                              } else {
-                                                console.log('CKEditor chưa được tải.');
-                                              }
-                                            };
-                                        </script>
                                         </div>
                                       </form> 
                                 </div>
@@ -298,45 +289,61 @@
 
 
 </body>
-
 <script>
-if (typeof chrome !== "undefined" && chrome.runtime) {
-  chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log('Message received:', request);
-  });
-} else {
-  console.log('chrome.runtime không tồn tại, mã không chạy trong môi trường tiện ích Chrome');
-}
+// Khởi tạo TinyMCE
+tinymce.init({
+    selector: '#mota', // Chỉ định id của textarea
+    setup: function(editor) {
+        // Optional: Thêm các thiết lập tùy chỉnh nếu cần
+    }
+});
 
-    function getFormValues() {
-    // Lấy giá trị các trường trong form
-    var productCode = document.getElementById('productCode').value;
-    var productName = document.getElementById('productName').value;
-    var productQuantity = document.getElementById('productQuantity').value;
-    var productStatus = document.getElementById('productStatus').value;
-    var productCategory = document.getElementById('productCategory').value;
-    var supplier = document.getElementById('supplier').value;
-    var sellingPrice = document.getElementById('sellingPrice').value;
-    var costPrice = document.getElementById('costPrice').value;
-    var productDescription = CKEDITOR.instances.mota.getData(); // Lấy mô tả từ CKEditor
+// Lấy dữ liệu khi người dùng bấm lưu
+const saveProductToLocal = () => {
+    const productData = {
+        maSanPham: document.getElementById('masanpham').value,
+        tenSanPham: document.getElementById('tensanpham').value,
+        soLuong: document.getElementById('soluong').value,
+        tinhTrang: document.getElementById('exampleSelect1').value,
+        danhMuc: document.getElementById('exampleSelect2').value,
+        nhaCungCap: document.getElementById('exampleSelect3').value,
+        giaBan: document.getElementById('giaban').value,
+        giaVon: document.getElementById('giavon').value,
+        moTaSanPham: tinymce.get('mota') ? tinymce.get('mota').getContent() : '', // Kiểm tra nếu tinymce.get('mota') tồn tại
+        anhSanPham: getImageBase64() // Hàm để lấy ảnh base64
+    };
 
-    // Lấy ảnh sản phẩm
-    var productImage = document.getElementById('thumbimage').src; // Lấy src ảnh nếu có
+    let productList = JSON.parse(localStorage.getItem('productList')) || [];
+    productList.push(productData);
+    localStorage.setItem('productList', JSON.stringify(productList));
 
-    // Hiển thị các giá trị trong console
-    console.log("Mã sản phẩm:", productCode);
-    console.log("Tên sản phẩm:", productName);
-    console.log("Số lượng:", productQuantity);
-    console.log("Tình trạng:", productStatus);
-    console.log("Danh mục:", productCategory);
-    console.log("Nhà cung cấp:", supplier);
-    console.log("Giá bán:", sellingPrice);
-    console.log("Giá vốn:", costPrice);
-    console.log("Mô tả sản phẩm:", productDescription);
-    console.log("Ảnh sản phẩm:", productImage);
-}
+    alert("Dữ liệu sản phẩm đã được lưu!");
+
+    window.location.href = './table.htm'; 
+};
+const getImageBase64 = () => {
+    const fileInput = document.getElementById('uploadfile'); // Lấy input file
+    const file = fileInput.files[0]; // Lấy file đầu tiên được chọn
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onloadend = function () {
+            // Khi FileReader đã đọc xong, trả về kết quả dưới dạng base64
+            return reader.result; // Đây là dữ liệu ảnh base64
+        };
+
+        reader.readAsDataURL(file); // Đọc file dưới dạng base64
+    }
+};
+
+// Gắn sự kiện lưu sản phẩm vào button
+document.querySelector('.btn-save').addEventListener('click', saveProductToLocal);
+
 
 </script>
+  
+  
 
 <!-- <script>
 

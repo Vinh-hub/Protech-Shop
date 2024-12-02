@@ -1272,9 +1272,8 @@ input {
 
 /* Thay thế border-color bằng color cho tab hiện tại và tạo chân xanh */
 li.is-active {
-    color: rgb(27, 168, 255); /* Màu chữ cho tab đang hoạt động */
-    /* Ở đây ta có thể giữ lại border-bottom = 3px, nhưng thay đổi màu sắc */
-    border-bottom: 3px solid rgb(27, 168, 255); /* Chân xanh dưới tab được chọn */
+    color: rgb(13, 92, 182);
+    border-bottom: 2px solid rgb(13, 92, 182);
 }
 
 .kuORbI {
@@ -1468,6 +1467,23 @@ li.is-active {
     margin-bottom: 16px;
     border-radius: 8px;
 }
+
+.logout_button {
+    background-color: rgb(11, 116, 229); /* Màu nền cho nút */
+    color: white; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 4px; /* Để bo góc nút */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Đổi con trỏ khi hover */
+    font-size: 16px; /* Kích thước chữ */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+    width: 212px;
+}
+
+.logout-button:hover {
+    background-color: rgb(11, 116, 229); /* Màu nền khi hover */
+}
+
 .header__category{
     font-size: 1.7rem;
     font-weight: 600;
@@ -2110,6 +2126,7 @@ li.is-active {
     display:flex;
     gap:15px;
     margin-top:10px;
+    cursor: pointer;
 }
 
 #item-img{
@@ -2167,7 +2184,6 @@ li.is-active {
     color: #555;
 }
 .styles__Tab-sc-b2w09e-2.active {
-    border-bottom: 2px solid #007bff; /* Đặt màu border-bottom */
-    color: #007bff; /* Màu chữ khi tab được chọn */
-    font-weight: bold; /* Tùy chọn: Làm chữ đậm hơn */
+    color: rgb(13, 92, 182);
+    border-bottom: 2px solid rgb(13, 92, 182);
 }

@@ -2123,7 +2123,7 @@ li.is-active {
     border-left:0;
     background: #f9f9f9;
     align-items: center;
-    display: inline-block;
+    display: flex;
     gap:15px;
     margin-top:10px;
     cursor: pointer;

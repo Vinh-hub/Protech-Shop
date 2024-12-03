@@ -20,6 +20,7 @@ accountButton.addEventListener('click', function(event) {
 });
     
     // Hàm xử lý khi nhấn vào nút đăng xuất
+
     // logoutButton.addEventListener('click', function() {
     //     // Đặt lại trạng thái đăng nhập
     //     localStorage.setItem('isLoggedIn', 'false'); // Đặt trạng thái thành chưa đăng nhập

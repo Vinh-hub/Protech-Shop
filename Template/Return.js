@@ -36,3 +36,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Khởi tạo hiển thị cho tab đầu tiên
     tabs[0].click(); // Giả sử tab đầu tiên được chọn mặc định
 });
+const links = document.querySelectorAll('.category__item-link');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+document.querySelectorAll('.order-item').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.transform = 'scale(1.01)';
+        });
+    
+        item.addEventListener('mouseout', () => {
+            item.style.transform = 'scale(1)';
+        });
+    });

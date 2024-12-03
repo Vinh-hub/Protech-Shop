@@ -6,3 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Thông tin đã được lưu"); // Hiển thị thông báo
     });
 });
+const links = document.querySelectorAll('.category__item-link');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });

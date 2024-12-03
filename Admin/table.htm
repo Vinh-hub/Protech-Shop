@@ -179,6 +179,16 @@
                                 </div>
                             </div> 
                             <div class="content table-responsive table-full-width">
+                                
+                                <div class="filter-container">
+                                    <select id="statusFilter">
+                                        <option value="">Tất cả trạng thái</option>
+                                        <option value="Còn hàng">Còn hàng</option>
+                                        <option value="Hết hàng">Hết hàng</option>
+                                    </select>
+                                    <input type="text" id="searchInput" placeholder="Nhập mã sản phẩm để tìm">
+                                </div>
+
                                 <table class="table table-hover table-striped">
                                     <thead>
                                         <th>ID</th>
@@ -285,6 +295,11 @@
                                                     <i class="fa fa-times"></i>
                                                 </button>
                                             </td>
+                                        </tr>
+
+                                        
+                                        <tr class="no-products">
+                                            <td colspan="7" class="text-center">Không tìm thấy sản phẩm</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -651,6 +666,97 @@ cancelDeleteButton.addEventListener('click', function() {
         imageInput.value = ""; // Xóa ảnh input
         imagePreview.innerHTML = ""; // Xóa ảnh preview
     }
+});
+//Lọc sản phẩm theo trạng thái
+document.addEventListener('DOMContentLoaded', () => {
+  // Lấy các phần tử cần thiết
+  const searchInput = document.querySelector('#searchInput');
+  const productTableBody = document.getElementById('productTableBody');
+  const statusFilter = document.querySelector('#statusFilter');
+
+  // Hàm lọc sản phẩm
+  function filterProducts() {
+    const searchValue = searchInput.value.toLowerCase();  // Lấy giá trị tìm kiếm và chuyển thành chữ thường
+    const selectedStatus = statusFilter.value;  // Lấy giá trị của bộ lọc trạng thái
+
+    // Lấy tất cả các hàng trong bảng
+    const rows = productTableBody.querySelectorAll('tr');
+    let productFound = false;  // Biến kiểm tra nếu có sản phẩm nào khớp
+
+    rows.forEach(row => {
+      const productId = row.children[0]?.textContent.trim();  // Lấy ID sản phẩm
+      const productStatusElement = row.querySelector('.badge');  // Lấy phần tử trạng thái
+      const productStatus = productStatusElement ? productStatusElement.textContent.trim() : '';  // Kiểm tra nếu có trạng thái
+
+      // Kiểm tra điều kiện lọc
+      const matchesSearch = productId.includes(searchValue);  // Kiểm tra khớp tìm kiếm
+      const matchesStatus = selectedStatus === "" || productStatus === selectedStatus;  // Kiểm tra trạng thái
+
+      // Hiển thị hoặc ẩn dòng theo điều kiện
+      if (matchesSearch && matchesStatus) {
+        row.style.display = '';  // Hiển thị nếu khớp
+        productFound = true;  // Đã tìm thấy sản phẩm
+      } else {
+        row.style.display = 'none';  // Ẩn nếu không khớp
+      }
+    });
+
+    // Hiển thị hoặc ẩn dòng "Không tìm thấy sản phẩm"
+    const noProductsMessage = document.querySelector('.no-products');
+    if (productFound) {
+      noProductsMessage.style.display = 'none';  // Ẩn thông báo nếu có sản phẩm khớp
+    } else {
+      noProductsMessage.style.display = '';  // Hiển thị thông báo nếu không có sản phẩm khớp
+    }
+  }
+
+  // Thêm sự kiện lắng nghe cho input tìm kiếm và bộ lọc trạng thái
+  searchInput.addEventListener('input', filterProducts);
+  statusFilter.addEventListener('change', filterProducts);
+
+  // Ẩn dòng "Không tìm thấy sản phẩm" khi chưa tìm kiếm
+  const noProductsMessage = document.querySelector('.no-products');
+  noProductsMessage.style.display = 'none';  // Ẩn dòng thông báo khi chưa tìm kiếm
+});
+
+//Lọc sản phẩm theo tên
+document.addEventListener('DOMContentLoaded', () => {
+  // Lấy các phần tử cần thiết
+  const searchInput = document.querySelector('#sampleTable_filter input[type="search"]');
+  const productTableBody = document.getElementById('productTableBody');
+  const noProductsMessage = document.querySelector('.no-products'); // Dòng thông báo "Không tìm thấy sản phẩm"
+  
+ // Hàm lọc sản phẩm theo tên
+  function filterProductsByName() {
+    const searchValue = searchInput.value.toLowerCase(); // Lấy giá trị tìm kiếm và chuyển về chữ thường
+    const rows = productTableBody.querySelectorAll('tr'); // Lấy tất cả các hàng trong bảng
+    let productFound = false; // Biến kiểm tra nếu có sản phẩm khớp
+
+    rows.forEach(row => {
+      const productName = row.children[2]?.textContent.toLowerCase(); // Lấy tên sản phẩm và chuyển về chữ thường
+
+      // Kiểm tra nếu tên sản phẩm có khớp với từ khóa tìm kiếm
+      if (productName && productName.includes(searchValue)) {
+        row.style.display = ''; // Hiển thị dòng nếu khớp
+        productFound = true; // Đánh dấu đã tìm thấy sản phẩm
+      } else {
+        row.style.display = 'none'; // Ẩn dòng nếu không khớp
+      }
+    });
+
+    // Hiển thị hoặc ẩn dòng "Không tìm thấy sản phẩm"
+    if (productFound || searchValue === '') {
+      noProductsMessage.style.display = 'none'; // Ẩn thông báo nếu có sản phẩm khớp hoặc chưa tìm kiếm
+    } else {
+      noProductsMessage.style.display = ''; // Hiển thị thông báo nếu không có sản phẩm khớp
+    }
+  }
+
+  // Thêm sự kiện lắng nghe cho input tìm kiếm
+  searchInput.addEventListener('input', filterProductsByName);
+
+  // Ẩn dòng "Không tìm thấy sản phẩm" khi vừa tải trang
+  noProductsMessage.style.display = 'none'; // Ẩn dòng thông báo khi chưa tìm kiếm
 });
     </script>
     <!--   Core JS Files   -->

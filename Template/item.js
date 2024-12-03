@@ -4,44 +4,6 @@ function movePage(url, query) {
     window.location.href = targetUrl;  
 };
 
-// let isLoggedIn = false;
-
-// function handleBuyNow() {
-//     if (!isLoggedIn) {
-//         alert("Vui lòng đăng nhập để mua sản phẩm.");
-//         // Chuyển hướng tới trang đăng nhập (thay đổi URL phù hợp)
-//         window.location.href = "http://127.0.0.1:5500/Template/Category/formNK.htm";
-//         return; // Kết thúc hàm nếu chưa đăng nhập
-//     }
-
-//     // Nếu đã đăng nhập, chuyển hướng tới trang thanh toán
-//     alert("Đang chuyển đến trang thanh toán...");
-//     window.location.href="http://127.0.0.1:5500/Template/Category/Info.htm"; // Thay đổi URL phù hợp
-// }
-
-
-
-// let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-// // Xử lý mua ngay
-// function handleBuyNow() {
-//     if (!isLoggedIn) {
-//         alert("Vui lòng đăng nhập để mua sản phẩm.");
-//         const targetUrl = "http://127.0.0.1:5500/Template/Category/formNK.htm"; 
-//         window.location.href = targetUrl; // Chuyển hướng
-//         return;
-//     }
-//     alert("Đang chuyển đến trang thanh toán...");
-//         const targetUrl = "http://127.0.0.1:5500/Template/Category/Info.htm"; 
-//         window.location.href = targetUrl; // Chuyển hướng
-// }
-
-// // Mô phỏng trạng thái đăng nhập khi nhấn "Đăng nhập" (dành cho kiểm tra)
-// function simulateLogin() {
-//     localStorage.setItem('isLoggedIn', 'true'); // Đặt trạng thái đăng nhập
-//     alert("Bạn đã đăng nhập thành công!");
-// }
-
-// sjkb
 let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
 // Xử lý đăng nhập

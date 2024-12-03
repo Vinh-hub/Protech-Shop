@@ -403,8 +403,8 @@ function viewOrderDetails() {
       const orderStatus = row.cells[6].textContent.trim();
 
       // Tạo URL với các tham số (query string) để chuyển dữ liệu sang trang chi tiết
-      const url = `chiTiet.html?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
-
+      const url = `chiTiet.htm?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
+      // console.log(url);
       // Chuyển hướng đến trang chiTiet.html với dữ liệu của đơn hàng
       window.location.href = url;
     });

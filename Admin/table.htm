@@ -161,7 +161,7 @@
                                 </button>
                             </div>
                             <div class="search-product-admin"> 
-                                <div class="search-product-admin current" style="display: none;">
+                                <!-- <div class="search-product-admin current" style="display: none;">
                                     <div class="dataTables_length" id="sampleTable_length"> 
                                         <label>Hiện 
                                             <select name="sampleTable_length" aria-controls="sampleTable" class="form-control form-control-sm">
@@ -170,6 +170,15 @@
                                             </select>
                                         danh mục</label>
                                         </div>
+                                </div> -->
+                                
+                                <div class="filter-container">
+                                    <span>Trạng thái: </span>
+                                    <select id="statusFilter">
+                                        <option value="">Tất cả trạng thái</option>
+                                        <option value="Còn hàng">Còn hàng</option>
+                                        <option value="Hết hàng">Hết hàng</option>
+                                    </select>
                                 </div>
                                 <div class="search-product-admin search">
                                         <div id="sampleTable_filter" class="dataTables_filter">
@@ -180,14 +189,7 @@
                             </div> 
                             <div class="content table-responsive table-full-width">
                                 
-                                <div class="filter-container">
-                                    <select id="statusFilter">
-                                        <option value="">Tất cả trạng thái</option>
-                                        <option value="Còn hàng">Còn hàng</option>
-                                        <option value="Hết hàng">Hết hàng</option>
-                                    </select>
-                                    
-                                </div>
+                                
 
                                 <table class="table table-hover table-striped">
                                     <thead>

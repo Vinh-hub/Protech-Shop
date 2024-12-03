@@ -73,6 +73,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 0 15px;
+    align-items: center;
 }
 .search-product-admin.current{
     /* margin-left: 50px; */
@@ -331,8 +332,13 @@ button {
     border-radius: 5px;
     margin-left: 15px;
     margin-right:29px;
+    flex-direction: column;
+    margin-top: 15px;
 }
-
+.filter-container span{
+    font-size: 1.4rem;
+    color: #9A9A9A;
+}
 .filter-container select,
 .filter-container input {
     padding: 8px;

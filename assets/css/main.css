@@ -2113,7 +2113,7 @@ li.is-active {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  
+    overflow: hidden; /* Ngăn không cho nội dung tràn ra ngoài */
 }
 
 .order-item {
@@ -2123,10 +2123,18 @@ li.is-active {
     border-left:0;
     background: #f9f9f9;
     align-items: center;
-    display:flex;
+    display: inline-block;
     gap:15px;
     margin-top:10px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative; /* Thêm để điều chỉnh vị trí khi phóng to */
+    z-index: 1; /* Đảm bảo không bị chồng lên */
+    transform-origin: top;
+}
+.order-item:hover {
+    transform: scale(1); /* Phóng to 10% theo chiều dọc */
+    z-index: 2;
 }
 
 #item-img{

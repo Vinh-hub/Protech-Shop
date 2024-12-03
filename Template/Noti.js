@@ -32,3 +32,18 @@ tabs.forEach((tab, index) => {
 });
 
 // Khởi tạo: Hiển thị mục đầu tiên (thông báo chung) khi tải trang
+const links = document.querySelectorAll('.category__item-link');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+    document.querySelectorAll('.order-item').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.transform = 'scale(1.01)';
+        });
+    
+        item.addEventListener('mouseout', () => {
+            item.style.transform = 'scale(1)';
+        });
+    });

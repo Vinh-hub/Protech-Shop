@@ -24,15 +24,16 @@ function handleLogout() {
 }
 
 // Xử lý thêm vào giỏ hàng
-function handleAddToCart() {
-    if (!isLoggedIn) {
-        alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.");
-        const targetUrl = "http://127.0.0.1:5500/Template/Category/formNK.htm"; 
-        window.location.href = targetUrl; // Chuyển hướng
-        return;
-    }
-    alert("Sản phẩm đã được thêm vào giỏ hàng.");
-}
+// function handleAddToCart() {
+//     if (!isLoggedIn) {
+//         alert("Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.");
+//         const targetUrl = "http://127.0.0.1:5500/Template/Category/formNK.htm"; 
+//         window.location.href = targetUrl; // Chuyển hướng
+//         return;
+//     }
+//     alert("Sản phẩm đã được thêm vào giỏ hàng.");
+    
+// }
 
 // Xử lý mua ngay
 function handleBuyNow() {

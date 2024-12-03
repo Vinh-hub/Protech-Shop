@@ -185,6 +185,7 @@
                                         <option value="">Tất cả trạng thái</option>
                                         <option value="Còn hàng">Còn hàng</option>
                                         <option value="Hết hàng">Hết hàng</option>
+                                        <option value="Đang nhập hàng">Đang nhập hàng</option>
                                     </select>
                                     
                                 </div>
@@ -286,7 +287,7 @@
                                         	<td>iPhone 16 Pro Max 256GB</td>
                                         	<td>34.990.000₫</td>
                                         	<td>40</td>
-                                            <td><span class="badge bg-success">Còn hàng</span></td>
+                                            <td><span class="badge bg-prosses">Đang nhập hàng</span></td>
                                             <td class="td-actions text-right">
                                                 <button type="button" rel="tooltip" title="" class="btn btn-info btn-simple btn-xs btn-edit-show btn-editProduct" data-original-title="Edit Product">
                                                     <i class="fa fa-edit"></i>
@@ -668,153 +669,71 @@ cancelDeleteButton.addEventListener('click', function() {
         imagePreview.innerHTML = ""; // Xóa ảnh preview
     }
 });
-//Lọc sản phẩm theo trạng thái
-// document.addEventListener('DOMContentLoaded', () => {
-//   // Lấy các phần tử cần thiết
-//   const searchInput = document.querySelector('#searchInput');
-//   const productTableBody = document.getElementById('productTableBody');
-//   const statusFilter = document.querySelector('#statusFilter');
+document.getElementById('statusFilter').addEventListener('change', function() {
+    // Lấy giá trị trạng thái được chọn từ dropdown
+    const selectedStatus = this.value;
 
-//   // Hàm lọc sản phẩm
-//   function filterProducts() {
-//     const searchValue = searchInput.value.toLowerCase();  // Lấy giá trị tìm kiếm và chuyển thành chữ thường
-//     const selectedStatus = statusFilter.value;  // Lấy giá trị của bộ lọc trạng thái
+    // Lấy tất cả các hàng (row) của bảng
+    const rows = document.querySelectorAll('.table tbody tr');
 
-//     // Lấy tất cả các hàng trong bảng
-//     const rows = productTableBody.querySelectorAll('tr');
-//     let productFound = false;  // Biến kiểm tra nếu có sản phẩm nào khớp
-
-//     rows.forEach(row => {
-//       const productId = row.children[0]?.textContent.trim();  // Lấy ID sản phẩm
-//       const productStatusElement = row.querySelector('.badge');  // Lấy phần tử trạng thái
-//       const productStatus = productStatusElement ? productStatusElement.textContent.trim() : '';  // Kiểm tra nếu có trạng thái
-
-//       // Kiểm tra điều kiện lọc
-//       const matchesSearch = productId.includes(searchValue);  // Kiểm tra khớp tìm kiếm
-//       const matchesStatus = selectedStatus === "" || productStatus === selectedStatus;  // Kiểm tra trạng thái
-
-//       // Hiển thị hoặc ẩn dòng theo điều kiện
-//       if (matchesSearch && matchesStatus) {
-//         row.style.display = '';  // Hiển thị nếu khớp
-//         productFound = true;  // Đã tìm thấy sản phẩm
-//       } else {
-//         row.style.display = 'none';  // Ẩn nếu không khớp
-//       }
-//     });
-
-//     // Hiển thị hoặc ẩn dòng "Không tìm thấy sản phẩm"
-//     const noProductsMessage = document.querySelector('.no-products');
-//     if (productFound) {
-//       noProductsMessage.style.display = 'none';  // Ẩn thông báo nếu có sản phẩm khớp
-//     } else {
-//       noProductsMessage.style.display = '';  // Hiển thị thông báo nếu không có sản phẩm khớp
-//     }
-//   }
-
-//   // Thêm sự kiện lắng nghe cho input tìm kiếm và bộ lọc trạng thái
-//   searchInput.addEventListener('input', filterProducts);
-//   statusFilter.addEventListener('change', filterProducts);
-
-//   // Ẩn dòng "Không tìm thấy sản phẩm" khi chưa tìm kiếm
-//   const noProductsMessage = document.querySelector('.no-products');
-//   noProductsMessage.style.display = 'none';  // Ẩn dòng thông báo khi chưa tìm kiếm
-// });
-
-// //Lọc sản phẩm theo tên
-// document.addEventListener('DOMContentLoaded', () => {
-//   // Lấy các phần tử cần thiết
-//   const searchInput = document.querySelector('#sampleTable_filter input[type="search"]');
-//   const productTableBody = document.getElementById('productTableBody');
-//   const noProductsMessage = document.querySelector('.no-products'); // Dòng thông báo "Không tìm thấy sản phẩm"
-  
-//  // Hàm lọc sản phẩm theo tên
-//   function filterProductsByName() {
-//     const searchValue = searchInput.value.toLowerCase(); // Lấy giá trị tìm kiếm và chuyển về chữ thường
-//     const rows = productTableBody.querySelectorAll('tr'); // Lấy tất cả các hàng trong bảng
-//     let productFound = false; // Biến kiểm tra nếu có sản phẩm khớp
-
-//     rows.forEach(row => {
-//       const productName = row.children[2]?.textContent.toLowerCase(); // Lấy tên sản phẩm và chuyển về chữ thường
-
-//       // Kiểm tra nếu tên sản phẩm có khớp với từ khóa tìm kiếm
-//       if (productName && productName.includes(searchValue)) {
-//         row.style.display = ''; // Hiển thị dòng nếu khớp
-//         productFound = true; // Đánh dấu đã tìm thấy sản phẩm
-//       } else {
-//         row.style.display = 'none'; // Ẩn dòng nếu không khớp
-//       }
-//     });
-
-//     // Hiển thị hoặc ẩn dòng "Không tìm thấy sản phẩm"
-//     if (productFound || searchValue === '') {
-//       noProductsMessage.style.display = 'none'; // Ẩn thông báo nếu có sản phẩm khớp hoặc chưa tìm kiếm
-//     } else {
-//       noProductsMessage.style.display = ''; // Hiển thị thông báo nếu không có sản phẩm khớp
-//     }
-//   }
-
-//   // Thêm sự kiện lắng nghe cho input tìm kiếm
-//   searchInput.addEventListener('input', filterProductsByName);
-
-//   // Ẩn dòng "Không tìm thấy sản phẩm" khi vừa tải trang
-//   noProductsMessage.style.display = 'none'; // Ẩn dòng thông báo khi chưa tìm kiếm
-// });
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Lấy các phần tử cần thiết
-  const searchInput = document.querySelector('#sampleTable_filter input[type="search"]'); // Tìm kiếm
-  const statusFilter = document.querySelector('#statusFilter'); // Bộ lọc trạng thái
-  const productTableBody = document.getElementById('productTableBody'); // Thân bảng sản phẩm
-  const noProductsMessage = document.querySelector('.no-products'); // Dòng thông báo "Không tìm thấy sản phẩm"
-  
-  // Hàm lọc sản phẩm
-  function filterProducts() {
-    const searchValue = searchInput.value.toLowerCase();  // Lấy giá trị tìm kiếm và chuyển thành chữ thường
-    const selectedStatus = statusFilter.value.toLowerCase();  // Lấy giá trị của bộ lọc trạng thái (Còn hàng / Hết hàng)
-
-    // Lấy tất cả các hàng trong bảng
-    const rows = productTableBody.querySelectorAll('tr');
-    let productFound = false;  // Biến kiểm tra nếu có sản phẩm nào khớp
-
+    // Duyệt qua từng hàng và kiểm tra trạng thái
     rows.forEach(row => {
-      const productId = row.children[0]?.textContent.trim();  // Lấy mã sản phẩm (ID)
-      const productName = row.children[2]?.textContent.trim().toLowerCase();  // Lấy tên sản phẩm và chuyển thành chữ thường
-      const productStatusElement = row.querySelector('.badge');  // Lấy phần tử trạng thái
-      const productStatus = productStatusElement ? productStatusElement.textContent.trim().toLowerCase() : '';  // Kiểm tra nếu có trạng thái
+        const conditionCell = row.querySelector('td:nth-child(6)'); // Cột "Condition"
+        
+        if (conditionCell) {
+            const condition = conditionCell.textContent.trim();
 
-      // Kiểm tra điều kiện lọc
-      const matchesSearch = productId.includes(searchValue) || productName.includes(searchValue);  // Kiểm tra tìm kiếm mã hoặc tên sản phẩm
-      const matchesStatus = selectedStatus === "" || productStatus === selectedStatus;  // Kiểm tra trạng thái nếu có bộ lọc
-
-      // Hiển thị hoặc ẩn dòng theo điều kiện
-      if (matchesSearch && matchesStatus) {
-        row.style.display = '';  // Hiển thị nếu khớp
-        productFound = true;  // Đã tìm thấy sản phẩm
-      } else {
-        row.style.display = 'none';  // Ẩn nếu không khớp
-      }
+            // Hiển thị hoặc ẩn hàng dựa vào điều kiện
+            if (selectedStatus === "" || condition === selectedStatus) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        }
     });
-
-    // Hiển thị hoặc ẩn dòng "Không tìm thấy sản phẩm"
-    if (productFound) {
-      noProductsMessage.style.display = 'none';  // Ẩn thông báo nếu có sản phẩm khớp
-    } else {
-        noProductsMessage.style.display = '';  // Hiển thị thông báo nếu không có sản phẩm khớp
-    }
-  }
-
-  // Thêm sự kiện lắng nghe cho input tìm kiếm và bộ lọc trạng thái
-  searchInput.addEventListener('input', filterProducts);
-  statusFilter.addEventListener('change', filterProducts);
-
-  // Ẩn dòng "Không tìm thấy sản phẩm" khi chưa tìm kiếm
-  noProductsMessage.style.display = 'none';  // Ẩn dòng thông báo khi chưa tìm kiếm
 });
 
 
 
+//Lọc sản phẩm theo tên
+document.addEventListener('DOMContentLoaded', () => {
+  // Lấy các phần tử cần thiết
+  const searchInput = document.querySelector('#sampleTable_filter input[type="search"]');
+  const productTableBody = document.getElementById('productTableBody');
+  const noProductsMessage = document.querySelector('.no-products'); // Dòng thông báo "Không tìm thấy sản phẩm"
+  
+ // Hàm lọc sản phẩm theo tên
+  function filterProductsByName() {
+    const searchValue = searchInput.value.toLowerCase(); // Lấy giá trị tìm kiếm và chuyển về chữ thường
+    const rows = productTableBody.querySelectorAll('tr'); // Lấy tất cả các hàng trong bảng
+    let productFound = false; // Biến kiểm tra nếu có sản phẩm khớp
 
+    rows.forEach(row => {
+      const productName = row.children[2]?.textContent.toLowerCase(); // Lấy tên sản phẩm và chuyển về chữ thường
 
+      // Kiểm tra nếu tên sản phẩm có khớp với từ khóa tìm kiếm
+      if (productName && productName.includes(searchValue)) {
+        row.style.display = ''; // Hiển thị dòng nếu khớp
+        productFound = true; // Đánh dấu đã tìm thấy sản phẩm
+      } else {
+        row.style.display = 'none'; // Ẩn dòng nếu không khớp
+      }
+    });
+
+    // Hiển thị hoặc ẩn dòng "Không tìm thấy sản phẩm"
+    if (productFound || searchValue === '') {
+      noProductsMessage.style.display = 'none'; // Ẩn thông báo nếu có sản phẩm khớp hoặc chưa tìm kiếm
+    } else {
+      noProductsMessage.style.display = ''; // Hiển thị thông báo nếu không có sản phẩm khớp
+    }
+  }
+
+  // Thêm sự kiện lắng nghe cho input tìm kiếm
+  searchInput.addEventListener('input', filterProductsByName);
+
+  // Ẩn dòng "Không tìm thấy sản phẩm" khi vừa tải trang
+  noProductsMessage.style.display = 'none'; // Ẩn dòng thông báo khi chưa tìm kiếm
+});
 
     </script>
     <!--   Core JS Files   -->

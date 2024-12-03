@@ -1,10 +1,14 @@
 
 // Khai báo các phần tử cần thiết
 var accountButton = document.querySelector('.header_navbar-item-link');
-var logoutButton = document.querySelector('.logout_button');
+
+console.log(accountButton);
 
 // Biến theo dõi trạng thái đăng nhập
 isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Lấy trạng thái từ localStorage
+
+console.log(isLoggedIn);
+
 
 // Hàm xử lý khi nhấn vào mục tài khoản
 accountButton.addEventListener('click', function(event) {
@@ -12,16 +16,9 @@ accountButton.addEventListener('click', function(event) {
     
     if (isLoggedIn) {
         // Nếu đã đăng nhập, chuyển đến trang Information.htm
-        window.location.href = '../Information.htm'; // Đường dẫn đến trang Information
+        window.location.href = 'http://127.0.0.1:5500/Template/Information.htm'; // Đường dẫn đến trang Information
     } else{
             // Nếu chưa đăng nhập, chuyển đến trang formNK.htm
-            window.location.href = './Template/Category/formNK.htm'; // Đường dẫn đến trang đăng ký
+            window.location.href = 'http://127.0.0.1:5500/Template/Category/formNK.htm'; // Đường dẫn đến trang đăng ký
     }
 });
-    
-    // Hàm xử lý khi nhấn vào nút đăng xuất
-    // logoutButton.addEventListener('click', function() {
-    //     // Đặt lại trạng thái đăng nhập
-    //     localStorage.setItem('isLoggedIn', 'false'); // Đặt trạng thái thành chưa đăng nhập
-    //     window.location.href = '../../index.htm'; // Chuyển hướng về trang chính
-    // });

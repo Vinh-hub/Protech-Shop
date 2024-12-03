@@ -55,17 +55,17 @@ function updateButtons() {
     const addToCartButton = document.getElementById('addToCartButton');
     const buyNowButton = document.getElementById('buyNowButton');
 
-    if (isLoggedIn) {
-        loginButton.style.display = 'none'; // Ẩn nút Đăng nhập
-        logoutButton.style.display = 'inline-block'; // Hiện nút Đăng xuất
-        addToCartButton.disabled = false; // Mở khóa nút Thêm vào giỏ
-        buyNowButton.disabled = false; // Mở khóa nút Mua ngay
-    } else {
-        loginButton.style.display = 'inline-block'; // Hiện nút Đăng nhập
-        logoutButton.style.display = 'none'; // Ẩn nút Đăng xuất
-        addToCartButton.disabled = true; // Khóa nút Thêm vào giỏ
-        buyNowButton.disabled = true; // Khóa nút Mua ngay
-    }
+    // if (isLoggedIn) {
+    //     loginButton.style.display = 'none'; // Ẩn nút Đăng nhập
+    //     logoutButton.style.display = 'inline-block'; // Hiện nút Đăng xuất
+    //     addToCartButton.disabled = false; // Mở khóa nút Thêm vào giỏ
+    //     buyNowButton.disabled = false; // Mở khóa nút Mua ngay
+    // } else {
+    //     loginButton.style.display = 'inline-block'; // Hiện nút Đăng nhập
+    //     logoutButton.style.display = 'none'; // Ẩn nút Đăng xuất
+    //     addToCartButton.disabled = true; // Khóa nút Thêm vào giỏ
+    //     buyNowButton.disabled = true; // Khóa nút Mua ngay
+    // }
 }
 
 // Gọi hàm cập nhật trạng thái khi tải trang

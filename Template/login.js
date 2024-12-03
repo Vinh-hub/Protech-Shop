@@ -1,105 +1,108 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Lấy các phần tử DOM
-    var signUpSection = document.getElementById('signUpSection');
-    var loginSection = document.getElementById('loginSection');
-    var btnSignUp = document.getElementById('showSignUp');
-    var btnLogin = document.getElementById('btn--login'); // Nút đăng nhập
-    var returnpage = document.getElementById('btn--returnlog'); // Nút trở lại
-    var signUps = document.getElementById('btn--signup');
-    const textsign = document.getElementById('inp-namesign');
-    const textlogin = document.getElementById('inp-namelogin');
+    const signUpSection = document.getElementById('signUpSection');
+    const loginSection = document.getElementById('loginSection');
+    const btnSignUp = document.getElementById('showSignUp'); // Nút mở đăng ký
+    const btnLogin = document.getElementById('btn--login'); // Nút đăng nhập
+    const returnPage = document.getElementById('btn--returnlog'); // Nút trở lại
+    const signUps = document.getElementById('btn--signup'); // Nút đăng ký
+    const textSign = document.getElementById('inp-namesign'); // Tên đăng ký
+    const textLogin = document.getElementById('inp-namelogin'); // Tên đăng nhập
     const passwordLogin = document.getElementById('mk'); // Mật khẩu đăng nhập
     const showLoginBtn = document.getElementById('showLogin'); // Nút chuyển sang trang đăng nhập
 
-// Kiểm tra trạng thái đăng nhập khi tải trang
-    // let isLoggedIn = localStorage.getItem('isLoggedIn');
+    // Danh sách người dùng mẫu
+    const users = [
+        { username: "user", password: "123456" },
+        { username: "admin", password: "admin123" }
+    ];
 
-  
-
-// function openModal(sectionToShow) {
-//     if (sectionToShow === 'signUp') {
-//         signUpSection.style.display = 'block';    
-//         loginSection.style.display = 'none';
-//     } else if (sectionToShow === 'login') {
-//         signUpSection.style.display = 'none'; 
-//         loginSection.style.display = 'block';
-//     }
-// }
-
-// // Hiển thị modal đăng ký hoặc đăng nhập dựa vào nút nhấn
-// btnSignUp.addEventListener('click', function() {
-//     openModal('signUp');
-// });
-// btnLogin.addEventListener('click', function() {
-//     openModal('login');
-// });
-
-
-//Kiểm tra trạng thái đăng nhập khi tải trang
+    // Kiểm tra trạng thái đăng nhập khi tải trang
     let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
 
-   // Hàm mở modal đăng ký hoặc đăng nhập
+    // Hàm mở modal đăng ký hoặc đăng nhập
     function openModal(sectionToShow) {
         if (sectionToShow === 'signUp') {
-            signUpSection.style.display = 'block';    
+            signUpSection.style.display = 'block';
             loginSection.style.display = 'none';
         } else if (sectionToShow === 'login') {
-            signUpSection.style.display = 'none'; 
+            signUpSection.style.display = 'none';
             loginSection.style.display = 'block';
         }
     }
 
-    // Hiển thị modal đăng ký hoặc đăng nhập dựa vào nút nhấn
-    btnSignUp.addEventListener('click', function() {
-        openModal('signUp');
-    });
-
-    // Nút "Đăng nhập" (chuyển sang màn hình đăng nhập)
-    showLoginBtn.addEventListener('click', function() {
-        openModal('login'); // Mở trang đăng nhập
-    });
-
-    // Xử lý khi nhấn nút đăng ký
-    signUps.addEventListener('click', function(){
-        isLoggedIn = true; // Cập nhật trạng thái đăng nhập
-        localStorage.setItem('isLoggedIn', 'true'); // Lưu vào localStorage
-        signUpSection.style.display = 'none'; 
-        loginSection.style.display = 'block';
-        textlogin.value = textsign.value; // Chuyển giá trị từ ô đăng ký sang ô đăng nhập
-        alert("Đăng ký thành công!"); // Hiển thị thông báo đăng ký thành công
-    });
-
-    // Xử lý khi nhấn nút quay về trang trước
-    returnpage.addEventListener('click', function() {
-        // Nếu đang ở trang đăng ký, chuyển về trang đăng nhập
-        if (signUpSection.style.display === 'block') {
-            openModal('login');
-        }
-        // Nếu đang ở trang đăng nhập, chuyển về trang đăng ký
-        else {
+    // Xử lý sự kiện nút "Hiển thị đăng ký"
+    if (btnSignUp) {
+        btnSignUp.addEventListener('click', function() {
             openModal('signUp');
+        });
+    }
+
+    // Xử lý sự kiện nút "Hiển thị đăng nhập"
+    if (showLoginBtn) {
+        showLoginBtn.addEventListener('click', function() {
+            openModal('login');
+        });
+    }
+
+    // Xử lý sự kiện nút "Đăng ký"
+    if (signUps) {
+        signUps.addEventListener('click', function () {
+            isLoggedIn = true; // Cập nhật trạng thái đăng nhập
+            localStorage.setItem('isLoggedIn', 'true'); // Lưu vào localStorage
+            openModal('login'); // Chuyển sang màn hình đăng nhập
+            textLogin.value = textSign.value; // Chuyển giá trị từ đăng ký sang đăng nhập
+            alert("Đăng ký thành công!");
+        });
+    }
+
+    // Xử lý sự kiện nút "Trở lại"
+    if (returnPage) {
+        returnPage.addEventListener('click', function () {
+            if (signUpSection.style.display === 'block') {
+                openModal('login');
+            } else {
+                openModal('signUp');
+            }
+        });
+    }
+
+    // Xử lý đăng nhập
+    if (btnLogin && textLogin && passwordLogin) {
+        btnLogin.addEventListener('click', function () {
+            const usernameInput = textLogin.value.trim();
+            const passwordInput = passwordLogin.value.trim();
+
+            if (usernameInput && passwordInput) {
+                const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
+                if (user) {
+                    alert("Đăng nhập thành công!");
+
+                    // Điều hướng theo loại người dùng
+                    if (usernameInput === "admin") {
+                        window.location.href = "http://127.0.0.1:5500/Admin/dashboard.htm"; // Trang dành cho admin
+                    } else {
+                        window.location.href = "http://127.0.0.1:5500/index.htm"; // Trang dành cho user
+                    }
+
+                    localStorage.setItem('isLoggedIn', 'true'); // Lưu trạng thái đăng nhập
+                } else {
+                    alert("Tên đăng nhập hoặc mật khẩu không chính xác.");
+                }
+            } else {
+                alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
+            }
+        });
+    } else {
+        console.error("Không tìm thấy các phần tử cần thiết trong DOM.");
+    }
+
+    // Hàm hiển thị / ẩn mật khẩu
+    window.daoTT = function () {
+        if (passwordLogin) {
+            passwordLogin.type = (passwordLogin.type === "password") ? "text" : "password";
+        } else {
+            console.error("Không tìm thấy phần tử mật khẩu với ID 'mk'.");
         }
-    });
-
-    // Xử lý khi nhấn nút đăng nhập
-    btnLogin.addEventListener('click', function() {
-        var username = textlogin.value; // Lấy tên đăng nhập
-        var password = passwordLogin.value; // Lấy mật khẩu
-
-        // Giả sử tất cả thông tin nhập vào là hợp lệ (bỏ qua kiểm tra)
-        alert("Đăng nhập thành công!"); // Hiển thị thông báo đăng nhập thành công
-        
-        // Cập nhật trạng thái đăng nhập và lưu vào localStorage
-        isLoggedIn = true;
-        localStorage.setItem('isLoggedIn', 'true');
-        
-        // Chuyển đến trang thông tin sau khi đăng nhập thành công
-        window.location.href = '../../index.htm'; 
-    });
+    };
 });
-
-
-function daoTT() {
-    let mk = document.getElementById("mk");
-    mk.type = (mk.type === "password")? "text":"password";
-  } ;

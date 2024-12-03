@@ -11,13 +11,13 @@ function toggleTab(index) {
 
     // Hiển thị phần nội dung tương ứng với tab được chọn
     if (index === 0) { // Thông báo chung
-        orderItems.forEach(item => item.style.display = 'block'); // Hiển thị tất cả
+        orderItems.forEach(item => item.style.display = 'flex'); // Hiển thị tất cả
     } else if (index === 1) { // Thông báo khuyến mãi
-        orderItems[2].style.display = 'block'; // Hiển thị HAVIT
+        orderItems[2].style.display = 'flex'; // Hiển thị HAVIT
     } else if (index === 2) { // Thông báo đơn hàng
-        orderItems[0].style.display = 'block'; // Hiển thị iPhone
+        orderItems[0].style.display = 'flex'; // Hiển thị iPhone
     } else if (index === 3) { // Thông báo đổi trả
-        orderItems[1].style.display = 'block'; // Hiển thị ASUS
+        orderItems[1].style.display = 'flex'; // Hiển thị ASUS
     }
 
     // Đánh dấu tab được chọn là 'active'

@@ -40,6 +40,9 @@ signUps.addEventListener('click', function(){
 
 // Xử lý khi nhấn nút quay về trang chủ
 returnpage.addEventListener('click', function(){
+    // Cập nhật trạng thái đăng nhập từ localStorage trước khi kiểm tra
+    isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
     // Chuyển đến trang index nếu chưa đăng nhập, và đến Information nếu đã đăng nhập
     if (isLoggedIn) {
         window.location.href = '../Information.htm'; // Chuyển đến trang Information khi đã đăng nhập

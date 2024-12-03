@@ -12,19 +12,15 @@ accountButton.addEventListener('click', function(event) {
     if (isLoggedIn) {
         // Nếu đã đăng nhập, chuyển đến trang Information.htm
         window.location.href = '../Information.htm'; // Đường dẫn đến trang Information
-    } else {
-        // Nếu chưa đăng nhập, chuyển đến trang formNK.htm
-        window.location.href = './Template/Category/formNK.htm'; // Đường dẫn đến trang đăng ký
+    } else{
+            // Nếu chưa đăng nhập, chuyển đến trang formNK.htm
+            window.location.href = './Template/Category/formNK.htm'; // Đường dẫn đến trang đăng ký
     }
 });
-
-// Hàm xử lý khi nhấn vào nút đăng xuất
-// Khai báo các phần tử cần thiết
-var logoutButton = document.querySelector('.logout_button');
-
-// Hàm xử lý khi nhấn vào nút đăng xuất
-logoutButton.addEventListener('click', function() {
-    // Đặt lại trạng thái đăng nhập
-    localStorage.setItem('isLoggedIn', 'false'); // Đặt trạng thái thành chưa đăng nhập
-    window.location.href = '../../index.htm'; // Chuyển hướng về trang chính
-});
+    
+    // Hàm xử lý khi nhấn vào nút đăng xuất
+    logoutButton.addEventListener('click', function() {
+        // Đặt lại trạng thái đăng nhập
+        localStorage.setItem('isLoggedIn', 'false'); // Đặt trạng thái thành chưa đăng nhập
+        window.location.href = '../../index.htm'; // Chuyển hướng về trang chính
+    });

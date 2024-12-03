@@ -356,8 +356,9 @@
 .auth-form__controls.review{
     margin-bottom: 15px;
 }
-.btn--review{
+.btn--review {
     width: 100%;
+    margin-bottom: 15px;
 }
 .auth-form--review__body__group--input.review{
     max-width: 48%;

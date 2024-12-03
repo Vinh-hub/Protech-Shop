@@ -1999,7 +1999,13 @@ li.is-active {
     font-weight: 400;
     color: var(--text-color);
   }
-  
+  .auth-form__header--icon{
+    font-size: 2rem;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: var(--text-color);
+  }
   .auth-form__header--switch-btn{
     font-size: 1.6rem;
     font-weight: 500;

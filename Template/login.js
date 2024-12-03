@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // });
 
 
-// Kiểm tra trạng thái đăng nhập khi tải trang
+//Kiểm tra trạng thái đăng nhập khi tải trang
     let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
 
-    // Hàm mở modal đăng ký hoặc đăng nhập
+   // Hàm mở modal đăng ký hoặc đăng nhập
     function openModal(sectionToShow) {
         if (sectionToShow === 'signUp') {
             signUpSection.style.display = 'block';    
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('isLoggedIn', 'true');
         
         // Chuyển đến trang thông tin sau khi đăng nhập thành công
-        window.location.href = '../Information.htm'; 
+        window.location.href = '../../index.htm'; 
     });
 });
 

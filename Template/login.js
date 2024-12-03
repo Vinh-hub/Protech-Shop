@@ -8,25 +8,27 @@ const textsign = document.getElementById('inp-namesign');
 const textlogin = document.getElementById('inp-namelogin');
 
 // Kiểm tra trạng thái đăng nhập khi tải trang
-let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
+    let isLoggedIn = localStorage.getItem('isLoggedIn');
 
-function openModal(sectionToShow) {
-    if (sectionToShow === 'signUp') {
-        signUpSection.style.display = 'block';    
-        loginSection.style.display = 'none';
-    } else if (sectionToShow === 'login') {
-        signUpSection.style.display = 'none'; 
-        loginSection.style.display = 'block';
-    }
-}
+  
 
-// Hiển thị modal đăng ký hoặc đăng nhập dựa vào nút nhấn
-btnSignUp.addEventListener('click', function() {
-    openModal('signUp');
-});
-btnLogin.addEventListener('click', function() {
-    openModal('login');
-});
+// function openModal(sectionToShow) {
+//     if (sectionToShow === 'signUp') {
+//         signUpSection.style.display = 'block';    
+//         loginSection.style.display = 'none';
+//     } else if (sectionToShow === 'login') {
+//         signUpSection.style.display = 'none'; 
+//         loginSection.style.display = 'block';
+//     }
+// }
+
+// // Hiển thị modal đăng ký hoặc đăng nhập dựa vào nút nhấn
+// btnSignUp.addEventListener('click', function() {
+//     openModal('signUp');
+// });
+// btnLogin.addEventListener('click', function() {
+//     openModal('login');
+// });
 
 // Xử lý khi nhấn nút đăng ký
 signUps.addEventListener('click', function(){

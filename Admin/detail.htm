@@ -176,8 +176,8 @@
 
     <div class="order-info">
         <h2>Thông Tin Đơn Hàng</h2>
-        <p><strong>Mã Đơn Hàng:</strong> <span id="orderId"></span></p>
-        <p><strong>Ngày Đặt Hàng:</strong> <span id="orderDate"></span></p>
+        <p><strong>Mã Đơn Hàng:</strong><span id="orderId"></span></p>
+        <p><strong>Ngày Đặt Hàng:</strong> 06-12-2024<span id="orderDate"></span></p>
         <p><strong>Tên Khách Hàng:</strong><span id="customerName"></span></p>
         <p><strong>Địa Chỉ:</strong>234 An Dương Vương phường 3 quận 5 <span id="address"></span></p>
     </div>
@@ -220,6 +220,8 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     // Lấy dữ liệu từ sessionStorage
+    const orderId = sessionStorage.getItem('orderId');
+    const customerName = sessionStorage.getItem('customerName');
     const productName = sessionStorage.getItem('productName');
     const quantity = sessionStorage.getItem('quantity');
     const totalPrice = sessionStorage.getItem('totalPrice');
@@ -227,6 +229,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Gán dữ liệu vào các phần tử trong trang detail.html
     if (productName && quantity && totalPrice && status) {
+        document.getElementById('orderId').textContent = orderId;
+        document.getElementById('customerName').textContent = customerName;
         document.getElementById('productName').textContent = productName;
         document.getElementById('quantity').textContent = quantity;
         document.getElementById('totalPrice').textContent = totalPrice;

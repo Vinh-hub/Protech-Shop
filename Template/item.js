@@ -34,18 +34,17 @@ function handleLogout() {
 //     alert("Sản phẩm đã được thêm vào giỏ hàng.");
     
 // }
+const basePath = localStorage.getItem('basePath');
 
 // Xử lý mua ngay
 function handleBuyNow() {
     if (!isLoggedIn) {
         alert("Vui lòng đăng nhập để mua sản phẩm.");
-        const targetUrl = "http://127.0.0.1:5500/Template/Category/Info.htm"; 
-        window.location.href = targetUrl; // Chuyển hướng đến trang thanh toán
+        window.location.href = `${basePath}Template/Category/formNK.htm`;
         // return;
     }
     alert("Đang chuyển đến trang thanh toán...");
-    const targetUrl = "http://127.0.0.1:5500/Template/Category/Info.htm"; 
-    window.location.href = targetUrl; // Chuyển hướng đến trang thanh toán
+    window.location.href = `${basePath}Template/Category/Info.htm`;// Chuyển hướng đến trang thanh toán
 }
 
 // Cập nhật trạng thái nút khi đăng nhập/đăng xuất

@@ -42,10 +42,16 @@ function render(list) {
 //     window.location.href = targetUrl;
 // }
 
+// function movePage(url, query) {
+//     let targetUrl = `./${url}?query=${encodeURIComponent(query)}`;
+// window.location.href = targetUrl;
+// }
+
 function movePage(url, query) {
-    let targetUrl = `http://127.0.0.1:5500/${url}?query=${encodeURIComponent(query)}`;
-    window.location.href = targetUrl;  
+    const targetPath = `${window.location.origin}/${url}?query=${encodeURIComponent(query)}`;
+    window.location.href = targetPath;
 }
+
 
 function compareStringsByPhrases(string1, string2, phraseLength = 1) {
     const words1 = string1.toLowerCase().split(/\s+/);
@@ -85,9 +91,16 @@ function search(query) {
 // }
 
 function handleSearchAndRedirect() {
-    var query = inputElement.value.trim();
+    var query = inputElement.value.trim(); 
     if (query !== "") {
-        movePage('Template/Category/resultSearch.htm', query);  
+        const currentPath = window.location.pathname;
+        const targetPath = currentPath
+          .split('/')  
+          .slice(0, -1)  
+          .join('/') + '/Template/Category/resultSearch.htm';
+        
+        // Điều hướng đến trang với query
+        movePage(targetPath, query); 
     } else {
         alert('Vui lòng nhập từ khóa tìm kiếm.');
     }
@@ -224,14 +237,9 @@ function handleAddToCart(button) {
     alert("Item added to cart!");
 }
 document.addEventListener("DOMContentLoaded", () => {
-    const basePath = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1 );
-    localStorage.setItem('basePath', basePath);
-    console.log(localStorage.getItem('basePath'));
-
-const accountLink = document.getElementById('account-link'); //Tham chieu den the tai khoan
-const accountIconLink = document.getElementById('account-icon-link');
-
-
+    const basePath = localStorage.getItem('basePath');
+    const accountLink = document.getElementById('account-link'); // Tham chiếu đến thẻ tài khoản
+    const accountIconLink = document.getElementById('account-icon-link'); // Tham chiếu đến thẻ biểu tượng tài khoản
     // Hàm chuyển hướng theo trạng thái đăng nhập
     function handleAccountLinkClick(event) {
         event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
@@ -239,10 +247,10 @@ const accountIconLink = document.getElementById('account-icon-link');
         
         if (isLoggedIn) {
             // Nếu đã đăng nhập, chuyển đến trang thông tin
-            window.location.href = `${basePath}Template/Infomation.htm`; 
+            window.location.href = `${basePath}Template/Information.htm`;
         } else {
             // Nếu chưa đăng nhập, chuyển đến trang đăng ký
-            window.location.href = `${basePath}Template/Category/formNK.htm`; 
+            window.location.href = `${basePath}Template/Category/formNK.htm`;
         }
     }
 
@@ -252,7 +260,6 @@ const accountIconLink = document.getElementById('account-icon-link');
     }
 
     if (accountIconLink) {
-        
         accountIconLink.addEventListener('click', handleAccountLinkClick);
     }
 });

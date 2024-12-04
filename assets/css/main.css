@@ -4,8 +4,8 @@
 }
 
 .header_first{
-   background-color: white;
-   height:25px;
+   background-color: #EFFFF4;
+   height:43px;
 }
 
 /*Header*/
@@ -1046,57 +1046,28 @@ margin-top: 4px;
 }
 
 /* Another-button */
+.another-product{
+    margin-top:50px;
+}
 
-.back-btn {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-align: center;
-    font-size: 1.5rem;
-    text-decoration: none;
+.another-button{
+    height:40px;
+    width:500px;
+    background-color: #6aaaea;
+    border:none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .back-btn:hover {
-    background-color: #0056b3;
-  }
-  .back-btn-sub {
-    display: block;
-    margin: 10px auto 10px;
-    padding: 16px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-align: center;
-    font-size: 1.5rem;
+}
+
+.another-button a{
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .back-btn-sub:hover {
-    background-color: #0056b3;
-  }
+    font-size:1.4rem;
+    color:black;
+    
+}
 /* Information */
 .information-page{
     width:900px;
     height:720px;
-    /* margin-left:auto;
-    margin-right:auto; */
-    border-radius: 5px;
-}
-.information-pagee{
-    width:900px;
-    height:380px;
-    /* margin-left:auto;
-    margin-right:auto; */
-    border-radius: 5px;
-}
-.information-pageee{
-    width:900px;
-    height:400px;
     /* margin-left:auto;
     margin-right:auto; */
     border-radius: 5px;
@@ -1122,23 +1093,13 @@ margin-top: 4px;
 }
 .information-right{
     font-size: 1.5rem;
-    height: 335px;
+    height: 650px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: 600;
     background-color: var(--white-color);
     border:2px solid white;
     box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2 );
-    border-radius: 5px;
-}
-.information-rightt{
-    font-size: 1.5rem;
-    height: 240px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: 400;
-    background-color: var(--white-color);
-    box-shadow: 0 1px 3.123rem 0 rgba(153, 150, 150, 0.2);
     border-radius: 5px;
 }
 .information-customers-h4{
@@ -1152,46 +1113,33 @@ margin-top: 4px;
     display: block;
     margin-bottom: 50px;
 }
-.information-address {
+.information-address{
     font-size: 1.5rem;
-    padding: 15px;
-    height: 110px;
+    padding: 15px 30px 15px;
+    height: 170px;
+    margin-top: 5px;
+    margin-left: 30px;
     margin-bottom: 5px;
     font-weight: 600;
     background-color: var(--white-color);
-    border: 2px solid white;
-    box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2);
+    border:2px solid white;
+    box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2 );
     border-radius: 5px;
 }
-
-.information-address-h4 {
+.information-address-h4{
     margin-top: 0px;
     margin-bottom: 15px;
 }
-
-.information-address-profile {
-    display: flex;
+.information-address-profile{
     font-weight: 200;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
-    margin-right: 100px; /* Thêm khoảng cách nhỏ giữa bên trái và bên phải */
-}
-
-.right {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-info {
-    display: flex;
-    flex-direction: row;
 }
 .information-address-profile span {
     display: block;
     margin-bottom: 10px;
+}
+.form-info {
+    display: flex;
+    flex-direction: row;
 }
 .form-name {
     width: 100%;
@@ -1386,6 +1334,7 @@ li.is-active {
     border-bottom: none;
 }
 .krSXKE {
+    cursor: pointer;
     background: rgb(255, 255, 255);
     width: 100%;
     display: flex;
@@ -1409,14 +1358,7 @@ li.is-active {
     color: rgb(128, 128, 137);
     border-bottom: none;
 }
-.czMhBb {
-    width: 16.6667%;
-    padding: 12px 0px;
-    text-align: center;
-    color: rgb(128, 128, 137);
-    border-bottom: none;
-    font-weight: 400;
-}
+
 .login {
     display: flex;
     text-align: center;
@@ -1740,7 +1682,6 @@ li.is-active {
     animation: itemmove ease-in-out 0.4s;
   }
   .product-item-group:hover{
-    
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
     transform: translateY(-1.5px);
   }
@@ -2174,60 +2115,28 @@ li.is-active {
   }
 
 /* Phần hiển thị sản phẩm */
-.orders {
+  .orders {
     display: flex;
     flex-direction: column;
+    gap: 20px;
     overflow: hidden; /* Ngăn không cho nội dung tràn ra ngoài */
 }
 
-.orderss {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Ngăn không cho nội dung tràn ra ngoài */
-}
-
-
-.view-link{
-    background-color: rgb(11, 116, 229);
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.3s;
-}
-.view-link:hover {
-    transform: translateY(-5px); /* Di chuyển lên 5px khi di chuột qua */
-}
-.orders-item {
+.order-item {
     padding: 10px;
     border: 1px solid #ccc;
     border-right: 0;
     border-left:0;
+    background: #f9f9f9;
     align-items: center;
     display: flex;
     gap:15px;
+    margin-top:10px;
+    cursor: pointer;
     transition: transform 0.3s ease;
     position: relative; /* Thêm để điều chỉnh vị trí khi phóng to */
     z-index: 1; /* Đảm bảo không bị chồng lên */
     transform-origin: top;
-}
-.orders-item.animated {
-    transform: scale(1.05); /* Tăng kích thước khi nhấn */
-}
-.order-item {
-    padding: 10px;
-    border-right: 0;
-    border-left:0;
-    align-items: center;
-    display: flex;
-    gap:15px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-    position: relative; /* Thêm để điều chỉnh vị trí khi phóng to */
-    z-index: 1; /* Đảm bảo không bị chồng lên */
-    transform-origin: top;
-    box-shadow: 0 1px 3.123rem 0 rgba(0, 0, 0, 0.2);
-    background-color: var(--white-color);
 }
 .order-item:hover {
     transform: scale(1); /* Phóng to 10% theo chiều dọc */
@@ -2256,20 +2165,21 @@ li.is-active {
     border-bottom: 2px solid transparent; /* Không có border-bottom khi không được chọn */
     color: #333; /* Màu chữ mặc định */
     padding: 10px;
+    cursor: pointer;
     transition: border-bottom 0.3s ease, color 0.3s ease; /* Hiệu ứng mượt mà cho border và màu chữ */
 }
 
-
-/* .styles__Tab-sc-e27b7w-3.active-tab {
-    border-bottom: 2px solid #007bff; 
-    color: #007bff; 
-    font-weight: bold; 
+/* Tab đang được chọn */
+.styles__Tab-sc-e27b7w-3.active-tab {
+    border-bottom: 2px solid #007bff; /* Đặt màu border-bottom */
+    color: #007bff; /* Màu chữ khi tab được chọn */
+    font-weight: bold; /* Tùy chọn: Làm chữ đậm hơn */
 }
 
-
+/* Tùy chọn: Thay đổi màu tab khi hover */
 .styles__Tab-sc-e27b7w-3:hover {
-    color: #0056b3; 
-} */
+    color: #0056b3; /* Màu chữ khi hover (chưa chọn) */
+}
 
 /* Ẩn hình ảnh khi có đơn hàng */
 .styles__EmptyCpn-sc-1twarw-0.hggZkm {

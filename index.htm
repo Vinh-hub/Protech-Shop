@@ -93,11 +93,11 @@
                        
     
                         <li class="header_navbar-item">
-                            <a href="../Template/Information.htm" class="header_navbar-item-link">
+                            <a href="./Template/Information.htm" class="header_navbar-item-link">
                                 <a href="#" class="header_navbar-icon-link" id="account-icon-link">
                                     <i class="fa-regular fa-face-smile-wink"></i>
                                 </a>
-                                <a href="../Template/Information.htm" class="header_navbar-icon-link header_navbar-link--strong" id="account-link">
+                                <a href="#" class="header_navbar-icon-link header_navbar-link--strong" id="account-link">
                                     Tài khoản
                                 </a>
                             </a>
@@ -116,7 +116,7 @@
                            
                                 <!-- <div class="header_cart-wrap">  -->
 
-                                    <a href="../Template/Cart.htm" class="header_navbar-icon-link">
+                                    <a href="./Template/Cart.htm" class="header_navbar-icon-link">
                                         <i class="header_navbar-icon-cart fa-solid fa-cart-shopping"></i> <span id="cart-count">2</span> 
                                     </a>
                             
@@ -984,13 +984,17 @@
     <!-- <script>
         window.location.href = window.location.origin + "./Admin/dashboard.htm";
     </script> -->
-    <!-- <script>
-        const basePath = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf )
-        localStorage.setItem('basePath', basePath );
+    <!-- <script src="./Template/login.js"></script> -->
+     <!-- <script> -->
+        <!-- // const basePath = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1); 
+        // localStorage.setItem('basePath', basePath);
+        // console.log(localStorage.getItem('basePath')); -->
+    <!--  </script> -->
+    <script>
+           const basePath = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1); 
+        localStorage.setItem('basePath', basePath);
         console.log(localStorage.getItem('basePath'));
-    </script> -->
-
-    <!-- <script src="./Template/logout.js"></script> -->
+    </script>
     <script src="./Template/cart.js"></script>
 </body>
 </html>

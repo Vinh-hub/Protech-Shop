@@ -62,9 +62,13 @@
                                 <a href="../../../index.htm" class="header_navbar-icon-link header_navbar-link--strong home-page">Trang chủ</a>
                             </li>
                             <li class="header_navbar-item">
-                                <a href="../../../Template/Information.htm" class="header_navbar-item-link">
-                                    <span class="header_navbar-icon-link"><i class="fa-regular fa-face-smile-wink"></i></span>
-                                    Tài khoản
+                                <a href="./Template/Information.htm" class="header_navbar-item-link">
+                                    <a href="#" class="header_navbar-icon-link" id="account-icon-link">
+                                        <i class="fa-regular fa-face-smile-wink"></i>
+                                    </a>
+                                    <a href="#" class="header_navbar-icon-link header_navbar-link--strong" id="account-link">
+                                        Tài khoản
+                                    </a>
                                 </a>
                             </li>
                             <li class="header_navbar-item header_navbar-item-no-pointer">
@@ -647,9 +651,9 @@
 <script src="../../../main.js"></script>
 <script src="../assets/ctsp.js"></script>
 <script src="../../item.js"></script>
-<script src="../../logout.js"></script>
+<!-- <script src="../../logout.js"></script> -->
 <script>
-    const basePath = localStorage.getItem('basePath');
+    // const basePath = localStorage.getItem('basePath');
     console.log(basePath);
 </script>
 </html>

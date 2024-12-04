@@ -32,8 +32,8 @@
                       
                         
                     <div class="header_width-search">
-                        <a href="../../index.htm" class="header_logo">
-                            <img class="header_logo-img " src="../../assets/imgs/logo.png" alt="ProTech-logo" width="96" height="40">
+                        <a href="../index.htm" class="header_logo">
+                            <img class="header_logo-img " src="../assets/imgs/logo.png" alt="ProTech-logo" width="96" height="40">
                         </a>
                     </div>
                         
@@ -101,11 +101,11 @@
                    
 
                     <li class="header_navbar-item">
-                        <a href="#" class="header_navbar-item-link">
-                            <a href="./Template/Information.htm" class="header_navbar-icon-link">
+                        <a href="./Template/Information.htm" class="header_navbar-item-link">
+                            <a href="#" class="header_navbar-icon-link" id="account-icon-link">
                                 <i class="fa-regular fa-face-smile-wink"></i>
                             </a>
-                            <a href="./Template/Information.htm" class="header_navbar-icon-link header_navbar-link--strong">
+                            <a href="#" class="header_navbar-icon-link header_navbar-link--strong" id="account-link">
                                 Tài khoản
                             </a>
                         </a>
@@ -1063,4 +1063,9 @@
 </body>
 <script src="../../main.js"></script>
 <script src="../cart.js"></script>
+<script>
+    
+    const basePath = localStorage.getItem('basePath');
+    console.log(basePath);
+</script>
 </html>

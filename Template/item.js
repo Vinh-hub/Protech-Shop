@@ -43,8 +43,10 @@ function handleBuyNow() {
         window.location.href = `${basePath}Template/Category/formNK.htm`;
         // return;
     }
+    if (isLoggedIn){
     alert("Đang chuyển đến trang thanh toán...");
     window.location.href = `${basePath}Template/Category/Info.htm`;// Chuyển hướng đến trang thanh toán
+    }
 }
 
 // Cập nhật trạng thái nút khi đăng nhập/đăng xuất

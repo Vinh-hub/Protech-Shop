@@ -224,7 +224,7 @@ function handleAddToCart(button) {
     alert("Item added to cart!");
 }
 document.addEventListener("DOMContentLoaded", () => {
-    const basePath = window.location.origin + windown.location.pathname.substring(0, windown.location.pathname.lastIndexOf('/') + 1 );
+    const basePath = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1 );
     localStorage.setItem('basePath', basePath);
     console.log(localStorage.getItem('basePath'));
 

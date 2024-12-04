@@ -287,6 +287,11 @@
                                 <td>
                                     <button class="btn view">Xem</button>
                                 </td>
+
+                                <tr class="no-product-row" style="display:none">
+                                  <td colspan="7" class="text-center">Không tìm thấy sản phẩm</td>
+                              </tr>
+
                             </tbody>
                           </table>
                         </div>
@@ -386,7 +391,32 @@ function filterByStatus() {
   });
 }
 
-// Hiển thị chi tiết đơn hàng
+// // Hiển thị chi tiết đơn hàng
+// function viewOrderDetails() {
+//   const viewButtons = document.querySelectorAll(".btn.view");
+//   viewButtons.forEach((button) => {
+//     button.addEventListener("click", function () {
+//       // Lấy hàng tương ứng (row) mà nút "Xem" được bấm
+//       const row = this.closest("tr");
+
+//       // Lấy thông tin chi tiết từ các ô trong hàng
+//       const orderId = row.cells[1].textContent.trim();
+//       const customerName = row.cells[2].textContent.trim();
+//       const productName = row.cells[3].textContent.trim();
+//       const quantity = row.cells[4].textContent.trim();
+//       const totalAmount = row.cells[5].textContent.trim();
+//       const orderStatus = row.cells[6].textContent.trim();
+
+//       // Tạo URL với các tham số (query string) để chuyển dữ liệu sang trang chi tiết
+//       const url = `chiTiet.htm?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
+//       // console.log(url);
+//       // Chuyển hướng đến trang chiTiet.html với dữ liệu của đơn hàng
+//       window.location.href = url;
+//     });
+
+//   });
+// }
+// Chức năng xem chi tiết
 function viewOrderDetails() {
   const viewButtons = document.querySelectorAll(".btn.view");
   viewButtons.forEach((button) => {
@@ -404,13 +434,55 @@ function viewOrderDetails() {
 
       // Tạo URL với các tham số (query string) để chuyển dữ liệu sang trang chi tiết
       const url = `chiTiet.htm?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
-      // console.log(url);
+      
       // Chuyển hướng đến trang chiTiet.html với dữ liệu của đơn hàng
       window.location.href = url;
     });
   });
 }
 
+// Chức năng lọc theo ngày
+document.getElementById('filterDateBtn').addEventListener('click', function() {
+  const startDate = document.getElementById('startDate').value; // Ngày bắt đầu
+  const endDate = document.getElementById('endDate').value; // Ngày kết thúc
+  const rows = document.querySelectorAll("#sampleTable tbody tr"); // Lấy tất cả các dòng đơn hàng
+  const noProductRow = document.querySelector(".no-product-row"); // Dòng thông báo không tìm thấy sản phẩm
+  let productFound = false; // Biến kiểm tra xem có đơn hàng nào thỏa điều kiện không
+
+  // Nếu người dùng đã chọn cả ngày bắt đầu và kết thúc
+  if (startDate && endDate) {
+    const startDateObj = new Date(startDate); // Chuyển đổi startDate thành đối tượng Date
+    const endDateObj = new Date(endDate); // Chuyển đổi endDate thành đối tượng Date
+
+    rows.forEach((row) => {
+      const rowDate = row.getAttribute('data-date'); // Lấy ngày từ thuộc tính data-date của mỗi dòng
+      const rowDateObj = new Date(rowDate); // Chuyển đổi ngày của dòng thành đối tượng Date
+
+      // Kiểm tra xem ngày của đơn hàng có nằm trong khoảng ngày được chọn hay không
+      if (rowDateObj >= startDateObj && rowDateObj <= endDateObj) {
+        row.style.display = ""; // Hiển thị dòng nếu trong khoảng ngày
+        productFound = true; // Đánh dấu là có sản phẩm
+      } else {
+        row.style.display = "none"; // Ẩn dòng nếu không trùng khớp ngày
+      }
+    });
+  } else {
+    // Nếu không có ngày bắt đầu hoặc ngày kết thúc, hiển thị tất cả các dòng
+    rows.forEach((row) => {
+      row.style.display = ""; // Hiển thị tất cả các dòng
+    });
+  }
+
+  // Hiển thị hoặc ẩn dòng thông báo "Không tìm thấy sản phẩm"
+  if (!productFound) {
+    noProductRow.style.display = ""; // Hiển thị dòng không tìm thấy nếu không có đơn hàng nào thỏa điều kiện
+  } else {
+    noProductRow.style.display = "none"; // Ẩn dòng không tìm thấy nếu có ít nhất một đơn hàng thỏa điều kiện
+  }
+});
+
+// Gọi chức năng xem chi tiết khi tải trang
+viewOrderDetails();
 
 // Sắp xếp các đơn hàng theo địa chỉ giao hàng
 function sortOrdersByAddress() {

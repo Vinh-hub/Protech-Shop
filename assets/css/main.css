@@ -4,8 +4,8 @@
 }
 
 .header_first{
-   background-color: #EFFFF4;
-   height:43px;
+   background-color: white;
+   height:25px;
 }
 
 /*Header*/
@@ -2200,4 +2200,22 @@ li.is-active {
 .styles__Tab-sc-b2w09e-2.active {
     color: rgb(13, 92, 182);
     border-bottom: 2px solid rgb(13, 92, 182);
+}
+.button-item{
+    font-size: 1.4rem;
+    color:white;
+    font-weight: 550;
+}
+
+.button-item-order{
+    font-size: 1.4rem;
+    color:white;
+    background-color: #007bff;
+    font-weight: 550;
+    width:488px;
+    margin-top:30px;
+    padding:10px;
+    border:1px solid #007bff;
+    border-radius: 5px;
+    cursor:pointer;
 }

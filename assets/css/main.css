@@ -4,8 +4,8 @@
 }
 
 .header_first{
-   background-color: #EFFFF4;
-   height:43px;
+   background-color: white;
+   height:25px;
 }
 
 /*Header*/
@@ -28,7 +28,7 @@
 .header_navbar-search{
     display:flex;
     justify-content: space-between;
-    gap:40px;
+    gap:50px;
     align-items: center;
    
 }

@@ -357,3 +357,10 @@ button {
     padding: 8px 12px;
     height: 40px;
 }
+
+.first{
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}

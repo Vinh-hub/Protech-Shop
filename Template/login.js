@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
+const basePath = localStorage.getItem('basePath');
+console.log(basePath);
     // Xử lý đăng nhập
     if (btnLogin && textLogin && passwordLogin) {
         btnLogin.addEventListener('click', function () {
@@ -80,9 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Điều hướng theo loại người dùng
                     if (usernameInput === "admin") {
-                        window.location.href = "http://127.0.0.1:5500/Admin/dashboard.htm"; // Trang dành cho admin
+                        window.location.href = `${basePath}Admin/dashboard.html`; // Trang dành cho admin
                     } else {
-                        window.location.href = "http://127.0.0.1:5500/index.htm"; // Trang dành cho user
+                        window.location.href = `${basePath}index.htm`; // Trang dành cho user
                     }
 
                     localStorage.setItem('isLoggedIn', 'true'); // Lưu trạng thái đăng nhập

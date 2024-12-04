@@ -984,8 +984,13 @@
     <!-- <script>
         window.location.href = window.location.origin + "./Admin/dashboard.htm";
     </script> -->
-    <!-- <script src="./Template/login.js"></script> -->
-    <script src="./Template/logout.js"></script>
+    <!-- <script>
+        const basePath = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf )
+        localStorage.setItem('basePath', basePath );
+        console.log(localStorage.getItem('basePath'));
+    </script> -->
+
+    <!-- <script src="./Template/logout.js"></script> -->
     <script src="./Template/cart.js"></script>
 </body>
 </html>

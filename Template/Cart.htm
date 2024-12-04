@@ -341,6 +341,9 @@ function movePage(url, query) {
     let targetUrl = `http://127.0.0.1:5500/${url}?query=${encodeURIComponent(query)}`;
     window.location.href = targetUrl;  
 };
+
+const basePath = localStorage.getItem('basePath');
+console.log(basePath);
 </script>
 
 <script src="cart.js"></script>   

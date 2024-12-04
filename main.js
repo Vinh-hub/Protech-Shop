@@ -224,8 +224,13 @@ function handleAddToCart(button) {
     alert("Item added to cart!");
 }
 document.addEventListener("DOMContentLoaded", () => {
-    const accountLink = document.getElementById('account-link'); // Tham chiếu đến thẻ tài khoản
-    const accountIconLink = document.getElementById('account-icon-link'); // Tham chiếu đến thẻ biểu tượng tài khoản
+    const basePath = window.location.origin + windown.location.pathname.substring(0, windown.location.pathname.lastIndexOf('/') + 1 );
+    localStorage.setItem('basePath', basePath);
+    console.log(localStorage.getItem('basePath'));
+
+const accountLink = document.getElementById('account-link'); //Tham chieu den the tai khoan
+const accountIconLink = document.getElementById('account-icon-link');
+
 
     // Hàm chuyển hướng theo trạng thái đăng nhập
     function handleAccountLinkClick(event) {
@@ -234,10 +239,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if (isLoggedIn) {
             // Nếu đã đăng nhập, chuyển đến trang thông tin
-            window.location.href = '../../Template/Information.htm'; 
+            window.location.href = `${basePath}Template/Infomation.htm`; 
         } else {
             // Nếu chưa đăng nhập, chuyển đến trang đăng ký
-            window.location.href = '../../Template/Category/formNK.htm'; 
+            window.location.href = `${basePath}Template/Category/formNK.htm`; 
         }
     }
 

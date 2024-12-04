@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProTech - Mua hàng Online giá rẻ</title>
-    <link rel="icon" type="image/x-icon" href="../../assets/imgs/logo-tab.png">
-    <link rel="stylesheet" href="../../normalize.css">
+    <link rel="icon" type="image/x-icon" href="../assets/imgs/logo-tab.png">
+    <link rel="stylesheet" href="../normalize.css">
     <!-- assets -->
-    <link rel="stylesheet" href="../../assets/css/base.css">
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/grid.css">
-    <link rel="stylesheet" href="../../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
     <!--fonts-->
     <link rel="stylesheet" href="../../assets/fonts/fontawesome-free-6.6.0-web/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,8 +32,8 @@
                           
                             
                         <div class="header_width-search">
-                            <a href="../../index.htm" class="header_logo">
-                                <img class="header_logo-img " src="../../assets/imgs/logo.png" alt="ProTech-logo" width="96" height="40">
+                            <a href="../index.htm" class="header_logo">
+                                <img class="header_logo-img " src="../assets/imgs/logo.png" alt="ProTech-logo" width="96" height="40">
                             </a>
                         </div>
                             
@@ -237,52 +237,82 @@
                                         Quản lý đổi trả
                                     </a>
                                 </li>
-                                <li class="category__item">
-                                    <a href="../Template/Noti.htm" class="category__item-link">
-                                        <i class="category__item-icon fa-regular fa-envelope"></i>
-                                        Thông báo của tôi
-                                    </a>
-                               </li>
-                               <li class="category__item">
-                                    <a href="../Template/Return.htm" class="category__item-link">
-                                        <i class="category__item-icon fa-solid fa-rotate-left"></i>
-                                        Quản lý đổi trả
-                                    </a>
-                                </li>
                             </ul>
                         </nav>
                         <button type="button" class="logout_button">
                             Đăng xuất      
-                        </button>
+                        </button>          
                     </div>
                     <div class="col l-10 m-12 c-12">
-                        <div class="information-page">
+                        <div class="information-pagee">
                             <div class="information-heading">
-                                <h3>Quản lý đơn hàng</h3>
+                                <h3>Lịch sử mua hàng</h3>
                             </div>
                             <div class="information-right">
                                 <div class="styles__StyledTab-sc-e27b7w-2 krSXKE">
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 kJvPK">Tất cả đơn</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Chờ thanh toán</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đang xử lý</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đang vận chuyển</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đã giao</div>
-                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">Đã huỷ</div>
+                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">MÃ ĐƠN</div>
+                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">NGÀY MUA</div>
+                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">ĐỊA CHỈ</div>
+                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">TRẠNG THÁI</div>
+                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">TỔNG TIỀN</div>
+                                    <div width="16.666666666666668%" class="styles__Tab-sc-e27b7w-3 czMhB">CHI TIẾT</div>
                                 </div>
 
                                 <div class="orders">
                                     <!-- Nếu không có đơn -->
-                                    <div class="styles__EmptyCpn-sc-1twarw-0 hggZkm" >
+                                    <!-- <div class="styles__EmptyCpn-sc-1twarw-0 hggZkm" >
                                         <img src="https://frontend.tikicdn.com/_desktop-next/static/img/account/empty-order.png" alt="Empty Order">
                                         <p>Chưa có đơn hàng</p>
-                                    </div>
+                                    </div> -->
                                     <!-- Đơn hàng -->
-                                    <div class="order-item" data-status="Chờ thanh toán">
-                                        <img id="item-img" src="../assets/imgs/iphone-15.png"> 
-                                        Iphone 16 Promax 256gb - Chờ thanh toán 
+                                    <div class="orders-item" data-status="Chờ thanh toán">
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">001</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">4/12/2024</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">45, Long Hòa</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">Đã giao</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">4.999.000đ</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb"><a href="OrdersDetail.htm" class="view-link">XEM</a>
+                                        </div>
                                     </div>
+                                    <div class="orders-item" data-status="Chờ thanh toán">
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">002</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">5/12/2024</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">45, Long Hòa</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">Đã giao</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">19.999.000đ</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb"><a href="OrdersDetail.htm" class="view-link">XEM</a>
+                                        </div>
+                                    </div>
+                                    <div class="orders-item" data-status="Chờ thanh toán">
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">003</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">6/11/2024</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">45, Long Hòa</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">Đã giao</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">5.999.000đ</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb"><a href="OrdersDetail.htm" class="view-link">XEM</a>
+                                        </div>
+                                    </div>
+                                    <div class="orders-item" data-status="Chờ thanh toán">
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">004</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">2/7/2024</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">45, Long Hòa</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">Đã giao</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">999.000đ</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb"><a href="OrdersDetail.htm" class="view-link">XEM</a>
+                                        </div>
+                                    </div>
+                                    <div class="orders-item" data-status="Chờ thanh toán">
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">005</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">1/10/2024</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">45, Long Hòa</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">Đã giao</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb">2.999.000đ</div>
+                                        <div class="styles__Tab-sc-e27b7w-3 czMhBb"><a href="OrdersDetail.htm" class="view-link">XEM</a>
+                                        </div>
+                                    </div>
+                                    
 
-                                    <div class="order-item" data-status="Đang xử lý">
+                                    <!-- <div class="order-item" data-status="Đang xử lý">
                                         <img id="item-img" src="../assets/imgs/m55-den.webp"> 
                                        Điện thoại Samsung Galaxy S23 Ultra 5G - Đang xử lý
                                     </div>
@@ -300,16 +330,14 @@
                                     <div class="order-item" data-status="Đang vận chuyển">
                                         <img id="item-img" src="../assets/imgs/iMac.webp">
                                         iMac 24inch 4.5K M3 16GB/256GB - Đang vận chuyển 
-                                    </div>
+                                    </div> -->
 
                                 </div>
-                            </div>                                                         
-                            </div>
+                            </div>               
                         </div>
                     </div>
                 </div>
         </section>
-    </div>
         <footer class="end">
             <div class="grid wide">
                 <div class="row row-end">
@@ -446,9 +474,9 @@
                     <span class="end__heading-end-information">Địa chỉ: 273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh, Vietnam</span>
                     <span class="end__heading-end-information">Chịu Trách Nhiệm Quản Lý Nội Dung: Thành Viên 6713</span>
                     <span class="end__heading-end-information">© 2024 - Bản quyền thuộc về Công ty ProTech</span>
-            </div>
+                </div>
         </footer>
-        <script src="Orders.js"></script>
+    </div>
         <script src="cart.js"></script>
         <script src="logout.js"></script>
 </body>

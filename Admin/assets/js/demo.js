@@ -150,3 +150,19 @@ demo = {
     
 }
 
+const viewButtons = document.querySelectorAll('.btn.view');
+
+// Thêm sự kiện click vào từng nút "Xem"
+viewButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const row = button.closest('tr'); // Lấy hàng cha của nút
+        const code = row.children[1].textContent;
+        const name = row.children[2].textContent;
+        const amount = row.children[3].textContent;
+
+        // Chuyển hướng đến trang chi tiết
+        const url = `detail.html?code=${encodeURIComponent(code)}&name=${encodeURIComponent(name)}&amount=${encodeURIComponent(amount)}`;
+        window.location.href = url;
+    });
+});
+

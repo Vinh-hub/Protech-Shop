@@ -247,6 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (accountIconLink) {
+        
         accountIconLink.addEventListener('click', handleAccountLinkClick);
     }
 });

@@ -266,13 +266,13 @@
                                     <button class="btn view">Xem</button>
                                 </td>
                               <tr>
-                                <td data-date="2024-03-19" width="10"><input type="checkbox" name="check1" value="1"></td>
-                                <td>AL3947</td>
-                                <td>Phạm Thị Ngọc</td>
-                                <td>Laptop Dell Core i5</td>
-                                <td>2 </td>
-                                <td>19.770.000 đ</td>
-                                <td><span class="badge bg-warning">Đang giao hàng</span></td>
+                                <td data-date="2024-05-19" width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td>ER3835</td>
+                                <td>Nguyễn Thị Mỹ Yến</td>
+                                <td>Đồng hồ thông minh</td>
+                                <td>1 </td>
+                                <td>16.770.000 đ</td>
+                                <td><span class="badge bg-info">Chờ thanh toán</span></td>
                                 <td>
                                     <button class="btn view">Xem</button>
                                 </td>
@@ -391,7 +391,7 @@ function filterByStatus() {
   });
 }
 
-// // Hiển thị chi tiết đơn hàng
+// Hiển thị chi tiết đơn hàng
 // function viewOrderDetails() {
 //   const viewButtons = document.querySelectorAll(".btn.view");
 //   viewButtons.forEach((button) => {
@@ -416,30 +416,62 @@ function filterByStatus() {
 
 //   });
 // }
-// Chức năng xem chi tiết
-function viewOrderDetails() {
-  const viewButtons = document.querySelectorAll(".btn.view");
-  viewButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Lấy hàng tương ứng (row) mà nút "Xem" được bấm
-      const row = this.closest("tr");
+// // Chức năng xem chi tiết
+// function viewOrderDetails() {
+//   const viewButtons = document.querySelectorAll(".btn.view");
+//   viewButtons.forEach((button) => {
+//     button.addEventListener("click", function () {
+//       // Lấy hàng tương ứng (row) mà nút "Xem" được bấm
+//       const row = this.closest("tr");
 
-      // Lấy thông tin chi tiết từ các ô trong hàng
-      const orderId = row.cells[1].textContent.trim();
-      const customerName = row.cells[2].textContent.trim();
-      const productName = row.cells[3].textContent.trim();
-      const quantity = row.cells[4].textContent.trim();
-      const totalAmount = row.cells[5].textContent.trim();
-      const orderStatus = row.cells[6].textContent.trim();
+//       // Lấy thông tin chi tiết từ các ô trong hàng
+//         const customerName = row.cells[2].textContent.trim();
+//         const productName = row.cells[3].textContent.trim();
+//         const quantity = row.cells[4].textContent.trim();
+//         const totalPrice = row.cells[5].textContent.trim();
+//         const status = row.cells[6].textContent.trim();
 
-      // Tạo URL với các tham số (query string) để chuyển dữ liệu sang trang chi tiết
-      const url = `chiTiet.htm?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
+//       // Tạo URL với các tham số (query string) để chuyển dữ liệu sang trang chi tiết
+//       const url = `chiTiet.htm?id=${encodeURIComponent(orderId)}&customer=${encodeURIComponent(customerName)}&product=${encodeURIComponent(productName)}&quantity=${encodeURIComponent(quantity)}&total=${encodeURIComponent(totalAmount)}&status=${encodeURIComponent(orderStatus)}`;
       
-      // Chuyển hướng đến trang chiTiet.html với dữ liệu của đơn hàng
-      window.location.href = url;
+//       // Chuyển hướng đến trang chiTiet.html với dữ liệu của đơn hàng
+//       window.location.href = url;
+//     });
+//   });
+// }
+// Lắng nghe sự kiện click trên các nút "Xem"
+document.querySelectorAll('.view').forEach(button => {
+    button.addEventListener('click', function () {
+        const row = button.closest('tr');  // Lấy dòng chứa nút "Xem"
+        const orderId = row.cells[1].textContent.trim();
+        const customerName = row.cells[2].textContent.trim();
+        const productName = row.cells[3].textContent.trim();
+        const quantity = row.cells[4].textContent.trim();
+        const totalPrice = row.cells[5].textContent.trim();
+        const status = row.cells[6].textContent.trim();
+
+        // Lưu thông tin vào sessionStorage
+        sessionStorage.setItem('orderId', orderId);
+        sessionStorage.setItem('customerName', customerName);
+        sessionStorage.setItem('productName', productName);
+        sessionStorage.setItem('quantity', quantity);
+        sessionStorage.setItem('totalPrice', totalPrice);
+        sessionStorage.setItem('status', status);
+
+        // Chuyển hướng đến trang detail.html
+        window.location.href = 'detail.html';
     });
-  });
-}
+});
+
+
+
+
+
+
+
+
+
+
 
 // Chức năng lọc theo ngày
 document.getElementById('filterDateBtn').addEventListener('click', function() {

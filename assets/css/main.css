@@ -28,7 +28,7 @@
 .header_navbar-search{
     display:flex;
     justify-content: space-between;
-    gap:50px;
+    gap:40px;
     align-items: center;
    
 }
@@ -1740,6 +1740,7 @@ li.is-active {
     animation: itemmove ease-in-out 0.4s;
   }
   .product-item-group:hover{
+    
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
     transform: translateY(-1.5px);
   }

@@ -6,6 +6,9 @@
   <title>Chi tiết đơn hàng</title>
 </head>
 <body>
+  <div class="main">
+
+  </div>
   <div class="container">
     <h1>Chi tiết đơn hàng</h1>
     <p><strong>ID đơn hàng:</strong> <span id="orderId"></span></p>
@@ -16,6 +19,17 @@
     <p><strong>Trạng thái:</strong> <span id="status" data-status=""></span></p>
     <a href="../Admin/typography.htm" class="back-btn">Quay lại</a>
   </div>
+
+</footer>
+<footer class="end__heading-end">
+<div class="end__heading-end-information-group">
+    <span class="end__heading-end-information end__heading-end-information-name"><b>CÔNG TY PROTECH</b></span>
+    <span class="end__heading-end-information">Địa chỉ: 273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh, Vietnam</span>
+    <span class="end__heading-end-information">Chịu Trách Nhiệm Quản Lý Nội Dung: Thành Viên 6713</span>
+    <span class="end__heading-end-information">© 2024 - Bản quyền thuộc về Công ty ProTech</span>
+</div>
+</footer>
+
   
 
 <style>
@@ -100,7 +114,57 @@ p strong {
 .back-btn:hover {
   background-color: #0056b3;
 }
+.end__heading-end{
+    background-color: var(--white-color);
+    margin: 10px 0 20px;
+    /* /* display:flex;
+    justify-content: center; */
+    /* position:fixed;
+    bottom:0;  */
+}
+.end__heading-end-list{
+    list-style: none ;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 40PX;
+}
+.end__heading-end-item{
+    padding: 0 20px;
+}
+.end__heading-end-item:not(:last-child){
+    border-right: 1px solid rgba(51, 51, 51, 0.2);
+}
+.end__heading-country-link{
+    font-size: 1.4rem;
+    color: rgba(51, 51, 51, 0.7);
+}
+.end__heading-end-certificate{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+}
 
+.end__heading-end-information-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #f5f5fa;
+    
+}
+.end__heading-end-information{
+    font-size: 1rem;
+    color: rgba(51, 51, 51, 0.9);
+    margin-top: 10px;
+}
+.end__heading-end-information-name{
+    margin-bottom: 1px;
+}
 </style>
 
   <script>

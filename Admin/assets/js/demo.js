@@ -161,7 +161,7 @@ viewButtons.forEach(button => {
         const amount = row.children[3].textContent;
 
         // Chuyển hướng đến trang chi tiết
-        const url = `detail.html?code=${encodeURIComponent(code)}&name=${encodeURIComponent(name)}&amount=${encodeURIComponent(amount)}`;
+        const url = `detail.htm?code=${encodeURIComponent(code)}&name=${encodeURIComponent(name)}&amount=${encodeURIComponent(amount)}`;
         window.location.href = url;
     });
 });

@@ -1,191 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chi tiết đơn hàng</title>
-</head>
-<body>
-  <div class="main">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Đơn Hàng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-  </div>
-  <div class="container">
-    <h1>Chi tiết đơn hàng</h1>
-    <p><strong>ID đơn hàng:</strong> <span id="orderId"></span></p>
-    <p><strong>Khách hàng:</strong> <span id="customer"></span></p>
-    <p><strong>Sản phẩm:</strong> <span id="product"></span></p>
-    <p><strong>Số lượng:</strong> <span id="quantity"></span></p>
-    <p><strong>Tổng tiền:</strong> <span id="total"></span></p>
-    <p><strong>Trạng thái:</strong> <span id="status" data-status=""></span></p>
-    <a href="../Admin/typography.htm" class="back-btn">Quay lại</a>
-  </div>
+        body {
+            background-color: #f3f5f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-</footer>
-<footer class="end__heading-end">
-<div class="end__heading-end-information-group">
-    <span class="end__heading-end-information end__heading-end-information-name"><b>CÔNG TY PROTECH</b></span>
-    <span class="end__heading-end-information">Địa chỉ: 273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh, Vietnam</span>
-    <span class="end__heading-end-information">Chịu Trách Nhiệm Quản Lý Nội Dung: Thành Viên 6713</span>
-    <span class="end__heading-end-information">© 2024 - Bản quyền thuộc về Công ty ProTech</span>
-</div>
-</footer>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 15px;
+            box-shadow: 8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+            overflow: hidden;
+            animation: fadeIn 1.2s ease-in-out;
+        }
 
-  
+        .header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+        }
 
-<style>
-  /* Tổng thể */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-/* Container chính */
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
+        .order-info {
+            padding: 20px;
+        }
 
-/* Tiêu đề trang */
-h1 {
-  text-align: center;
-  color: #007BFF;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
+        .order-info h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0056b3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 5px solid #0056b3;
+            padding-left: 10px;
+        }
 
-/* Thông tin chi tiết */
-p {
-  font-size: 1rem;
-  margin: 10px 0;
-}
+        .order-info p {
+            margin-bottom: 8px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
 
-p strong {
-  font-weight: bold;
-  color: #555;
-}
+        .order-info p strong {
+            color: #0056b3;
+            margin-right: 5px;
+        }
 
-/* Phong cách riêng cho từng trường */
-#orderId {
-  color: #007BFF;
-}
+        .order-items {
+            padding: 20px;
+        }
 
-#status {
-  font-weight: bold;
-}
+        .order-items h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0056b3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 5px solid #0056b3;
+            padding-left: 10px;
+        }
 
-#status[data-status="Hoàn thành"] {
-  color: #28a745; /* Màu xanh lá */
-}
+        .order-items table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
 
-#status[data-status="Chờ thanh toán"] {
-  color: #17a2b8; /* Màu xanh dương nhạt */
-}
+        .order-items th, .order-items td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
 
-#status[data-status="Đang giao hàng"] {
-  color: #ffc107; /* Màu vàng */
-}
+        .order-items th {
+            background: #f0f4f8;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-#status[data-status="Đã hủy"] {
-  color: #dc3545; /* Màu đỏ */
-}
+        .order-items tr:hover {
+            background-color: #e8f0fe;
+        }
 
-/* Nút quay lại */
-.back-btn {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: #fff;
-  text-align: center;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
+        .order-summary {
+            padding: 20px;
+            background: #f9fbfd;
+            border-top: 2px solid #ddd;
+        }
 
-.back-btn:hover {
-  background-color: #0056b3;
-}
-.end__heading-end{
-    background-color: var(--white-color);
-    margin: 10px 0 20px;
-    /* /* display:flex;
-    justify-content: center; */
-    /* position:fixed;
-    bottom:0;  */
-}
-.end__heading-end-list{
-    list-style: none ;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 40PX;
-}
-.end__heading-end-item{
-    padding: 0 20px;
-}
-.end__heading-end-item:not(:last-child){
-    border-right: 1px solid rgba(51, 51, 51, 0.2);
-}
-.end__heading-country-link{
-    font-size: 1.4rem;
-    color: rgba(51, 51, 51, 0.7);
-}
-.end__heading-end-certificate{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 48px;
-}
+        .order-summary .total {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: right;
+            color: #0056b3;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
 
-.end__heading-end-information-group{
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f3f5f9;
+            font-size: 14px;
+            color: #666;
+            border-top: 2px solid #ddd;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .footer p {
+            font-weight: 500;
+        }
+
+        .btn-back {
+            background-color: #78aadf;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            display: inline-block;
+            margin-bottom:20px;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+        .end__heading-end-information-group-sub{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: #f5f5fa;
-    
+    background-color: white;
+
 }
-.end__heading-end-information{
-    font-size: 1rem;
-    color: rgba(51, 51, 51, 0.9);
-    margin-top: 10px;
-}
-.end__heading-end-information-name{
-    margin-bottom: 1px;
-}
-</style>
 
-  <script>
 
-// Đọc tham số từ URL
-const urlParams = new URLSearchParams(window.location.search);
-const orderId = urlParams.get('id');
-const customerName = urlParams.get('customer');
-const productName = urlParams.get('product');
-const quantity = urlParams.get('quantity');
-const totalAmount = urlParams.get('total');
-const orderStatus = urlParams.get('status');
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
 
-// Hiển thị thông tin trong các phần tử HTML
-setElementText('orderId', orderId);
-setElementText('customer', customerName, 'Unknown');
-setElementText('product', productName, 'Unknown');
-setElementText('quantity', quantity, '0');
-setElementText('total', totalAmount ? formatCurrency(totalAmount) : '0 ₫');
-setElementText('status', orderStatus, 'Pending');
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<div class="container">
+    <div class="header">
+        <h1>Chi Tiết Đơn Hàng</h1>
+    </div>
 
-  </script>
+    <div class="order-info">
+        <h2>Thông Tin Đơn Hàng</h2>
+        <p><strong>Mã Đơn Hàng:</strong>M0247<span id="orderId"></span></p>
+        <p><strong>Ngày Đặt Hàng:</strong> 06-12-2024<span id="orderDate"></span></p>
+        <p><strong>Tên Khách Hàng:</strong>Vũ Đức Phát<span id="customerName"></span></p>
+        <p><strong>Địa Chỉ:</strong>234 An Dương Vương phường 3 quận 5 <span id="address"></span></p>
+    </div>
+
+    <div class="order-items">
+        <h2>Sản Phẩm</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Số Lượng</th>
+                    <th>Thành Tiền</th>
+                    <th>Trạng thái</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="productName">Điện thoại 14 Promax</td>
+                <td id="quantity">3</td>
+                <td id="totalPrice">3,000,000 đ</td>
+                <td id="status">Đã giao</td>            
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="order-summary">
+        <p class="total">Tổng Cộng: 9.999.000 <span id="totalAmount"></span></p>
+        <button class="btn-back" onclick="window.location.href = 'typography.htm';">Quay lại trang Quản lí đơn hàng</button>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Công Ty ProTech. All rights reserved.</p>
+</div>
+
+
+<script>
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Lấy dữ liệu từ sessionStorage
+//     const orderId = sessionStorage.getItem('orderId');
+//     const customerName = sessionStorage.getItem('customerName');
+//     const productName = sessionStorage.getItem('productName');
+//     const quantity = sessionStorage.getItem('quantity');
+//     const totalPrice = sessionStorage.getItem('totalPrice');
+//     const status = sessionStorage.getItem('status');
+
+//     // Gán dữ liệu vào các phần tử trong trang detail.html
+//     if (productName && quantity && totalPrice && status) {
+//         document.getElementById('orderId').textContent = orderId;
+//         document.getElementById('customerName').textContent = customerName;
+//         document.getElementById('productName').textContent = productName;
+//         document.getElementById('quantity').textContent = quantity;
+//         document.getElementById('totalPrice').textContent = totalPrice;
+//         document.getElementById('status').textContent = status;
+
+//         // Cập nhật tổng cộng (có thể là tổng tiền của sản phẩm)
+//         document.getElementById('totalAmount').textContent = totalPrice;
+//     }
+// });
+
+
+ 
+</script>
 </body>
+
+
 </html>

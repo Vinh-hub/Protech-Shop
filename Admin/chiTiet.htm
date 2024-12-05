@@ -169,21 +169,19 @@ p strong {
 
   <script>
     // Lấy tham số từ URL
-const urlParams = new URLSearchParams(window.location.search);
-const orderId = urlParams.get('id');
-const customerName = urlParams.get('customer');
-const productName = urlParams.get('product');
-const quantity = urlParams.get('quantity');
-const totalAmount = urlParams.get('total');
-const orderStatus = urlParams.get('status');
+document.addEventListener("DOMContentLoaded", () => {
+    const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
 
-// Hiển thị thông tin trong các phần tử HTML
-document.getElementById('orderId').textContent = orderId;
-document.getElementById('customer').textContent = customerName;
-document.getElementById('product').textContent = productName;
-document.getElementById('quantity').textContent = quantity;
-document.getElementById('total').textContent = totalAmount;
-document.getElementById('status').textContent = orderStatus;
+    if (orderDetails) {
+        document.getElementById("orderId").textContent = orderDetails.orderId;
+        document.getElementById("customer").textContent = orderDetails.customer;
+        document.getElementById("orderDate").textContent = orderDetails.date;
+        document.getElementById("total").textContent = orderDetails.total;
+        document.getElementById("totalAmount").textContent = orderDetails.total;
+    } else {
+        alert("Không có dữ liệu đơn hàng. Vui lòng quay lại!");
+    }
+});
 
   </script>
 </body>

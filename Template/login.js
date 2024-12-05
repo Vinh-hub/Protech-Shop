@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const showLoginBtn = document.getElementById('showLogin'); // Nút chuyển sang trang đăng nhập
 
     // Danh sách người dùng mẫu
-    const users = [
-        { username: "user", password: "123456" },
-        { username: "admin", password: "admin123" }
-    ];
+    // const users = [
+    //     { username: "user", password: "123456" },
+    //     { username: "admin", password: "admin123" }
+    // ];
 
     // Kiểm tra trạng thái đăng nhập khi tải trang
     let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; 
@@ -70,34 +70,51 @@ document.addEventListener('DOMContentLoaded', function () {
     const basePath = localStorage.getItem('basePath');
     console.log(basePath);
     // Xử lý đăng nhập
-    if (btnLogin && textLogin && passwordLogin) {
+    // if (btnLogin && textLogin && passwordLogin) {
+    //     btnLogin.addEventListener('click', function () {
+    //         const usernameInput = textLogin.value.trim();
+    //         const passwordInput = passwordLogin.value.trim();
+
+    //         if (usernameInput && passwordInput) {
+    //             const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
+    //             if (user) {
+    //                 alert("Đăng nhập thành công!");
+
+    //                 // Điều hướng theo loại người dùng
+    //                 if (usernameInput === "admin") {
+    //                     window.location.href = `${basePath}Admin/dashboard.htm`; // Trang dành cho admin
+    //                 } else {
+    //                     window.location.href = `${basePath}index.htm`; // Trang dành cho user
+    //                 }
+
+    //                 localStorage.setItem('isLoggedIn', 'true'); // Lưu trạng thái đăng nhập
+    //             } else {
+    //                 alert("Tên đăng nhập hoặc mật khẩu không chính xác.");
+    //             }
+    //         } else {
+    //             alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
+    //         }
+    //     });
+    // } else {
+    //     console.error("Không tìm thấy các phần tử cần thiết trong DOM.");
+    // }
+
+    if (btnLogin) {
         btnLogin.addEventListener('click', function () {
-            const usernameInput = textLogin.value.trim();
-            const passwordInput = passwordLogin.value.trim();
-
-            if (usernameInput && passwordInput) {
-                const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
-                if (user) {
-                    alert("Đăng nhập thành công!");
-
-                    // Điều hướng theo loại người dùng
-                    if (usernameInput === "admin") {
-                        window.location.href = `${basePath}Admin/dashboard.htm`; // Trang dành cho admin
-                    } else {
-                        window.location.href = `${basePath}index.htm`; // Trang dành cho user
-                    }
-
-                    localStorage.setItem('isLoggedIn', 'true'); // Lưu trạng thái đăng nhập
-                } else {
-                    alert("Tên đăng nhập hoặc mật khẩu không chính xác.");
-                }
-            } else {
-                alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
-            }
+            // Luôn hiển thị thông báo đăng nhập thành công
+            alert("Đăng nhập thành công!");
+    
+            // Điều hướng đến index.htm
+            window.location.href = `${basePath}index.htm`;
+    
+            // Lưu trạng thái đăng nhập
+            localStorage.setItem('isLoggedIn', 'true');
         });
     } else {
         console.error("Không tìm thấy các phần tử cần thiết trong DOM.");
     }
+    
+
 
     // Hàm hiển thị / ẩn mật khẩu
     window.daoTT = function () {

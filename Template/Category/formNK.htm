@@ -86,7 +86,9 @@
                                     <p class="auth-form__aside-help">
                                        <a href="#" class="auth-form__aside-help-link ">Quên mật khẩu</a>
                                        <span class="auth-form__aside-help-link-separate"></span>
-                                       <a href="#" class="auth-form__aside-help-link">Cần trơ giúp?</a> 
+                                       <a href="#" class="auth-form__aside-help-link">Cần trơ giúp?</a>
+                                       <span class="auth-form__aside-help-link-separate"></span>
+                                       <a href="#" class="auth-form__aside-help-link" id="dnAdmin">Đăng nhập với tư cách là Admin</a>
                                     </p>
                                 </article>
                                 <footer class="auth-form__controls">
@@ -248,8 +250,16 @@
         </footer>
     </div>
     <script src="../login.js"></script>
-    <!-- <script src="../logout.js"></script> -->
-    <!-- <script>
+    <script>
+        const btnAdmin = document.getElementById('dnAdmin');  
+    const basePath = localStorage.getItem('basePath');
+
+        btnAdmin.addEventListener('click', ()=>{
+        window.location.href = `${basePath}Template/Category/formNKAdmin.htm`;
+        
+        });
+    </script> 
+   <!-- <script>
 var signUpSection = document.getElementById('signUpSection');
 var loginSection = document.getElementById('loginSection');
 var btnSignUp = document.getElementById('showSignUp');
@@ -290,6 +300,6 @@ function daoTT() {
   let mk = document.getElementById("mk");
   mk.type = (mk.type === "password")? "text":"password";
 } ;
-    </script> -->
+ </script> -->
 </body>
 </html>

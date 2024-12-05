@@ -2328,3 +2328,8 @@ li.is-active {
     background-color: white;
 
 }
+#dnAdmin,
+.auth-form__aside-help-link {
+    text-decoration: none;
+    color: var(--text-color);
+}

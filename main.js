@@ -33,7 +33,7 @@ function render(list) {
         productList.innerHTML ='<div class="no-product"><span class="no-product__text">Không tìm thấy sản phẩm</span></div>';
 
         nonepagination.style.display = 'none';
-        pagination.style.display = 'none';;
+        pagination.style.display = 'block';////
     }
 };
 
@@ -148,11 +148,11 @@ btndts.forEach(btndt => {
     });
 });
 
-        
+        ///////////////////////////////////////
 if (nonepagination && pagination) {
     if (itemProducts.length > 5) {
-        nonepagination.style.display = 'block';
-        pagination.style.display = 'none';
+        nonepagination.style.display = 'none';//block
+        pagination.style.display = 'flex';
     } else {
         nonepagination.style.display = 'none';
         pagination.style.display = 'flex';

@@ -2333,3 +2333,7 @@ li.is-active {
     text-decoration: none;
     color: var(--text-color);
 }
+.pagination-item--active .pagination-number-link{
+    background-color: var(--primary-color);
+    color: #fff;
+}

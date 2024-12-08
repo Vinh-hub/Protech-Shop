@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quản lý người dùng</h1>
+
+        <!-- Bảng quản lý người dùng -->
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>SĐT</th>
+                    <th>Vai trò</th>
+                    <th>Email</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nguyễn Văn Tiến</td>
+                    <td>0912345678</td>
+                    <th>Admin</th>
+                    <td>a@example.com</td>
+                    <td>
+                        <button class="btn-block">Khóa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Trần Thị Ngọc</td>
+                    <td>0987654321</td>
+                    <th>Khách hàng</th>
+                    <td>b@example.com</td>
+                    <td>
+                        <button class="btn-block">Khóa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ngô Tuấn Tú</td>
+                    <td>0933123456</td>
+                    <th>Khách hàng</th>
+                    <td>c@example.com</td>
+                    <td>
+                        <button class="btn-block">Khóa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Lê Văn Tuấn</td>
+                    <td>0933123456</td>
+                    <th>Quản trị viên</th>
+                    <td>c@example.com</td>
+                    <td>
+                        <button class="btn-block">Khóa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+         <!-- Nút Thêm Người Dùng -->
+         <button id="showAddFormBtn" >Thêm Người Dùng</button>
+    </div>
+<style>
+    /* Thiết lập kiểu chữ chung và margin */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f8fa;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #333;
+    }
+    
+    /* Container chính */
+    .container {
+        width: 90%;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Tiêu đề chính */
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    /* Bảng quản lý người dùng */
+    table {
+        width: 100%;
+        border-collapse: collapse; /* Hợp nhất các đường viền lại thành một */
+        background-color: #ffffff;
+    }
+    
+    /* Tiêu đề các cột */
+    th {
+        padding: 16px 20px;
+        text-align: center; /* Căn giữa nội dung trong tiêu đề */
+        font-weight: 700;
+        font-size: 16px;
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ddd; /* Đặt đường viền giữa các cột */
+    }
+    
+    /* Định dạng các ô dữ liệu */
+    td {
+        padding: 16px 20px;
+        text-align: center; /* Căn giữa nội dung trong ô */
+        font-size: 14px;
+        color: #555;
+        border: 1px solid #ddd; /* Đặt đường viền giữa các dòng */
+        vertical-align: middle; /* Căn giữa nội dung theo chiều dọc */
+    }
+    
+    /* Đảm bảo chiều rộng của cột */
+    td, th {
+        width: auto;
+    }
+    
+    /* Dòng tr bảng khi di chuột qua */
+    tr:nth-child(even) {
+        background-color: #fafafa;
+    }
+    
+    /* Dòng tr khi hover */
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+    
+    /* Các nút chức năng */
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Nút Khóa người dùng */
+    .btn-block {
+        background-color: #e74c3c;
+        color: white;
+        border: 1px solid #e74c3c;
+    }
+    
+    .btn-block:hover {
+        background-color: #c0392b;
+        border-color: #c0392b;
+    }
+    
+    /* Nút Xóa người dùng */
+    .btn-delete {
+        background-color: #3498db;
+        color: white;
+        border: 1px solid #3498db;
+    }
+    
+    .btn-delete:hover {
+        background-color: #2980b9;
+        border-color: #2980b9;
+    }
+    
+    /* Trạng thái người dùng */
+    .status {
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    .status.active {
+        background-color: #2ecc71;
+        color: white;
+        border: 1px solid #2ecc71;
+    }
+    
+    .status.blocked {
+        background-color: #e74c3c;
+        color: white;
+        border: 1px solid #e74c3c;
+    }
+    #showAddFormBtn {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+#showAddFormBtn:hover {
+    background-color: #2980b9;
+}
+</style>    
+    <script>
+   
+// // Function to unblock a user
+// function unblockUser(userId) {
+//     const row = document.querySelector(`#usersTable tr:nth-child(${userId})`);
+//     const statusCell = row.querySelector('.status');
+//     statusCell.classList.remove('blocked');
+//     statusCell.classList.add('active');
+//     statusCell.textContent = 'Đang hoạt động';
+
+//     const blockButton = row.querySelector('.btn-block');
+//     blockButton.textContent = 'Khóa';
+//     blockButton.setAttribute('onclick', `blockUser(${userId})`);
+// }
+
+// // Function to delete a user
+// function deleteUser(userId) {
+//     const row = document.querySelector(`#usersTable tr:nth-child(${userId})`);
+//     row.remove();
+// }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Lắng nghe sự kiện click trên các nút Khóa
+    const blockButtons = document.querySelectorAll('.btn-block');
+    blockButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            console.log('Khóa button clicked');
+            alert('Đã khóa người dùng.');
+        });
+    });
+
+    // Lắng nghe sự kiện click trên các nút Xóa
+    const deleteButtons = document.querySelectorAll('.btn-delete');
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            console.log('Xóa button clicked');
+            alert('Đã xóa người dùng.');
+        });
+    });
+});
+// Thêm người dùng
+document.getElementById('showAddFormBtn').addEventListener('click', function() {
+    // Chuyển hướng đến trang "thong-tin-nguoi-dung.html"
+    window.location.href = 'addNguoidung.htm';
+});
+
+
+
+    </script>
+    
+</body>
+</html>
+
+
+

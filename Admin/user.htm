@@ -35,7 +35,6 @@
 
     <div class="container">
         <div class="profile-header">
-            <img src="https://via.placeholder.com/100" alt="User Avatar">
             <div class="user-info">
                 <h2>ProTech</h2>
                 <p>Email: ProTech.@gmail.com</p>
@@ -114,5 +113,16 @@
 
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
+<script>
+    // Chọn các nút Change Password và Update Profile
+document.querySelector('a.btn[href="#"]:nth-of-type(1)').addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('Đã thay đổi password');
+});
 
+document.querySelectorAll('a.btn[href="#"]')[1].addEventListener('click', function(event) {
+    event.preventDefault();
+    alert('Đã cập nhật Profile');
+});
+</script>
 </html>

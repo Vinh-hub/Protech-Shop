@@ -42,6 +42,7 @@
             font-size: 16px;
             margin-left: 10px;
         }
+       
     </style>
 </head>
 <body>
@@ -109,4 +110,18 @@
         </div>
     </form>
 </body>
+<script>
+    // Chọn nút Thêm sản phẩm
+document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Ngăn form submit nếu có
+    alert('Đã thêm sản phẩm');
+    // Chuyển đến trang add-productList
+    window.location.href = 'Quanlisanpham.htm';
+});
+
+// Chọn nút Làm lại
+document.querySelector('button[type="reset"]').addEventListener('click', function() {
+    location.reload(); // Load lại trang
+});
+</script>
 </html>

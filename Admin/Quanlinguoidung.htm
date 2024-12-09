@@ -33,6 +33,8 @@
                     <td>
                         <button class="btn-block">Khóa</button>
                         <button class="btn-delete">Xóa</button>
+                        <button class="btn-sua">Sửa</button>
+
                     </td>
                 </tr>
                 <tr>
@@ -44,6 +46,8 @@
                     <td>
                         <button class="btn-block">Khóa</button>
                         <button class="btn-delete">Xóa</button>
+                        <button class="btn-sua">Sửa</button>
+
                     </td>
                 </tr>
                 <tr>
@@ -55,6 +59,8 @@
                     <td>
                         <button class="btn-block">Khóa</button>
                         <button class="btn-delete">Xóa</button>
+                        <button class="btn-sua">Sửa</button>
+
                     </td>
                 </tr>
 
@@ -67,6 +73,7 @@
                     <td>
                         <button class="btn-block">Khóa</button>
                         <button class="btn-delete">Xóa</button>
+                        <button class="btn-sua">Sửa</button>
                     </td>
                 </tr>
             </tbody>
@@ -180,7 +187,16 @@
         background-color: #2980b9;
         border-color: #2980b9;
     }
+    .btn-sua {
+        background-color: #cca56a;
+        color: white;
+        border: 1px solid #cca56a;
+    }
     
+    .btn-sua:hover {
+        background-color: #cca56a;
+        border-color: #cca56a;
+    }
     /* Trạng thái người dùng */
     .status {
         padding: 4px 10px;
@@ -216,53 +232,43 @@
 }
 </style>    
     <script>
-   
-// // Function to unblock a user
-// function unblockUser(userId) {
-//     const row = document.querySelector(`#usersTable tr:nth-child(${userId})`);
-//     const statusCell = row.querySelector('.status');
-//     statusCell.classList.remove('blocked');
-//     statusCell.classList.add('active');
-//     statusCell.textContent = 'Đang hoạt động';
-
-//     const blockButton = row.querySelector('.btn-block');
-//     blockButton.textContent = 'Khóa';
-//     blockButton.setAttribute('onclick', `blockUser(${userId})`);
-// }
-
-// // Function to delete a user
-// function deleteUser(userId) {
-//     const row = document.querySelector(`#usersTable tr:nth-child(${userId})`);
-//     row.remove();
-// }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Lắng nghe sự kiện click trên các nút Khóa
-    const blockButtons = document.querySelectorAll('.btn-block');
-    blockButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            console.log('Khóa button clicked');
-            alert('Đã khóa người dùng.');
+//Xóa và khóa người dùng
+document.querySelector('.btn-block').addEventListener('click', function() {
+            const confirmBlock = confirm('Bạn có chắc chắn muốn khóa không?');
+            if (confirmBlock) {
+                alert('Đã khóa thành công!');
+            } else {
+                alert('Hành động khóa đã bị hủy.');
+            }
         });
-    });
 
-    // Lắng nghe sự kiện click trên các nút Xóa
-    const deleteButtons = document.querySelectorAll('.btn-delete');
-    deleteButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            console.log('Xóa button clicked');
-            alert('Đã xóa người dùng.');
+        // Gắn sự kiện cho nút "Xóa"
+document.querySelector('.btn-delete').addEventListener('click', function() {
+            const confirmDelete = confirm('Bạn có chắc chắn muốn xóa không?');
+            if (confirmDelete) {
+                alert('Đã xóa thành công!');
+            } else {
+                alert('Hành động xóa đã bị hủy.');
+            }
         });
-    });
-});
 // Thêm người dùng
 document.getElementById('showAddFormBtn').addEventListener('click', function() {
     // Chuyển hướng đến trang "thong-tin-nguoi-dung.html"
     window.location.href = 'addNguoidung.htm';
 });
-
-
-
+//Sửa thông tin
+    document.addEventListener('DOMContentLoaded', function() {
+        // Chọn tất cả các nút sửa
+        const editButtons = document.querySelectorAll('.btn-sua');
+        
+        // Lặp qua tất cả các nút sửa và thêm sự kiện click
+        editButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                // Chuyển hướng đến trang suaThongtinNguoidung.htm
+                window.location.href = 'suaThongtinNguoidung.htm';
+            });
+        });
+    });
     </script>
     
 </body>

@@ -272,18 +272,12 @@ footer.end__heading-end {
             <div class="welcome">ProTech</div>
         <nav>
             <ul>
-                <!-- <li><a href="./Tongquan.htm" class="nav-link" target="content-frame" data-target="profile">Tổng quan</a></li>
-                <li><a href="./user.htm" class="nav-link" target="content-frame" data-target="profile">User Profile</a></li>
-                <li><a href="Quanlidonhang.htm" class="nav-link" target="content-frame" data-target="orders">Order Management</a></li>
-                <li><a href="Quanlinguoidung.htm" class="nav-link" target="content-frame" data-target="users">User Management</a></li>
-                <li><a href="Quanlisanpham.htm" class="nav-link" target="content-frame" data-target="products">Product Management</a></li> -->
-
-                <li><a href="./Tongquan.htm" class="nav-link" target="content-frame" data-target="profile" onclick="setActive(this)">Tổng quan</a></li>
-                <li><a href="./user.htm" class="nav-link" target="content-frame" data-target="profile" onclick="setActive(this)">User Profile</a></li>
-                <li><a href="Quanlidonhang.htm" class="nav-link" target="content-frame" data-target="orders" onclick="setActive(this)">Quản lí đơn hàng</a></li>
-                <li><a href="Quanlinguoidung.htm" class="nav-link" target="content-frame" data-target="users" onclick="setActive(this)">Quản lí người dùng</a></li>
-                <li><a href="Quanlisanpham.htm" class="nav-link" target="content-frame" data-target="products" onclick="setActive(this)">Quản lí sản phẩm</a></li>
-
+                    <li><a href="./Tongquan.htm" class="nav-link" target="content-frame" data-target="profile">Tổng quan</a></li>
+                    <li><a href="./user.htm" class="nav-link" target="content-frame" data-target="profile">User Profile</a></li>
+                    <li><a href="Quanlidonhang.htm" class="nav-link" target="content-frame" data-target="orders">Quản lí đơn hàng</a></li>
+                    <li><a href="Quanlinguoidung.htm" class="nav-link" target="content-frame" data-target="users">Quản lí người dùng</a></li>
+                    <li><a href="Quanlisanpham.htm" class="nav-link" target="content-frame" data-target="products">Quản lí sản phẩm</a></li>
+                
             </ul>
         </nav>
         </style>
@@ -396,47 +390,14 @@ function setActive(link) {
 }
 
 // Mở trang Tổng quan khi load trang
-document.addEventListener("DOMContentLoaded", function() {
-    // Lấy tất cả các liên kết trong menu
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    // Lặp qua tất cả các liên kết và thêm sự kiện click
-    navLinks.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault(); // Ngăn việc tải lại trang
-
-            // Loại bỏ lớp 'active' khỏi tất cả các liên kết
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-            });
-
-            // Thêm lớp 'active' vào liên kết đã được nhấn
-            link.classList.add("active");
-
-            // Lấy giá trị của 'data-target' để xác định phần nội dung tương ứng
-            const target = link.getAttribute("data-target");
-
-            // Ẩn tất cả các phần nội dung
-            document.querySelectorAll(".info-section").forEach(section => {
-                section.classList.remove("active");
-            });
-
-            // Hiển thị phần nội dung tương ứng
-            document.getElementById(target).classList.add("active");
-
-            // Cập nhật nội dung trong iframe nếu cần
-            const iframe = document.getElementById("content-frame");
-            iframe.src = link.href; // Chuyển đến trang mới trong iframe
+window.addEventListener('load', function() {
+            // Khi trang được tải xong, tự động click vào trang "Tổng quan"
+            var overviewLink = document.querySelector('a[data-target="profile"]');
+            if (overviewLink) {
+                overviewLink.click();
+            }
         });
-    });
-
-    // Mô phỏng nhấp chuột vào liên kết "Tổng quan" khi trang được tải
-    const tongQuanLink = document.querySelector("nav ul li a[data-target='profile']");
-    if (tongQuanLink) {
-        tongQuanLink.click(); // Mô phỏng nhấp chuột vào "Tổng quan"
-    }
-});
-
+  
    </script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

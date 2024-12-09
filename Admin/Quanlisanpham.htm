@@ -1,38 +1,241 @@
-<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Quản lý sản phẩm</title>
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* background-color: #333; */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    color: #333;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.image-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-item h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttons .edit {
+    background-color: #3498db;
+    color: white;
+}
+
+.buttons .delete {
+    background-color: #e74c3c;
+    color: white;
+}
+.image-item .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+
+    </style>
 </head>
-<body class="">
+<body>
+
+    <header>
+        <h1 style="color:black">Quản lý sản phẩm</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Nhập tên sản phẩm">
+            <button>+ Thêm sản phẩm</button>
+        </div>
+    </header>
     
-    <div class="container">
-        <header>
-            <h1>Your Shopping Cart</h1>
-            <div class="shopping">
-                <img src="../assets/imgs/ipad.png">
-                <span class="quantity">0</span>
+    <div class="image-grid">
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Nike Air Force">
+            <h3>Nike Air Force 1 '07 High</h3>
+            <p class="price">2,500,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
             </div>
-        </header>
-
-        <div class="list">
-          
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Nike SFB">
+            <h3>Nike SFB Field 2 8"</h3>
+            <p class="price">3,000,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Adidas Campus">
+            <h3>Campus 00s Shoes</h3>
+            <p class="price">2,200,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Nike Blazer">
+            <h3>Nike Blazer Mid</h3>
+            <p class="price">2,800,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Adidas UltraBoost">
+            <h3>Adidas UltraBoost</h3>
+            <p class="price">3,200,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Nike Dunk Low">
+            <h3>Nike Dunk Low</h3>
+            <p class="price">2,900,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Adidas NMD">
+            <h3>Adidas NMD</h3>
+            <p class="price">3,500,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Nike Air Max">
+            <h3>Nike Air Max 2021</h3>
+            <p class="price">3,800,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="../assets/imgs/LaptopHP.webp" alt="Adidas Gazelle">
+            <h3>Adidas Gazelle</h3>
+            <p class="price">2,600,000 đ</p> <!-- Giá sản phẩm -->
+            <div class="buttons">
+                <button class="edit">Sửa</button>
+                <button class="delete">Xóa</button>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <h1>Card</h1>
-        <ul class="listCard">
-        </ul>
-        <div class="checkOut">
-            <div class="total">0</div>
-            <div class="closeShopping">Close</div>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
+    <script>
+        // JavaScript function để reload trang khi nhấn Enter
+        window.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('input[type="text"]');
+            
+            // Thêm sự kiện 'keydown' để phát hiện khi người dùng nhấn Enter
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {  // Kiểm tra nếu phím Enter được nhấn
+                    location.reload();  // Tải lại trang
+                }
+            });
+        });
+    </script>
 </body>
-</html> -->
+</html>

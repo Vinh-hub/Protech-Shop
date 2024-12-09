@@ -244,33 +244,8 @@ document.querySelector('button').addEventListener('click', function() {
     // URL bạn muốn chuyển đến
     window.location.href = 'add-productList.htm'; // Thay 'https://example.com' bằng URL của bạn
 });
+
 // //Sửa và xóa sản phẩm
-// document.addEventListener('DOMContentLoaded', function() {
-//         // Lắng nghe sự kiện click vào nút Sửa
-//         const editButton = document.querySelector('.edit');
-//         editButton.addEventListener('click', function() {
-//             // Chuyển hướng đến trang suaThongtinSanpham.htm
-//             window.location.href = 'suaThongtinSanpham.htm';
-//         });
-
-//         // Lắng nghe sự kiện click vào nút Xóa
-//         const deleteButton = document.querySelector('.delete');
-//         deleteButton.addEventListener('click', function() {
-//             // Hiển thị hộp thoại xác nhận xóa
-//             const isConfirmed = confirm('Bạn có chắc chắn muốn xóa sản phẩm này?');
-
-//             if (isConfirmed) {
-//                 // Nếu người dùng xác nhận xóa, hiển thị thông báo và thực hiện xóa
-//                 alert('Sản phẩm đã được xóa thành công.');
-
-//                 // Bạn có thể thay đổi hoặc thêm mã xử lý xóa ở đây (ví dụ: gửi yêu cầu xóa qua API hoặc chuyển hướng)
-//             } else {
-//                 // Nếu người dùng không xác nhận xóa
-//                 alert('Sản phẩm không bị xóa.');
-//             }
-//         });
-//     });
-
 document.addEventListener('DOMContentLoaded', function() {
     // Lắng nghe sự kiện click vào tất cả các nút "Sửa"
     const editButtons = document.querySelectorAll('.edit');

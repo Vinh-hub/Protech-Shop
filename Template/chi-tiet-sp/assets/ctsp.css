@@ -202,6 +202,7 @@
     margin-bottom: 30px;
     background-color: #ffffff;
     border-radius: 10px;
+    height: 685px;
 }
 .options-GB{
     display: flex;
@@ -399,4 +400,8 @@
 .star__review{
     font-size: 50px;
 
+}
+.name-product{
+    font-size: 3rem;
+    margin: 10px 0;
 }

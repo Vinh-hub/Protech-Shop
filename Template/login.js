@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Đăng nhập thành công!");
     
             // Điều hướng đến index.htm
-            window.location.href = `../index.htm`;
+            window.location.href = `../../index.htm`;
     
             // Lưu trạng thái đăng nhập
             localStorage.setItem('isLoggedIn', 'true');

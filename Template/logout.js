@@ -9,6 +9,7 @@
         // Đặt lại trạng thái đăng nhập
         localStorage.setItem('isLoggedIn', 'false'); // Đặt trạng thái thành chưa đăng nhập
         window.location.href = `../index.htm`; // Chuyển hướng về trang chính
+        alert("Đã đăng xuất!");
     });
 
     document.addEventListener("DOMContentLoaded", () => {

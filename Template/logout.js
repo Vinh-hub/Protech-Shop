@@ -8,8 +8,8 @@
    logoutButton.addEventListener('click', function() {
         // Đặt lại trạng thái đăng nhập
         localStorage.setItem('isLoggedIn', 'false'); // Đặt trạng thái thành chưa đăng nhập
-        alert("Đã đăng xuất!");
         window.location.href = `../index.htm`; // Chuyển hướng về trang chính
+        alert("Đã đăng xuất!");
     });
 
     document.addEventListener("DOMContentLoaded", () => {

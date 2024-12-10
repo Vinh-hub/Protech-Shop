@@ -212,7 +212,7 @@
                             <span class="header__category">Danh mục</span>
                             <ul class="category__list">
                                 <li class="category__item">
-                                    <a href="../../Category/Dien-thoai.htm" class="category__item-link active">
+                                    <a href="../Category/Dien-thoai.htm" class="category__item-link active">
                                         <img src="../../assets/imgs/phonne-24x24.png" alt="" class="category__item-icon">
                                         Điện thoại
                                     </a>
@@ -1077,8 +1077,38 @@ if (itemProducts.length > 0) {
     </script> -->
 </body>
 <script src="../../main.js"></script>
-<!-- <script>
+<script>
+    // const basePath = localStorage.getItem('basePath');
+    // console.log(basePath);
+    buttonElement.addEventListener('click', ()=>{
+        window.location.href = `../Category/resultSearch.htm`;
+    });
+    document.addEventListener("DOMContentLoaded", () => {
     const basePath = localStorage.getItem('basePath');
-    console.log(basePath);
-</script> -->
+    const accountLink = document.getElementById('account-link'); // Tham chiếu đến thẻ tài khoản
+    const accountIconLink = document.getElementById('account-icon-link'); // Tham chiếu đến thẻ biểu tượng tài khoản
+    // Hàm chuyển hướng theo trạng thái đăng nhập
+    function handleAccountLinkClick(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Kiểm tra trạng thái đăng nhập
+        
+        if (isLoggedIn) {
+            // Nếu đã đăng nhập, chuyển đến trang thông tin
+            window.location.href = `../Information.htm`;
+        } else {
+            // Nếu chưa đăng nhập, chuyển đến trang đăng ký
+            window.location.href = `../Category/formNK.htm`;
+        }
+    }
+     // Gán sự kiện nhấp chuột cho cả hai liên kết
+    if (accountLink) {
+        accountLink.addEventListener('click', handleAccountLinkClick);
+    }
+
+    if (accountIconLink) {
+        accountIconLink.addEventListener('click', handleAccountLinkClick);
+    }
+});
+</script>
+
 </html>

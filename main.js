@@ -133,9 +133,8 @@ function render(list) {
 //         return;
 //     }
 // });
-
-
 // 
+
 const btndts = document.querySelectorAll('.btn-custom');
 btndts.forEach(btndt => {
     btndt.addEventListener('click', function () {

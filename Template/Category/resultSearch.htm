@@ -265,6 +265,9 @@
                                 <span class="product-filter">Sắp xếp theo</span>
                                 <div class="produce__btn-group">
                                     <section class="produce__btn-option poppular">
+                                        <button id="btn-more">
+                                            <i class="fa-solid fa-filter"></i>
+                                        </button>
                                         <button class="btn-custom btn-sixe-s popular">
                                             Phổ biến
                                         </button>
@@ -1060,12 +1063,147 @@
             </div>
         </footer>
     </div>
+    <div class="modal-review" style="display: none;">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="filter-container">
+                <!-- Bộ lọc Hãng -->
+                <div class="filter-section">
+                  <h3>Hãng</h3>
+                  <div class="filter-options brand-options">
+                    <button>Samsung</button>
+                    <button>iPhone</button>
+                    <button>Oppo</button>
+                    <button>Tecno</button>
+                    <button>Nokia</button>
+                    <button>Masstel</button>
+                  </div>
+                </div>
+            
+                <!-- Bộ lọc Giá -->
+                <div class="filter-section">
+                  <h3>Giá</h3>
+                  <div class="filter-options price-range">
+                    <button>Dưới 2 triệu</button>
+                    <button>Từ 2 - 4 triệu</button>
+                    <button>Từ 4 - 7 triệu</button>
+                    <button>Từ 7 - 13 triệu</button>
+                    <button>Từ 13 - 20 triệu</button>
+                    <button>Trên 20 triệu</button>
+                  </div>
+                  <div class="custom-price">
+                    <p>Hoặc chọn mức giá phù hợp với bạn</p>
+                    <!-- <div class="price-slider">
+                        <div>
+                            <input type="number" class="price-MM" id="min-price" value="300000" min="300000" max="50000000">đ
+                            <input type="number" class="price-MM" id="max-price" value="50000000" min="300000" max="50000000">đ
+                        </div>
+                      <input type="range" id="price-range" min="0" max="50000000" value="300000" step="100000">
+                    </div> -->
+                    <div class="range-container">
+                        <input type="range" id="min-range" min="300000" max="50000000" value="300000" step="100000">
+                        <input type="range" id="max-range" min="300000" max="50000000" value="50000000" step="100000">
+                        <div class="progress-bar" id="progress"></div>
+                      </div>
+                      <div class="slider-labels">
+                        <span id="min-label">300.000đ</span>
+                        <span id="max-label">50.000.000đ</span>
+                      </div>
+                </div>
+
+                <!-- btn -->
+                <div class="btn-search2">
+                    <button class="btn search2-save">Lưu</button>
+                    <button class="btn search2-cancel">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="./resultSearch.htm">
 </body>
 <script src="../../main.js"></script>
 <script src="../cart.js"></script>
 <script>
-    
+    btnSearch.addEventListener('click', ()=>{
+        window.location.href = `./resultSearch.htm`;
+
+    });
     const basePath = localStorage.getItem('basePath');
     console.log(basePath);
+    const btnMore = document.getElementById('btn-more');
+    const btnModal = document.querySelector('.modal-review');
+    btnMore.addEventListener('click', ()=>{
+        btnModal.style.display = 'flex';
+    });
+    document.querySelector('.search2-save').addEventListener('click', ()=>{
+        window.location.href = './resultSearch.htm';
+    });
+    document.querySelector('.search2-cancel').addEventListener('click', ()=>{
+        btnModal.style.display = 'none';
+    });
+    const minRange = document.getElementById("min-range");
+    const maxRange = document.getElementById("max-range");
+    const progress = document.getElementById("progress");
+    const minLabel = document.getElementById("min-label");
+    const maxLabel = document.getElementById("max-label");
+
+    // Cập nhật nhãn khi thay đổi giá trị thanh trượt
+    minRange.addEventListener("input", function() {
+      minLabel.textContent = formatCurrency(minRange.value);
+      updateProgress();
+    });
+
+    maxRange.addEventListener("input", function() {
+      maxLabel.textContent = formatCurrency(maxRange.value);
+      updateProgress();
+    });
+
+    // Cập nhật thanh tiến trình giữa hai nút trượt
+    function updateProgress() {
+      const minValue = parseInt(minRange.value);
+      const maxValue = parseInt(maxRange.value);
+      const rangeWidth = maxRange.max - minRange.min;
+
+      // Cập nhật chiều rộng và vị trí của thanh tiến trình
+      const progressWidth = ((maxValue - minValue) / rangeWidth) * 100;
+      const progressLeft = ((minValue - minRange.min) / rangeWidth) * 100;
+
+      progress.style.left = `${progressLeft}%`; // Căn chỉnh thanh tiến trình từ vị trí min
+      progress.style.width = `${progressWidth}%`; // Cập nhật độ rộng của thanh tiến trình
+    }
+
+    // Định dạng giá trị thành tiền (đơn vị đ)
+    function formatCurrency(value) {
+      return `${parseInt(value).toLocaleString()}đ`;
+    }
+
+    // Gọi hàm lần đầu để khởi tạo progress
+    updateProgress();
+    document.addEventListener("DOMContentLoaded", () => {
+    const basePath = localStorage.getItem('basePath');
+    const accountLink = document.getElementById('account-link'); // Tham chiếu đến thẻ tài khoản
+    const accountIconLink = document.getElementById('account-icon-link'); // Tham chiếu đến thẻ biểu tượng tài khoản
+    // Hàm chuyển hướng theo trạng thái đăng nhập
+    function handleAccountLinkClick(event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Kiểm tra trạng thái đăng nhập
+        
+        if (isLoggedIn) {
+            // Nếu đã đăng nhập, chuyển đến trang thông tin
+            window.location.href = `../Information.htm`;
+        } else {
+            // Nếu chưa đăng nhập, chuyển đến trang đăng ký
+            window.location.href = `../Category/formNK.htm`;
+        }
+    }
+     // Gán sự kiện nhấp chuột cho cả hai liên kết
+    if (accountLink) {
+        accountLink.addEventListener('click', handleAccountLinkClick);
+    }
+
+    if (accountIconLink) {
+        accountIconLink.addEventListener('click', handleAccountLinkClick);
+    }
+});
 </script>
 </html>

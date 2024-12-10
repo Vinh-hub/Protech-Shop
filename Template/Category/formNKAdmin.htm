@@ -247,6 +247,7 @@
                     <span class="end__heading-end-information">© 2024 - Bản quyền thuộc về Công ty ProTech</span>
             </div>
         </footer>
+        <link rel="stylesheet" href="../../Admin/dashboard.htm">
     </div>
     <script>
     const btnLogin = document.getElementById('btn--login'); // Nút đăng nhập
@@ -255,7 +256,7 @@
         btnLogin.addEventListener('click', function () {
             // Luôn hiển thị thông báo đăng nhập thành công
             alert("Đăng nhập thành công!");
-            window.location.href = `${basePath}Admin/dashboard.htm`;
+            window.location.href = `../../Admin/dashboard.htm`;
     
             // Lưu trạng thái đăng nhập
             localStorage.setItem('isLoggedIn', 'true');

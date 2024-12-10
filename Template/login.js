@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const basePath = localStorage.getItem('basePath');
-    console.log(basePath);
+    // const basePath = localStorage.getItem('basePath');
+    // console.log(basePath);
     // Xử lý đăng nhập
     // if (btnLogin && textLogin && passwordLogin) {
     //     btnLogin.addEventListener('click', function () {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Đăng nhập thành công!");
     
             // Điều hướng đến index.htm
-            window.location.href = `${basePath}index.htm`;
+            window.location.href = `../index.htm`;
     
             // Lưu trạng thái đăng nhập
             localStorage.setItem('isLoggedIn', 'true');

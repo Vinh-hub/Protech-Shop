@@ -12,7 +12,7 @@
         <form action="#" method="POST">
             <div class="form-group">
                 <label for="product-name">Tên Sản Phẩm:</label>
-                <input type="text" id="product-name" name="product-name" value="Samsung Galaxy Zlip5" required>
+                <input type="text" id="product-name" name="product-name" value="Samsung Galaxy S23 Ultra" required>
             </div>
             <div class="form-group">
                 <label for="price">Giá:</label>
@@ -21,10 +21,10 @@
             <div class="form-group">
                 <label for="color">Màu:</label>
                 <select id="color" name="color" required>
-                    <option value="red">Đỏ</option>
+                    <option value="red">Đen</option>
                     <option value="blue">Xanh</option>
                     <option value="green">Xanh lá</option>
-                    <option value="black">Đen</option>
+                    <option value="black">Đỏ</option>
                 </select>
             </div>
             <div class="form-group">
@@ -34,6 +34,28 @@
             <div class="form-group">
                 <label for="supplier">Nhà Cung Cấp:</label>
                 <input type="text" id="supplier" name="supplier" value="FPT" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Loại sản phẩm</label>
+                <select id="category" name="category" required>
+                    <option value="electronics" selected>Điện thoại</option>
+                    <option value="fashion">Laptop</option>
+                    <option value="home">Đồng hồ</option>
+                    <option value="beauty">Máy tính bảng</option>
+                    <option value="sports">Màn hình</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Hình ảnh</label>
+                <img src="../assets/imgs/samsunggalaxy.jpg" alt="Nike Air Force" style="width: 316px; height: 316px;">
+            </div>
+            <div class="form-actionss">
+                <button type="changeimage" class="btn-changeimage">Thay đổi hình</button>
+                <button type="deleteimage" class="btn-deleteimage">Xóa hình</button>
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả sản phẩm</label>
+                <textarea id="description" name="description" rows="4" cols="52">Samsung Galaxy S23 Ultra sở hữu màn hình 6.8 inch Dynamic AMOLED 2X với độ phân giải QHD+, mang đến trải nghiệm hình ảnh siêu sống động và sắc nét.</textarea>
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn-submit">Lưu Thay Đổi</button>
@@ -51,7 +73,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 240vh;
 }
 
 .form-container {
@@ -109,6 +131,20 @@ body {
     cursor: pointer;
     font-size: 14px;
 }
+.form-actionss {
+    display: flex;
+    align-items: center;
+}
+
+.form-actionss button {
+    padding: 10px 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+}
 
 .form-actions .btn-submit {
     background-color: #007bff;
@@ -119,7 +155,23 @@ body {
     background-color: #6c757d;
     color: #ffffff;
 }
+.form-actionss .btn-changeimage {
+    margin-left: 100px;
+    background-color: #007bff;
+    color: #ffffff;
+}
 
+.form-actionss .btn-deleteimage {
+    background-color: #E74C3C;
+    color: #ffffff;
+}
+.form-actionss .btn-changeimage:hover {
+    background-color: #0056b3;
+}
+
+.form-actionss .btn-deleteimage:hover {
+    background-color: #E74C3C;
+}
 .form-actions .btn-submit:hover {
     background-color: #0056b3;
 }

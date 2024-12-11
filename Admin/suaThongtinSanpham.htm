@@ -46,6 +46,14 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="description">Hình ảnh</label>
+                <img src="../assets/imgs/samsunggalaxy.jpg" alt="Nike Air Force" style="width: 316px; height: 316px;">
+            </div>
+            <div class="form-actionss">
+                <button type="changeimage" class="btn-changeimage">Thay đổi hình</button>
+                <button type="deleteimage" class="btn-deleteimage">Xóa hình</button>
+            </div>
+            <div class="form-group">
                 <label for="description">Mô tả sản phẩm</label>
                 <textarea id="description" name="description" rows="5" cols="52">Samsung Galaxy Z Flip5 là bản nâng cấp đáng giá nhất trong dòng Flip từ trước đến nay với màn hình phụ mới, lớn hơn nhiều mà người dùng có thể sử dụng để xử lý nhiều tác vụ hàng ngày của mình mà không cần mở điện thoại.</textarea>
             </div>
@@ -65,7 +73,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 240vh;
 }
 
 .form-container {
@@ -123,6 +131,20 @@ body {
     cursor: pointer;
     font-size: 14px;
 }
+.form-actionss {
+    display: flex;
+    align-items: center;
+}
+
+.form-actionss button {
+    padding: 10px 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+}
 
 .form-actions .btn-submit {
     background-color: #007bff;
@@ -133,7 +155,23 @@ body {
     background-color: #6c757d;
     color: #ffffff;
 }
+.form-actionss .btn-changeimage {
+    margin-left: 100px;
+    background-color: #007bff;
+    color: #ffffff;
+}
 
+.form-actionss .btn-deleteimage {
+    background-color: #E74C3C;
+    color: #ffffff;
+}
+.form-actionss .btn-changeimage:hover {
+    background-color: #0056b3;
+}
+
+.form-actionss .btn-deleteimage:hover {
+    background-color: #E74C3C;
+}
 .form-actions .btn-submit:hover {
     background-color: #0056b3;
 }

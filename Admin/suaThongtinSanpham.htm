@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Giá:</label>
-                <input type="number" id="price" name="price" value="2500000" required>
+                <input type="text" id="price" name="price" value="2,500,000đ" required>
             </div>
             <div class="form-group">
                 <label for="color">Màu:</label>
@@ -47,11 +47,13 @@
             </div>
             <div class="form-group">
                 <label for="description">Hình ảnh</label>
-                <img src="../assets/imgs/samsunggalaxy.jpg" alt="Nike Air Force" style="width: 316px; height: 316px;">
+                <img id="productImage" src="../assets/imgs/samsunggalaxy.jpg" alt="Nike Air Force" style="width: 316px; height: 316px; display: block;">
             </div>
             <div class="form-actionss">
-                <button type="changeimage" class="btn-changeimage">Thay đổi hình</button>
-                <button type="deleteimage" class="btn-deleteimage">Xóa hình</button>
+                <!-- <input type="file" id="product-image" name="product_image" accept="image/*"> -->
+                <!-- <button type="button" class="btn-changeimage">Thay đổi hình</button> -->
+                <button type="button" class="btn-changeimage">Thay đổi hình</button>
+                <button type="button" class="btn-deleteimage">Xóa hình</button>
             </div>
             <div class="form-group">
                 <label for="description">Mô tả sản phẩm</label>
@@ -183,7 +185,7 @@ body {
     </style>
 
     <script>
-         document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         // Lắng nghe sự kiện submit form (bấm Lưu)
         const form = document.querySelector('form');
         form.addEventListener('submit', function(event) {
@@ -201,6 +203,61 @@ body {
         cancelButton.addEventListener('click', function() {
             // Chuyển hướng về trang Quanlisanpham.htm mà không có thông báo
             window.location.href = 'Quanlisanpham.htm';
+        });
+        // Tạo input file ẩn để chọn hình ảnh
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*'; // Chỉ cho phép chọn hình ảnh
+        fileInput.style.display = 'none'; // Ẩn input file
+
+        document.body.appendChild(fileInput); // Thêm vào body trang
+
+        // Lắng nghe sự kiện click vào nút Thay đổi hình
+        const changeImageButton = document.querySelector('.btn-changeimage');
+        changeImageButton.addEventListener('click', function() {
+            fileInput.click();  // Kích hoạt click trên input file ẩn
+        });
+
+        // Lắng nghe sự kiện khi người dùng chọn file
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    productImage.src = e.target.result; // Cập nhật src cho hình ảnh sản phẩm
+                    alert('Hình ảnh đã được thay đổi!');
+                };
+
+                reader.readAsDataURL(file); // Đọc file dưới dạng URL
+            }
+        });
+
+        // // Lắng nghe sự kiện click vào nút Thay đổi hình
+        // const changeImageButton = document.querySelector('.btn-changeimage');
+        // const fileInput = document.getElementById('fileInput');
+
+        // changeImageButton.addEventListener('click', function() {
+        //     fileInput.click();  // Kích hoạt click trên input file ẩn
+        // });
+        // // Lắng nghe sự kiện click vào nút Thay đổi hình
+        // const changeImageButton = document.querySelector('.btn-changeimage');
+        // changeImageButton.addEventListener('click', function() {
+        //     // Hiển thị thông báo sau khi người dùng nhấn nút Thay đổi hình
+        //     alert('Hình ảnh đã được thay đổi!');
+        //     // Ghi nhớ rằng không chuyển hướng trang
+        // });
+
+        // Lắng nghe sự kiện click vào nút Xóa hình
+        const deleteImageButton = document.querySelector('.btn-deleteimage');
+        deleteImageButton.addEventListener('click', function() {
+            // Hiển thị thông báo xác nhận khi xóa hình
+            const confirmation = confirm('Bạn có chắc muốn xóa hình này không?');
+            if (confirmation) {
+                // Nếu người dùng xác nhận xóa hình
+                alert('Hình ảnh đã bị xóa!'); 
+                // Thực hiện code để xóa hình ở đây (nếu cần)
+            }
         });
     });
     </script>

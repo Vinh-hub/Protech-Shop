@@ -147,7 +147,7 @@ btndts.forEach(btndt => {
     });
 });
 
-        ///////////////////////////////////////
+///////////////////////////////////////
 if (nonepagination && pagination) {
     if (itemProducts.length > 5) {
         nonepagination.style.display = 'none';//block

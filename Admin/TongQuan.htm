@@ -70,6 +70,7 @@
             width: 100%;
             height: auto;
         }
+        
     </style>
 </head>
 <body>
@@ -108,6 +109,171 @@
             </div>
         </div>
     </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Danh Sách Bán Chạy Nhất</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .container-1 {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-1">
+        <h2 style="text-align: center; padding: 20px 0;">Top Sản Phẩm Bán Chạy Nhất</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã SP</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Số Lượng Bán Ra</th>
+                    <th>Giá (VNĐ)</th>
+                    <th>Tổng Giá (VNĐ)</th>
+                    <th>Xem Chi Tiết</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>SP001</td>
+                    <td>Áo Thun Nam Basic</td>
+                    <td>500</td>
+                    <td>200,000</td>
+                    <td>100,000,000</td>
+                    <td><a href="#" onclick="viewDetails('SP001')">Xem Chi Tiết</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>SP002</td>
+                    <td>Quần Jean Nữ Skinny</td>
+                    <td>450</td>
+                    <td>350,000</td>
+                    <td>157,500,000</td>
+                    <td><a href="#" onclick="viewDetails('SP002')">Xem Chi Tiết</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>SP003</td>
+                    <td>Giày Sneaker Trắng</td>
+                    <td>400</td>
+                    <td>800,000</td>
+                    <td>320,000,000</td>
+                    <td><a href="#" onclick="viewDetails('SP003')">Xem Chi Tiết</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>SP004</td>
+                    <td>Túi Xách Nữ Thời Trang</td>
+                    <td>300</td>
+                    <td>1,200,000</td>
+                    <td>360,000,000</td>
+                    <td><a href="#" onclick="viewDetails('SP004')">Xem Chi Tiết</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>SP005</td>
+                    <td>Đồng Hồ Nam Cao Cấp</td>
+                    <td>250</td>
+                    <td>2,000,000</td>
+                    <td>500,000,000</td>
+                    <td><a href="#" onclick="viewDetails('SP005')">Xem Chi Tiết</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -147,6 +313,11 @@
                 ]
             }
         });
+
+        function viewDetails(productCode) {
+            // Chuyển hướng sang trang chi tiết sản phẩm
+            window.location.href = `details.html?product=${productCode}`;
+        }
     </script>
 </body>
 </html>

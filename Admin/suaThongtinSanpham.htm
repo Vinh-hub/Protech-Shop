@@ -185,8 +185,8 @@ body {
     <script>
          document.addEventListener('DOMContentLoaded', function() {
         // Lắng nghe sự kiện submit form (bấm Lưu)
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(event) {
+        const btnSubmit = document.querySelector('.btn-submit');
+        btnSubmit.addEventListener('click', function(event) {
             event.preventDefault();  // Ngừng gửi form mặc định
 
             // Hiển thị thông báo khi lưu thông tin

@@ -49,6 +49,22 @@ function handleBuyNow() {
     }
 }
 
+// Hàm thêm sản phẩm vào giỏ
+function handleAddToCart(button) {
+    // Thay đổi nội dung nút "Thêm vào giỏ"
+    button.textContent = "Đã thêm vào giỏ";
+    button.disabled = true; 
+    button.classList.add("disabled"); 
+
+    // Hiển thị thông báo
+    let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+    cartCount++;
+    document.getElementById("cart-count").textContent = cartCount;
+    localStorage.setItem("cartCount", cartCount);
+
+    alert("Sản phẩm đã được thêm vào giỏ hàng!");
+}
+
 // Cập nhật trạng thái nút khi đăng nhập/đăng xuất
 function updateButtons() {
     const loginButton = document.getElementById('loginButton');

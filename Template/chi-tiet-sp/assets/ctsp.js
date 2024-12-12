@@ -23,13 +23,13 @@ optionColors.forEach(optionColor => {
     });
 });
 
-document.getElementById('review-write').addEventListener('click', ()=>{
-    const modalReview = document.querySelector('.modal-review');
-    modalReview.style.display = 'flex';
-    document.querySelector('.auth-form__header--icon').addEventListener('click', ()=> {
-        modalReview.style.display = 'none';
-    });
-});
+// document.getElementById('review-write').addEventListener('click', ()=>{
+//     const modalReview = document.querySelector('.modal-review');
+//     modalReview.style.display = 'flex';
+//     document.querySelector('.auth-form__header--icon').addEventListener('click', ()=> {
+//         modalReview.style.display = 'none';
+//     });
+// });
 
 // document.getElementById("add-product-btn").addEventListener("click", function (){
 

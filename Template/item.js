@@ -1,8 +1,8 @@
 
-function movePage(url, query) {
-    let targetUrl = `http://127.0.0.1:5500/${url}?query=${encodeURIComponent(query)}`;
-    window.location.href = targetUrl;  
-};
+// function movePage(url, query) {
+//     let targetUrl = `http://127.0.0.1:5500/${url}?query=${encodeURIComponent(query)}`;
+//     window.location.href = targetUrl;  
+// };
 
 let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
@@ -34,18 +34,18 @@ function handleLogout() {
 //     alert("Sản phẩm đã được thêm vào giỏ hàng.");
     
 // }
-const basePath = localStorage.getItem('basePath');
+// const basePath = localStorage.getItem('basePath');
 
 // Xử lý mua ngay
 function handleBuyNow() {
     if (!isLoggedIn) {
         alert("Vui lòng đăng nhập để mua sản phẩm.");
-        window.location.href = `${basePath}Template/Category/formNK.htm`;
+        window.location.href = `../../Category/formNK.htm`;
         // return;
     }
     if (isLoggedIn){
     alert("Đang chuyển đến trang thanh toán...");
-    window.location.href = `${basePath}Template/Category/Info.htm`;// Chuyển hướng đến trang thanh toán
+    window.location.href = `../../Category/Info.htm`;
     }
 }
 

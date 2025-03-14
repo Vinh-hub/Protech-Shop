@@ -133,7 +133,7 @@ html{
     background-color: var(--white-color);
     margin: auto;
     position: relative;
-    z-index: 1;
+    z-index: 1002;
     border-radius: 5px;
     --grow-from: 0.7;
     --grow-to: 1;
@@ -157,5 +157,15 @@ html{
     animation: fadIn linear 0.1s;
     /* display: none; */
     display: flex;
-    z-index: 1000;
+    z-index: 1001;
   }
+
+  .modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}

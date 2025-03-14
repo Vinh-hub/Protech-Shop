@@ -1142,7 +1142,7 @@
     document.querySelector('.search2-save').addEventListener('click', ()=>{
         window.location.href = './resultSearch.htm';
     });
-    document.querySelector('.search2-cancel').addEventListener('click', ()=>{
+    document.querySelector('.search2-cancel, .modal__overlay').addEventListener('click', ()=>{
         btnModal.style.display = 'none';
     });
     const minRange = document.getElementById("min-range");
